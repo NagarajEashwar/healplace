@@ -1,0 +1,31 @@
+<div class="session-wrapper">
+    <div class="title">My Sessions</div>
+    <div class="row session-item" *ngFor="let session of sessions">
+        <div class="col-md-4">
+            <div class="session-title">Session Type</div>
+            <div class="session-value">{{ session.title }}</div>
+        </div>
+        <div class="col-md-2">
+            <div class="session-title">Price</div>
+            <div class="session-value">${{ session.price }}</div>
+        </div>
+        <div class="col-md-2">
+            <div class="session-title">Time</div>
+            <div class="session-value">{{ session.duration_min }} minutes</div>
+        </div>
+        <div class="col-md-4">
+            <button type="button" class="btn-block btn btn-primary btn-rounded" (click)="openConfirmSessionModal(confirmSessionModalOpen, 'confirmSession', session)">Edit</button>
+        </div>
+    </div>
+    <div class="row session-item" *ngIf="sessions.length === 0">
+        No sessions found
+    </div>
+</div>
+<ng-template #confirmSessionModalOpen role="document" let-modal>
+    <app-confirm-session [resource]="isContent" [session]="session" (changeBack)="closeConfirmSessionModal($event)"  (confirmCallBack)="openAddSessionModal(addSessionModalOpen, 'addSession', session)" (confirmBack)="closeConfirmSessionModal($event)" *ngIf="isContent == 'confirmSession'" title="Edit This Session?" buttonText="Edit Session">
+    </app-confirm-session>
+</ng-template>
+<ng-template #addSessionModalOpen role="document" let-modal>
+    <app-add-session [resource]="isContent" [session]="session" [editSession]="session" (changeBack)="closeAddSessionModal($event)" (closeModal)="closeAddSessionModal($event)" *ngIf="isContent == 'addSession'" title="Edit" buttonText="Edit Session" type="edit">
+    </app-add-session>
+</ng-template>

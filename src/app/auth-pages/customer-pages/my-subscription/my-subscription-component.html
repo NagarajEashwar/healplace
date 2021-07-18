@@ -1,0 +1,249 @@
+<div class="container-fluid" style="background: #FFF;height: 600px;">
+    <a href="#" class="interest-video package-period" > I’m interested in video session only 
+        <span class="pl-2 pr-2"><i class=" fa fa-arrow-right"></i></span>
+    </a>
+    <div class="row">
+        <div class="col-md-5 dv-main">
+            <h1 class="h1-align">Hi Mark! Welcome <br>to Healplace.</h1>
+            <label class="normal-font" style="padding-bottom: 25px;">
+                Keep in touch to learn about our latest news, offers and<br> updates.</label>
+            <div class="row">
+                <div class="col-md-2">
+                    <input type="text" class="form-control text-custom">
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-signup">SignUp <span class="pl-2 pr-2"><i
+                                class=" fa fa-arrow-right"></i></span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="row col-md-7 dv-main" *ngIf="showPackageItems == 'Monthly Pricing' && MonthlyData.length != 0" >
+            <div class="dvpackage">
+                <label class="lblpackage">{{MonthlyData[2].plan_name}}</label>
+                <h1 class="dollar-money-font pl-4">$ {{MonthlyData[2].regular_price}}</h1>
+                <button type="button" class="btn choose-btn ml-4" id="btn-customer" (click)="ChooseClick('1',MonthlyData[2])"
+                    [ngClass]="{'btncustom': selectedItem == '1'}">
+                    Choose <span class="pl-2 pr-2"><i class=" fa fa-arrow-right"></i></span>
+                </button>
+                <ul class="ul-align">
+                    <ol class="smallfont">
+                        Messaging Therapy
+                    </ol>
+                </ul>
+                
+            </div>
+            <div class="dvpackage dv-custom-1">
+                <label class="lblpackage">{{MonthlyData[1].plan_name}}</label>
+                <h1 class="dollar-money-font pl-4">${{MonthlyData[1].regular_price}}</h1>
+                <button type="button" class="btn choose-btn ml-4" id="btn-customer" (click)="ChooseClick('2',MonthlyData[1])"  
+                [ngClass]="{'btncustom': selectedItem == '2'}">
+                    Choose <span class="pl-2 pr-2"><i class=" fa fa-arrow-right"></i></span>
+                </button>
+                <ul class="ul-align">
+                    <ol class="smallfont">
+                        Messaging Therapy
+                    </ol>
+                    <ol class="smallfont">
+                        1 Live Session / month (30 min)
+                    </ol>
+                </ul>
+            </div>
+            <div class="dvpackage dv-custom-2">
+                <label class="lblpackage">{{MonthlyData[0].plan_name}}</label>
+                <h1 class="dollar-money-font pl-4">${{MonthlyData[0].regular_price}}</h1>
+                <button type="button" class="btn  choose-btn ml-4" id="btn-customer" (click)="ChooseClick('3',MonthlyData[0])"
+                    [ngClass]="{'btncustom': selectedItem == '3'}">
+                    Choose <span class="pl-2 pr-2"><i class=" fa fa-arrow-right"></i></span>
+                </button>
+                <ul class="ul-align">
+                    <ol class="smallfont">
+                        Messaging Therapy
+                    </ol> 
+                    <ol class="smallfont">
+                        4 Live Session / month (30 min)
+                    </ol> 
+                </ul>
+            </div>
+        </div>
+        <div class="row col-md-7 dv-main" *ngIf="showPackageItems == '3' && ThreeMonthData.length != 0">
+            <div class="dvpackage">
+                <label class="lblpackage">{{ThreeMonthData[0].plan_name}}</label>
+                <h1 class="dollar-money-font pl-4">${{ThreeMonthData[0].sale_price}}</h1>
+                <h6 class=" pl-4" style="text-decoration: line-through;">${{ThreeMonthData[0].regular_price}} </h6>
+                <button type="button" class="btn choose-btn ml-4" id="btn-customer" plan_id="asdsadkjsadkjsa" (click)="ChooseClick('1',ThreeMonthData[0])"
+                    [ngClass]="{'btncustom': selectedItem == '1'}">
+                    Choose <span class="pl-2 pr-2"><i class=" fa fa-arrow-right"></i></span>
+                </button>
+                <ul class="ul-align">
+                    <ol class="smallfont">
+                        Messaging Therapy
+                    </ol>
+                </ul>
+                
+            </div>
+       
+            <div class=" dvpackage dv-custom-1">
+                <div class="dvoffer">-15%</div>
+                <label class="lblpackage">{{ThreeMonthData[1].plan_name}}</label>
+                <h1 class="dollar-money-font pl-4">${{ThreeMonthData[1].sale_price}}</h1>
+                <h6 class="pl-4" style="text-decoration: line-through;">${{ThreeMonthData[1].regular_price}} </h6>
+                <button type="button" class="btn choose-btn ml-4" id="btn-customer" plan_id="asdsadkjsadkjsa" (click)="ChooseClick('2',ThreeMonthData[1])"
+                    [ngClass]="{'btncustom': selectedItem == '2'}">
+                    Choose <span class="pl-2 pr-2"><i class=" fa fa-arrow-right"></i></span>
+                </button>
+                <ul class="ul-align">
+                    <ol class="smallfont">
+                        Messaging Therapy
+                    </ol> 
+                    <ol class="smallfont">
+                        1 Live Session / month (30 min)
+                    </ol>
+                </ul>
+            </div>
+            <div class=" dvpackage dv-custom-2">
+                <label class="lblpackage">{{ThreeMonthData[2].plan_name}}</label>
+                <h1 class="dollar-money-font pl-4">${{ThreeMonthData[2].sale_price}}</h1>
+                <h6 class=" pl-4" style="text-decoration: line-through;">${{ThreeMonthData[2].regular_price}} </h6>
+                <button type="button" class="btn  choose-btn ml-4" id="btn-customer"  plan_id="asdsadkjsadkjsa" (click)="ChooseClick('3',ThreeMonthData[2])"
+                    [ngClass]="{'btncustom': selectedItem == '3'}">
+                    Choose <span class="pl-2 pr-2"><i class=" fa fa-arrow-right"></i></span>
+                </button>
+                <ul class="ul-align">
+                    <ol class="smallfont">
+                        Messaging Therapy
+                    </ol> 
+                    <ol class="smallfont">
+                        4 Live Session / month (30 min)
+                    </ol> 
+                </ul>
+            </div>
+        </div>
+
+        <div class="row col-md-7 dv-main" *ngIf="showPackageItems == '6' && SixMonthData.length != 0">
+            <div class="dvpackage">
+                <label class="lblpackage">{{SixMonthData[0].plan_name}}</label>
+                <h1 class="dollar-money-font pl-4">${{SixMonthData[0].sale_price}}</h1>
+                <h6 class=" pl-4" style="text-decoration: line-through;">${{SixMonthData[0].regular_price}} </h6>
+                <button type="button" class="btn choose-btn ml-4" id="btn-customer" (click)="ChooseClick('1',SixMonthData[0])"
+                    [ngClass]="{'btncustom': selectedItem == '1'}">
+                    Choose <span class="pl-2 pr-2"><i class=" fa fa-arrow-right"></i></span>
+                </button>
+                <ul class="ul-align">
+                    <ol class="smallfont">
+                        Messaging Therapy
+                    </ol>
+                </ul>
+                
+            </div>
+            <div class="dvpackage dv-custom-1">
+                <div class="dvoffer">-20%</div>
+                <label class="lblpackage">{{SixMonthData[1].plan_name}}</label>
+                <h1 class="dollar-money-font pl-4">${{SixMonthData[1].sale_price}}</h1>
+                <h6 class=" pl-4" style="text-decoration: line-through;">${{SixMonthData[1].regular_price}} </h6>
+                <button type="button" class="btn choose-btn ml-4" id="btn-customer" (click)="ChooseClick('2',SixMonthData[1])"
+                    [ngClass]="{'btncustom': selectedItem == '2'}">
+                    Choose <span class="pl-2 pr-2"><i class=" fa fa-arrow-right"></i></span>
+                </button>
+                <ul class="ul-align">
+                    <ol class="smallfont">
+                        Messaging Therapy
+                    </ol>
+                    <ol class="smallfont">
+                        1 Live Session / month (30 min)
+                    </ol>
+                </ul>
+            </div>
+            <div class="dvpackage dv-custom-2">
+                <label class="lblpackage">{{SixMonthData[2].plan_name}}</label>
+                <h1 class="dollar-money-font pl-4">${{SixMonthData[2].sale_price}}</h1>
+                <h6 class=" pl-4" style="text-decoration: line-through;">${{SixMonthData[2].regular_price}} </h6>
+                <button type="button" class="btn  choose-btn ml-4" id="btn-customer" (click)="ChooseClick('3',SixMonthData[2])"
+                    [ngClass]="{'btncustom': selectedItem == '3'}">
+                    Choose <span class="pl-2 pr-2"><i class=" fa fa-arrow-right"></i></span>
+                </button>
+                <ul class="ul-align">
+                    <ol class="smallfont">
+                        Messaging Therapy
+                    </ol> 
+                    <ol class="smallfont">
+                        4 Live Session / month (30 min)
+                    </ol> 
+                </ul>
+            </div>
+        </div>
+
+        <div class="row col-md-7 dv-main" *ngIf="showPackageItems == 'Annually'">
+            <div class="dvpackage">
+                <label class="lblpackage">Basic</label>
+                <h1 class="dollar-money-font pl-4">$940</h1>
+                <h6 class=" pl-4" style="text-decoration: line-through;">$1176 </h6>
+                <button type="button" class="btn choose-btn ml-4" id="btn-customer" (click)="ChooseClick('1',SixMonthData[1])"
+                    [ngClass]="{'btncustom': selectedItem == '1'}">
+                    Choose <span class="pl-2 pr-2"><i class=" fa fa-arrow-right"></i></span>
+                </button>
+                <ul class="ul-align">
+                    <ol class="smallfont">
+                        Messaging Therapy
+                    </ol>
+                </ul>
+                
+            </div>
+            <div class="dvpackage dv-custom-1">
+                <div class="dvoffer">-20%</div>
+                <label class="lblpackage">Starter</label>
+                <h1 class="dollar-money-font pl-4">$940</h1>
+                <h6 class=" pl-4" style="text-decoration: line-through;">$1176 </h6>
+                <button type="button" class="btn choose-btn ml-4" id="btn-customer" (click)="ChooseClick('2',SixMonthData[1])"
+                    [ngClass]="{'btncustom': selectedItem == '2'}">
+                    Choose <span class="pl-2 pr-2"><i class=" fa fa-arrow-right"></i></span>
+                </button>
+                <ul class="ul-align">
+                    <ol class="smallfont">
+                        Messaging Therapy
+                    </ol>
+                    <ol class="smallfont">
+                        1 Live Session / month (30 min)
+                    </ol>
+                </ul>
+            </div>
+            <div class="dvpackage dv-custom-2">
+                <label class="lblpackage">Complex</label>
+                <h1 class="dollar-money-font pl-4">$1516</h1>
+                <h6 class=" pl-4" style="text-decoration: line-through;">$1895 </h6>
+                <button type="button" class="btn  choose-btn ml-4" id="btn-customer" (click)="ChooseClick('3',SixMonthData[1])"
+                    [ngClass]="{'btncustom': selectedItem == '3'}">
+                    Choose <span class="pl-2 pr-2"><i class=" fa fa-arrow-right"></i></span>
+                </button>
+                <ul class="ul-align">
+                    <ol class="smallfont">
+                        Messaging Therapy
+                    </ol> 
+                    <ol class="smallfont">
+                        4 Live Session / month (30 min)
+                    </ol> 
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row" style="padding-top: 80px;" id="pakages-a">
+        <div class="col-md-6 offset-md-6" style="position: absolute;top: 570px;">
+            <label class="package-period mr-60-custom">
+                <a  (click)="ShowPackage('Monthly Pricing','Monthly Pricing')"  [ngClass]="{'a-active': showPackageItems == 'Monthly Pricing'}"> Monthly Pricing</a>    
+            </label>
+            <label class="package-period mr-60">
+                <a  (click)="ShowPackage('3', '3 Months')" [ngClass]="{'a-active': showPackageItems == '3'}">3 Months</a>    
+            </label>
+            <label class="package-period mr-60">
+                <a  (click)="ShowPackage('6', '6 Months')" [ngClass]="{'a-active': showPackageItems == '6'}">6 Months</a>
+            </label>
+            <label class="package-period mr-60">
+                <a  (click)="ShowPackage('Annually', 'Annually')" [ngClass]="{'a-active': showPackageItems == 'Annually'}">Annually</a>    
+            </label>
+        </div>
+    </div>
+</div>

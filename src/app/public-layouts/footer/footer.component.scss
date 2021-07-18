@@ -1,0 +1,74 @@
+.mdi:before, .mdi-set {
+  font-size: 38px;
+}
+
+.border-line {
+  border-left: 1px solid #fff;
+}
+.padtop100{
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.padbot50 {
+  padding-bottom: 40px;
+  width: 450px;
+}
+
+.padright70 {
+  padding-right: 70px;;
+}
+.colorblue {
+  color: #00BAD5;
+}
+
+.bg-warning{
+
+
+
+  background-color: #FFF !important;
+  width: 78px;
+    height: 75.33px;
+    left: 0px;
+    top: 0px;
+    border: #FFF !important;
+    box-shadow: 0px 12px 12px rgb(0 0 0 / 8%);
+    position: absolute;
+}
+
+.bg-warning1{
+
+
+
+  background-color: #FFF;
+  width: 78px;
+    height: 75.33px;
+    left: 50px;
+    top: 0px;
+    
+    box-shadow: 0px 12px 12px rgb(0 0 0 / 8%);
+    position: absolute;
+}
+
+.bg-warning2{
+
+
+
+  background-color: #FFF;
+  width: 78px;
+    height: 75.33px;
+    left: 100px;
+    top: 0px;
+    
+    box-shadow: 0px 12px 12px rgb(0 0 0 / 8%);
+    position: absolute;
+}
+@media all and (min-width:0px) and (max-width: 700px){
+
+  .container{
+    text-align: center;
+  }
+  .mt-4{
+    justify-content: space-evenly;
+  }
+}

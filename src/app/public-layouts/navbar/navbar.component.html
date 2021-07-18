@@ -1,0 +1,49 @@
+<header id="page-topbar">
+  <div class="container-fluid navbar-header">
+    <div class="d-flex padleft120">
+      <div class="navbar-brand-box" style="width: 100px;">
+        <a [routerLink]="['/homepage/home']" href="/" class="logo">
+          <span class="logo-lg">
+            <img src="assets/images/favicon_heal.PNG" alt="" height="45">
+          </span>
+        </a>
+      </div>
+      <h2 class="text-blue headings" style="color: #00BAD5;margin-bottom: 0px; margin-left: -13px;">healplace</h2>
+    </div>
+    <div class="d-flex">
+      <div class="navbar" style="padding-left: 70px;margin-top:5px;">
+       
+          <a routerLink="/homepage/home" routerLinkActive="class-name" routerLinkActiveOptions="{exact:true}"> Home</a>
+      
+          <a routerLink="/homepage/about-us" routerLinkActive="class-name" routerLinkActiveOptions="{exact:true}">About
+            Us</a>
+    
+          <a routerLink="/homepage/howitworks" routerLinkActive="class-name" routerLinkActiveOptions="{exact:true}"> How
+            it works</a>
+      
+          <a routerLink="/homepage/contact-us" routerLinkActive="class-name"
+            routerLinkActiveOptions="{exact:true}">Contact</a>
+      
+          <a routerLink="/homepage/faq" routerLinkActive="class-name" routerLinkActiveOptions="{exact:true}">FAQ</a>
+        <button type="button" class="text-dark btn header-item noti-icon btn-cd" style="margin-left: 50px;"
+          (click)="openModal(loginModalOpen, 'login')">Login
+        </button>
+      </div>
+    </div>
+    <style>
+      @media only screen and (max-width:767px) {
+        .navbar {
+          background: #00BAD5;
+          color: white;
+
+
+        }
+      }
+    </style>
+  </div>
+</header>
+
+<ng-template #loginModalOpen role="document" let-modal>
+  <public-login-modal [resource]="'login'" (changeBack)="closeModal($event)" *ngIf="isContent == 'login'">
+  </public-login-modal>
+</ng-template>

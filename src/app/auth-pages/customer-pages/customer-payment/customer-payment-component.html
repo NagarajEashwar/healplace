@@ -1,0 +1,58 @@
+<div class="container-fluid" style="padding-left: 200px;    background: #FFF;height: auto;">
+    <h2 class="text-font"> Thanks For Your Order, Mark.! <br>You’ve selected: </h2>
+
+    <div class="row col-md-8 back-color">
+        <div class="col-md-4 pl-4">
+            <label class="small-text">Plan</label>
+            <p class="plan-name">{{SelectedPlanData.plan[0].plan_name}}</p>
+            <p>Included services:<br>
+                 Messaging Therapy 1 <br>
+                 Live Session / month (30 min) 
+
+            </p>
+        </div>
+        <div class="col-md-4 pl-4">
+            <label class="small-text">Billing</label>
+            <p class="plan-name">{{SelectedPlanData.plan[0].plan_type__plan_type}}</p>
+        </div>
+        <div class="col-md-4 pl-4">
+            <label class="small-text">Price</label>
+            <p class="plan-name">${{SelectedPlanData.plan[0].sale_price}}</p>
+            <h6 class=" pl-4" style="text-decoration: line-through;">${{SelectedPlanData.plan[0].regular_price}} </h6>
+        </div>
+    </div>
+
+    <h2 class="text-font pt-5 pb-3"> Choose payment method </h2>
+    <div class="row col-md-8" id="dvpayment-option">
+        <div class="col-md-3 dvalign">
+            <label class="form-check-label small-text" for="creditcard">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" value="" name="check-payment" id="creditcard">
+                    Credit Card
+              </div>
+            </label>
+        </div>
+        <div class="col-md-3 dvalign">
+            <label class="form-check-label small-text" for="paypal">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="" name="check-payment" id="paypal">
+                        PayPal
+                  </div>
+                </label>
+        </div> 
+        <div class="col-md-3 dvalign">
+            <label class="form-check-label small-text" for="addother">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="" name="check-payment" id="addother">
+                    Add Other?
+                  </div>
+                </label>
+        </div>
+    </div>
+
+    <div class="row mt-5 mb-4" style="height: 170px;padding-left: 10px;">
+        <button type="button" class="btn btnpayment" id="btn-payment">
+        Go to Payment <span class="pl-2 pr-2"><i class=" fa fa-arrow-right"></i></span>
+    </button>
+    </div>
+</div>

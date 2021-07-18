@@ -1,0 +1,28 @@
+<div class="modal-body">
+    <div class="img-upload-btn">
+        <img src="assets/images/video.png" alt="Click to upload image" (click)="onUploadButtonClick()">
+        <input type="file" name="file" id="fileInput" #fileInput accept="image/*" (change)="onFileChanged($event)">
+    </div>
+    <h1 class="main-header">
+        Upload your photo
+    </h1>
+    <div class="help-txt">
+        <h2>
+            Recent photo (at least 1-2 years) - JPEG, GIF, BMP, TIFF or PNG format; maximum size of 2MB / At least 400 x
+            400 pixels
+        </h2>
+    </div>
+    <div class="card default-options">
+        <div class="card-body">
+            <h1 class="body-header">
+                or choose from our collection
+            </h1>
+            <div class="option-img">
+                <div class="avatar-box" *ngFor="let image of imageList; let i = index" [key]="image.id">
+                    <img [src]="image.image" [alt]="'Profile Picture ' + (i + 1)">
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="save-img">Save Profile →</button>
+</div>

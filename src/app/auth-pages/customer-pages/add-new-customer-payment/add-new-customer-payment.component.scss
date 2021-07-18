@@ -1,0 +1,131 @@
+.add-new-payment{
+    .dropdown-menu.show {
+        top: -300px !important;
+    }
+    .pick-date{
+        padding: 20px 40px;
+        border: none;
+        color: #074D63;
+        background: #FBD036;
+    }
+    .payment-card{
+        background: #FFFFFF;
+        box-shadow: 0px 15px 30px rgb(0 0 0 / 5%);
+        border-radius: 20px;
+        width: 232px;
+        height: 120px;
+        text-align: center;
+    }
+    .title{
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: #074D63;
+        padding-top: 50px;
+        vertical-align: middle;
+        display: inline-block;
+        padding-left: 20px;
+    }
+    .sub-title{
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+        color: #6D6D6D;
+    }
+    .plus-symbol{
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 35px;
+        text-align: center;
+        color: #074D63;
+        padding-top: 46px;
+    vertical-align: middle;
+    display: inline-block;
+    }
+    .card-full-name{
+        width: 380px;
+        height: 80px;
+        background: #F3F3F3;
+        border-radius: 20px;
+        color: #6D6D6D;
+        text-align: center;
+        font-family: FF Mark Pro;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 20px;
+    }
+    .billing-addr{
+        width: 380px;
+        height: 80px;
+        background: #FFFFFF;
+        box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
+        border-radius: 20px;
+        color: #074D63;
+        text-align: center;
+        font-family: FF Mark Pro;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 20px;
+    }
+    .card-number{
+        width: 380px;
+        height: 80px;
+        color: #6D6D6D;
+        border-radius: 20px;
+        background: #F3F3F3;
+        font-family: FF Mark Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 20px;
+    }
+    .city{
+        width: 170px;
+        height: 80px;
+        color: #6D6D6D;
+        background: #F3F3F3;
+        border-radius: 20px;
+        font-family: FF Mark Pro;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 20px;
+    }
+    .ccv-num{
+        width: 111px;
+        height: 80px;
+        color: #6D6D6D;
+        background: #F3F3F3;
+        border-radius: 20px;
+        font-family: FF Mark Pro;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 20px;
+    }
+    input{
+        border: none !important;
+        overflow: auto;
+        outline: none !important;
+        padding: 10px;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        text-align: center;
+    }
+    .mt-20{
+        margin-top: 20px;
+    }
+    .btn:focus{
+        box-shadow: none !important;
+    }
+}

@@ -1,0 +1,59 @@
+<div id="calendar-container">
+    <div class="title">Preview Your Schedule</div>
+    <div id="calendar">
+        <div id="cale-container">
+            <div id="cale-nav-container">
+                <div id="cale-nav-container">
+                    <div id="cale-prev-week-container">
+                        <div id="cale-prev-week" (click)="previousWeek()">
+                            &lt; </div>
+                    </div>
+
+                    <div id="cale-current-month-year-container">
+                        <span>{{week}}</span>
+                        <app-week-selection (weekRange)="changeWeek($event)"></app-week-selection>
+                    </div>
+
+
+                    <div id="cale-prev-week-container">
+                        <div id="cale-next-week" (click)="nextWeek()">&gt;</div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div id="cale-week-container">
+                <div id="cale-dates-container">
+                    <div id="cale-dates-container">
+                        <div class="cale-date-header" id="cale-date-header-0" *ngFor="let day of days">
+                            <div class="cale-date-number">{{day.day}}</div>
+                            <div class="cale-date-display">{{day.date + '/' + day.month}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="cale-available-time-container">
+                    <div class="cale-day-time-container" id="cale-day-time-container-0" *ngFor="let day of days">
+
+                        <a href="javascript:;" class="cale-available-time" [class.selected]="day.available.includes(time.time)" [class.disabled]="day.disable.includes(time.time)"
+                            *ngFor="let time of settings.availability">
+                            {{time.displayTime}}
+                        </a>
+
+                        <div style="clear:both;"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="add-new-container d-flex flex-column align-items-center">
+        <button type="submit" class="btn add-new" (click)="editSchedule()">
+            Edit Schedule
+            <i class="fa fa-arrow-right"></i>
+        </button>
+        <button type="button" class="btn">
+            Integrate with Calendar
+            <i class="fa fa-arrow-right"></i>
+        </button>
+    </div>
+</div>
+<app-available-patient></app-available-patient>

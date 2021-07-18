@@ -1,0 +1,42 @@
+<div class="add-bank-details-wrapper">
+    <div class="add-bank-details-container">
+        <div class="title">Bank account details</div>
+
+        <form class="form-group" [formGroup]="addBankDetailsForm" (ngSubmit)="saveBankDetails()">
+
+            <div class="form-group">
+                <label for="accountType">Account Type</label>
+                <select class="form-control" id="accountType" name="accountType" formControlName="account_holder_type">
+                    <option value="individual">Individual</option>
+                    <option value="company">Company</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="routingNumber">Routing Number</label>
+                <input type="text" class="form-control" id="routingNumber" name="routingNumber" formControlName="routing_number">
+            </div>
+
+            <div class="form-group">
+                <label for="accountNumber">Account Number</label>
+                <input type="text" class="form-control" id="accountNumber" name="accountNumber" formControlName="account_number">
+            </div>
+            <div class="form-group">
+                <label for="accountName">Account holder Name</label>
+                <input type="text" class="form-control" id="accountName" name="accountName" formControlName="account_holder_name">
+            </div>
+            <div class="form-group">
+                <label for="bankName">Bank Name</label>
+                <input type="text" class="form-control" id="bankName" name="bankName" formControlName="bank_name">
+            </div>
+
+        </form>
+
+        <div class="add-new-container d-flex flex-column align-items-center">
+            <button type="button" class="btn add-new" [disabled]="!addBankDetailsForm.valid" (click)="saveBankDetails()">
+                Link this account
+                <i class="fa fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</div>

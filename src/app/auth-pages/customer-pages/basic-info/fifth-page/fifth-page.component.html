@@ -1,0 +1,69 @@
+<div class="fifth-page">
+    <h1 class="head">How Are You Feeling Today?</h1>
+    <!--smile1-->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="sd-container" id="myid1" style="background: #ececec;" (click)="chooseMe(1,'Excited')">
+                <div class="row">
+                    <img class="emoji-container" src="assets/images/happy.jpg"> 
+                </div>
+                <div class="row">
+                    <p class="emoji-text">Excited</p>            
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="sd-container" id="myid2" style="background: #FFE4E4;" (click)="chooseMe(2,'Grateful')">
+                <div class="row">
+                    <img class="emoji-container" src="assets/images/love.png">
+                </div>
+                <div class="row">
+                    <p class="emoji-text">Grateful</p>         
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="sd-container" id="myid3" style="background: #E1FFEA;" (click)="chooseMe(3,'Calm')">
+                <div class="row">
+                    <img class="emoji-container" src="assets/images/calm2.png">
+                </div>
+                <div class="row">
+                    <p class="emoji-text">Calm</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="sd-container" id="myid4" style="background: #FFE4E4;" (click)="chooseMe(4,'Sleepy')">
+                <div class="row">
+                    <img class="emoji-container" src="assets/images/sleepy.png">
+                </div>
+                <div class="row">
+                    <p class="emoji-text">Sleepy</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="sd-container" id="myid5" style="background: #E1FFEA;" (click)="chooseMe(5,'Happy')">
+                <div class="row">
+                    <img class="emoji-container" src="assets/images/happy1.png">
+                </div>
+                <div class="row">
+                    <p class="emoji-text">Happy</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="sd-container" id="myid6" style="background: #FFF4E3;" (click)="chooseMe(6,'Suprised')">
+                <div class="row">
+                    <img class="emoji-container" src="assets/images/Surprised1.png">
+                </div>
+                <div class="row">
+                    <p class="emoji-text">Suprised</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="nextstep" (click)="profileSubmit()">Save Profile <i class="fa fa-arrow-right"></i></button>
+</div>

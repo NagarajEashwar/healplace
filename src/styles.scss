@@ -1,0 +1,389 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@ctrl/ngx-emoji-mart/picker';
+
+.modal-holder{
+    animation-name: example;
+    animation-duration: 0.3s;
+  }
+  @keyframes example {
+    0%   {transform: scale(0.5)}
+    100% {transform: scale(1)}
+  }
+
+  .carousel-item {
+    transition: opacity 0.7s ease !important;
+    position: absolute !important;
+    display: block !important;
+    opacity: 0;
+  }
+
+  .modal-remove-chat{
+    background: #074D63 !important;
+    opacity: 0.9 !important;
+}
+.modal-backdrop.show {
+  opacity: 0.1 !important;
+}
+a{
+  cursor: pointer !important;
+}
+
+.modal-practitioner{
+.modal-dialog{
+  float: right !important;
+  top: 170px !important;
+  right: 100px;
+}
+}
+
+.modal-copy-to-all{
+  background: #074D63 !important;
+  opacity: 0.9 !important;
+  .modal-dialog{
+    top: 150px !important;
+  }
+  }
+
+  .carousel-item.active {
+    position: relative !important;
+    opacity: 1;
+  }
+
+::ng-deep .body {
+  background-color: #fff !important;
+}
+
+.arrange{
+  vertical-align: middle;
+  text-align: center;
+}
+
+.headings{
+  font-family: healspace font !important;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 70px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.btn-outline-warning {
+  color: #000;
+  font-size: 13px;
+  border: 2px solid #006400;
+  background-color: #ffffff;
+}
+
+.btn-warning {
+  background-color: #ffa700;
+  border: 2px solid #ffa700;
+  color: #000;
+  font-size: 12px;
+  text-align: center;
+}
+
+.btn-success {
+  background-color: #6CB244;
+  border: 1px solid #6CB244;
+  color: #000;
+  font-size: 12px;
+  text-align: center;
+}
+
+.btn-info{
+  background-color: #00BAD5;
+}
+
+.text-info{
+  font-color: #00BAD5;
+}
+
+.customer-booking-modal{
+  .modal-body{
+    padding: 10px 50px !important;
+  }
+  .modal-content{
+    background-color: #fafafa !important;
+  }
+}
+
+bg-light {
+  background-color: #F4F4F4 !important;
+}
+
+.bg-warning{
+  background-color: #FBD036 !important;
+  border: 1px solid #FBD036;
+}
+
+.btn-primary{
+  background-color: #FBD036;
+  border:2px solid #FBD036;
+  color: #000;
+}
+
+.bg-success{
+  background-color: #6CB244 !important;
+  border: 1px solid #6CB244;
+}
+
+
+btn-outline-primary{
+  background-color: #fff;
+  border-color: #006400;
+  color: #000;
+}
+
+.card-shadow {
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.12);
+}
+
+.th-align {
+  text-align: center;
+}
+
+.book-a-session {
+  background-color: #FBD036;
+  border: 2px solid #FBD036;
+  box-shadow: 5px 15px 20px 0px rgba(0, 0, 0, 0.15);
+  height: 75px;
+  width: 410px;
+  left: 430px;
+  top: 3805px;
+  border-radius: 40px;
+}
+
+.container-fluid, .container-xl, .container-lg, .container-md, .container-sm {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+
+
+.search-box .search-icon {
+  font-size: 16px;
+  position: absolute;
+  left: 13px;
+  top: 0;
+  line-height: 59px;
+}
+
+.card {
+  border-radius: 40px;
+}
+
+
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #00B2D3;
+  background-color: #fff;
+  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.12);
+}
+
+
+.h1-lable {
+  font-family: FF Mark pro;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 70px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.new-text {
+  font-family: FF Mark Pro;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.col-lg-4-new{
+  padding-left: 30px;
+  padding-top: 30px;
+}
+
+.view-more {
+  width: 87px;
+  height: 22px;
+  left: 909px;
+  top: 4711px;
+  font-family: FF Mark Pro;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 22px;
+  color: #00B2D3;
+}
+
+.view-more-button {
+  height: 82px;
+  width: 246px;
+  left: 837px;
+  top: 4680px;
+  border: 2px solid #00B2D3;
+  border-radius: 40px;
+}
+
+.result {
+  width: 366px;
+  height: 30px;
+  left: 776px;
+  top: 4800px;
+  font-family: FF Mark Pro;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 22px;
+  text-align: center;
+  color: #000000;
+}
+
+.life-coaching {
+  font-family: FF Mark Pro;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.text-input-design{
+
+  height: calc(3.5em + 0.94rem + 2px);
+  font-weight: 500;
+  background-color: #EBF3FA;
+  border: 2px solid #D4D3D3;
+  font-size: 0.9825rem;
+}
+
+.select-custom-design{
+  height:calc(3.5em + 0.94rem + 2px);
+  background: #EBF3FA;
+  font-size: 0.9825rem;
+  border: 2px solid #D4D3D3;
+}
+
+.col-lg-2-new{
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+.card-shadow{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.popover .arrow {
+  display: none !important;
+}
+.popover-section{
+  .popover{
+    max-width: 500px;
+    width: 364px;
+background: #FFFFFF;
+border-radius: 20px;
+  }
+}
+.arror::after{
+  display: none !important;
+}
+@font-face {
+  font-family: "healspace font";
+  src: url("/assets/fonts/font.woff") format('woff'),url("/assets/fonts/font.woff2") format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.panel-heading{
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.custompautocomplete .p-autocomplete-dd .p-autocomplete-input, .p-autocomplete-dd .p-autocomplete-multiple-container{
+  border-radius: 40px 0px 0px 40px;
+  height: calc(3.5em + 0.94rem + 2px);
+  background: #f4f4f4 !important;
+  border: 2px solid #f4f4f4 !important;
+  padding-left: 30px !important;
+}
+
+.custompautocomplete .p-autocomplete .p-autocomplete-dropdown {
+  background: #f4f4f4 !important;
+  border-top-right-radius: 40px;
+  border: 1px solid #f4f4f4;
+  border-bottom-right-radius: 40px;
+}
+
+.accordion .card-header {
+  background-color: #fff !important;
+}
+
+.btn:focus, .btn.focus {
+  outline: 0;
+   box-shadow: 0 0 0 0.15rem;
+}
+
+.rating .p-rating .p-rating-icon.pi-star {
+  color: #FBD036;
+}
+.custom-cd { 
+  margin-right: 90px !important;
+  font-size: unset !important;
+  background-color: #f4f4f4 !important;
+  border: 1px solid #f4f4f4 !important;
+}
+.ngx-dropdown-container .ngx-dropdown-list-container {
+  box-sizing: border-box;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  z-index: 999999999;
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  box-shadow: 5px 5px 5px 0 rgb(0 0 0 / 21%);
+  overflow-y: auto;
+  height: 250px;
+}
+.ngx-dropdown-container .ngx-dropdown-button {
+  font-weight: 500 !important;
+  width: 100%;
+  min-height: 30px;
+  padding: 5px 10px;
+  background-color: #f4f4f4 !important;
+  border: none !important;
+  color: #7b7f93 !important;
+  margin-top: 0px !important;
+}
+
+// .ngx-dropdown-container[_ngcontent-vwq-c129] .ngx-dropdown-button[_ngcontent-vwq-c129] {
+//   width: 100%;
+//   min-height: 30px;
+//   padding: 5px 10px;
+//   background-color: #fff;
+//   margin: -11px !important;
+//   font-weight: 500 !important;
+//   color: #7b7f93;
+//   margin-top: 0px !important;
+// }
+
+.emoji-mart-scroll {
+  border-bottom: 0;
+  margin-bottom: 6px;
+}
+
+.emoji-mart-scroll + .emoji-mart-bar {
+  display: none;
+}
+@media (min-width: 576px) {
+  .add-session-modal .modal-dialog {
+      max-width: 874px !important;
+  }
+}
+@import '~ngx-bootstrap/datepicker/bs-datepicker.css';

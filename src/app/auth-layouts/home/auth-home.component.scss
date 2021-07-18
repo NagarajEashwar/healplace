@@ -1,0 +1,22 @@
+.container-fluid {
+  width: 100%;
+}
+body{background: #ffffff !important;}
+.main-view {
+  // padding-top: 3.7rem !important;
+}
+.language-view {
+  position: fixed;
+  z-index: 999;
+  right: 5px;
+}
+.language-view select {
+  border: 0;
+  margin-top: 1px;
+  padding: 5px;
+}
+@media (max-width: 480px) {
+  .main-view {
+    padding-top: 3.7rem !important;
+  }
+}

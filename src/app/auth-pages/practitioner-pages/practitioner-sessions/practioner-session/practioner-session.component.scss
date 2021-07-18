@@ -1,0 +1,51 @@
+.session-wrapper {
+    margin-bottom: 50px;
+    .title{
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        color: #074D63;
+        margin-bottom: 24px;
+    }
+    .session-item {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 32px 48px;
+        
+        width: 93%;
+        margin-bottom: 32px;
+        
+        background: #FFFFFF;
+        box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
+        border-radius: 20px;
+        .session-title {
+            font-family: FF Mark Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 18px;
+            color: #6D6D6D;
+        }
+        .session-value {
+            font-family: FF Mark Pro;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 20px;
+            color: #00BAD5;
+        }
+        .btn {
+            width: 120px;
+            height: 40px;
+            font-family: FF Mark Pro;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 18px;
+            color: #FFFFFF;
+        }
+    }
+}

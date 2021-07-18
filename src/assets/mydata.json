@@ -1,0 +1,52 @@
+{
+  "included_packages": [
+      {
+          "modified": "2021-06-11T20:11:51.595652Z",
+          "id": "071688d3-6fcf-4ebc-878b-ecab2369965e",
+          "practitioner_id": "0e652f04-9f71-4aa3-b3e6-4bd40c0c47ef",
+          "title": "Therapy session",
+          "description": "this session involves in resolving problematic behaviors, beliefs, feelings, relationship issues, an",
+          "duration_min": 30,
+          "price": 35,
+          "commission": null,
+          "is_active": true
+      },
+      {
+          "modified": "2021-06-11T20:18:30.991721Z",
+          "id": "a90aa464-b2cc-44ca-979f-681e807cf07c",
+          "practitioner_id": "0e652f04-9f71-4aa3-b3e6-4bd40c0c47ef",
+          "title": "Yoga Session",
+          "description": "Yoga Session",
+          "duration_min": 30,
+          "price": 25,
+          "commission": null,
+          "is_active": true
+      },
+      {
+          "modified": "2021-06-16T06:24:19.746294Z",
+          "id": "70764a4b-0594-444e-8159-2108a6397657",
+          "practitioner_id": "ad6fcbd1-1028-4103-9137-b7e2aa64ac5e",
+          "title": "Counselling Session",
+          "description": "this session involves in resolving problematic behaviors, beliefs, feelings, relationship issues, an",
+          "duration_min": 30,
+          "price": 125,
+          "commission": null,
+          "is_active": true
+      }
+  ],
+  "others": [
+      {
+          "modified": "2021-06-11T20:16:59.764404Z",
+          "id": "1dc7cedb-2ec9-4657-b874-1abaadc0e070",
+          "practitioner_id": "0e652f04-9f71-4aa3-b3e6-4bd40c0c47ef",
+          "title": "Counselling Session",
+          "description": "this session involves in resolving problematic behaviors, beliefs, feelings, relationship issues, an",
+          "duration_min": 60,
+          "price": 85,
+          "commission": null,
+          "is_active": true
+      }
+  ],
+  "total_session_message": "This practitioner has 3 type of video session available",
+  "message": "You have 1 video session remaining."
+}

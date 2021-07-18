@@ -1,0 +1,145 @@
+/* Begins */
+
+.hiw-p {
+  color:#074D63; 
+  width: 128px; 
+  height: 20px; 
+  font-weight:bold;
+  font-family: FF Mark Pro;
+  font-style: normal;
+  font-size:16px;
+  line-height:20px;
+}
+
+.hiw-head-content {
+  font-family: FF Mark Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+
+  width:301px;
+  height:79px; 
+  top: 215px; 
+  font-weight: 400;
+  font-Style: normal; 
+  font-Size: 16px;
+  line-height: 20px; 
+}
+
+.hiw-h3 {
+
+  color: #00BAD5; 
+  width: 301px; 
+  height:135px; 
+  margin-top:20px; 
+  font-weight: 400;
+  font-family: BelyDisplayW00-Regular;
+  line-height : 45px;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+
+
+
+
+
+
+.btn-submit-1 {
+  width :180px;
+   height : 60px;
+   border-radius:20px;
+   background-color: #00BAD5;
+   color: #fff;
+   border: 0px solid #00BAD5;
+   font-family: FF Mark Pro;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+  box-shadow: 0px 10px 20px rgb(0 0 0 / 8%);
+}
+
+
+.hiw-image-content {
+  margin-top: 100px;
+  height: auto; 
+  border-radius: 40px;
+  background-image: url('/assets/images/background.jpg');
+  padding-bottom: 80px;
+}
+
+.btn-center {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 100px;
+}
+
+.headings {
+  font-family: healspace font !important;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+/* Ends */
+
+
+
+
+
+
+
+.img-left{
+height: 450px;
+margin-left: 60px;
+border-radius: 40px;
+}
+
+.mt-n1{
+
+
+  margin-top: 2.75rem  !important;
+  margin-right: 170px;
+  margin-left: 96px;
+  
+}
+
+
+.ml-1 {
+  margin-left: 90px;
+}
+
+
+
+
+.col-sm{
+
+margin-left: 134px;
+  margin-top: 90px;
+
+}
+
+
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+.img {
+  width: 50%;
+}
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+.img {
+  width: 100%;
+}
+}

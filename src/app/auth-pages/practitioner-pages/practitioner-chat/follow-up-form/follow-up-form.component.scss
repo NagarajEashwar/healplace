@@ -1,0 +1,100 @@
+.block-chat-modal{
+    width: 848px;
+    height: 558px;
+    background: #FAFAFA;
+    border-radius: 40px;
+    padding:20px;
+    text-align: center;
+    .back-to-btn{
+        padding: 20px 40px;
+        background: #00BAD5;
+        border-radius: 20px;
+        color: #FFFFFF;
+        border: none;
+    }
+    .cancel-btn{
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        color: #074D63;
+
+    }
+    .btnactive{
+        background: #FBD036 !important;
+        color: #074D63 !important;
+        border: none !important;
+    }
+    .subdivactive{
+        background: #00BAD5 !important;
+        color: #FFFFFF !important;
+        p{
+            color: #FFFFFF !important; 
+        }
+    }
+    input{
+        background: #FFFFFF;
+        border-radius: 40px;
+        width: 630px;
+        height: 80px;
+        border: none !important;
+        overflow: auto;
+        outline: none !important;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+        color: #074D63;
+        padding: 20px;
+    }
+    .add-details-btn{
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        color: #074D63;
+        border: 1px solid #074D63;
+        padding: 10px 20px;
+    }
+    .btn:focus{
+        outline: none !important;
+    }
+    .sub-div{
+    border-radius: 20px;
+    width: 200px;
+    height: 80px;
+    color: #FFFFFF;
+    background: #074D63;
+    p{
+        padding-top: 20px;
+        color: #FFFFFF;
+    }
+}
+    .title{
+        font-family: BelyDisplayW00-Regular;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 40px;
+        line-height: 45px;
+        text-align: center;
+        color: #074D63;
+    }
+    .content{
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: #074D63;
+
+    }
+   
+}

@@ -1,0 +1,146 @@
+<div class="container bg-color">
+    <div class=" row-align m-auto text-center">
+        <h1 class="h1-align"> Add new practitioner <br>into the platform?
+        </h1>
+    </div>
+    <form class="form-horizontal" [formGroup]="AddPractitionerForm">
+
+        <div class="row padtop50" id="add-form">
+            <div class="col-md-3 marginleft70">
+                <div class="form-group">
+                    <label class="pl-2">Full Name</label>
+                    <p class="card-palign">
+                        <input type="text" class="form-control" formControlName="AddPractitionerFName" required>
+                    </p>
+                    <div *ngIf="AddPractitionerForm.controls['AddPractitionerFName'].invalid && 
+                    AddPractitionerForm.controls['AddPractitionerFName'].touched" class="con-val">
+                        <div *ngIf="AddPractitionerForm.controls['AddPractitionerFName'].errors.required">
+                            First Name is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 marginleft70">
+                <div class="form-group">
+                    <label class="pl-2">Busineess Name</label>
+                    <div >
+                        <p class="card-palign">
+                            <input type="text" class="form-control" formControlName="AddPractitionerBName" required>
+                        </p>
+                        <div *ngIf="AddPractitionerForm.controls['AddPractitionerBName'].invalid && 
+                    AddPractitionerForm.controls['AddPractitionerBName'].touched" class="con-val">
+                            <div *ngIf="AddPractitionerForm.controls['AddPractitionerBName'].errors.required">
+                                First Name is required.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 marginleft70">
+                <div class="form-group">
+                    <label class="pl-2">Email</label>
+                    <p class="card-palign">
+                        <input type="text" class="form-control" required formControlName="AddPractitionerEmail">
+                    </p>
+                    <div *ngIf="AddPractitionerForm.controls['AddPractitionerEmail'].invalid && 
+                    AddPractitionerForm.controls['AddPractitionerEmail'].touched" class="con-val">
+                        <div *ngIf="AddPractitionerForm.controls['AddPractitionerEmail'].errors.required">
+                            First Name is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 marginleft70">
+                <div class="form-group">
+                    <label class="pl-2">Phone</label>
+                    <p class="card-palign"> <input type="text" class="form-control"
+                            formControlName="AddPractitionerPhone" required   (keypress)="keyPress($event)" maxlength="10"></p>
+                    <div *ngIf="AddPractitionerForm.controls['AddPractitionerPhone'].invalid && 
+                    AddPractitionerForm.controls['AddPractitionerPhone'].touched" class="con-val">
+                        <div *ngIf="AddPractitionerForm.controls['AddPractitionerPhone'].errors.required">
+                            First Name is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 marginleft70">
+                <div class="form-group">
+                    <label class="pl-2">Location</label>
+                    <div >
+                        <p class="card-palign"><input type="text" class="form-control" formControlName="AddPractitionerLocation" required>
+                        </p>
+                        <div *ngIf="AddPractitionerForm.controls['AddPractitionerLocation'].invalid && 
+                        AddPractitionerForm.controls['AddPractitionerLocation'].touched" class="con-val">
+                            <div *ngIf="AddPractitionerForm.controls['AddPractitionerLocation'].errors.required">
+                                First Name is required.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 marginleft70">
+                <div class="form-group">
+                    <label class="pl-2">Postal Code</label>
+                    <p class="card-palign"> <input type="text" class="form-control" formControlName="AddPractitionerZip"
+                            required></p>
+                    <div *ngIf="AddPractitionerForm.controls['AddPractitionerZip'].invalid && 
+                        AddPractitionerForm.controls['AddPractitionerZip'].touched" class="con-val">
+                        <div *ngIf="AddPractitionerForm.controls['AddPractitionerZip'].errors.required">
+                            First Name is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+<div class="container bg-color">
+
+    <hr class="hr-align">
+    <div class="row pt-5">
+        <div class="col-md-3 marginleft70">
+            <p class="p1-align ">
+                Id Document :
+            </p>
+            <p class="p2-align">
+                Type: Driver License
+            </p>
+
+        </div>
+        <div class="col-md-3 marginleft70">
+            <input type="file" class="form-control">
+
+
+        </div>
+        <div class="col-md-3 marginleft70">
+            <input type="file" class="form-control">
+        </div>
+        <div class="row pt-custom-100">
+            <div class="col-md-3 marginleft70">
+                <p class="p1-align ">
+                    Certifications :
+                </p>
+
+            </div>
+            <div class="col-md-2 marginleft70">
+                <input type="file" class="form-control">
+            </div>
+            <div class="col-md-2 mar-left60">
+                <input type="file" class="form-control">
+            </div>
+            <div class="col-md-2 mar-left60">
+                <input type="file" class="form-control">
+            </div>
+        </div>
+        <div class="row m-auto" style="max-width: fit-content;">
+            <div>
+                <button type="button" class="btn-block btn btn-warning btn-rounded btn-approve btn-confirm mt-5 mb-5"
+                    tabindex="0" ng-reflect-router-link="/homepage/browse-practitioner" (click)="AddPractioner()">
+                    Create account <span class="pl-2 pr-2"><i class="fa fa-arrow-right"></i></span></button>
+            </div>
+        </div>
+    </div>

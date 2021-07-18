@@ -1,0 +1,101 @@
+<div *ngIf="currentStep === 'one'" class="block-customer-modal">
+    <div>
+        <img style="width: 60px;" src="../../../../../assets/images/customer/report.png" />
+    </div>
+    <p class="title">
+        Block customer
+    </p>
+    <div style="padding-top: 25px;">
+        <img src="../../../../../assets/images/profile_pic.png" /> <br />
+        <p class="name">Dr. Ronald Richards</p>
+        <p class="role">Health Coach, Therapist</p>
+        <br />
+        <br />
+        <p class="content">Choose a reason for blocking this customer</p>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-6 col-lg-6">
+            <div class="sub-div" style="float: right; background: #074D63;">
+                <a (click)="optionSelected('first')">
+                    <i *ngIf="option === 'first'" style="float: right;margin-top: 10px;margin-right: 10px;" class="fa fa-check-circle"></i>
+                    <p class="sub-content">He was <br /> disrespectful</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-6">
+            <div class="sub-div" style="background: #00BAD5;">
+                <a (click)="optionSelected('second')">
+                    <i *ngIf="option === 'second'" style="float: right;margin-right: 20px;margin-top: 10px;" class="fa fa-check-circle"></i>
+                    <p style="text-align: left;
+                    padding-left: 64px;" class="sub-content">Something <br />
+                        else here</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div style="text-align: center;margin-top: 20px;">
+        <button (click)="addDetails()" class="btn add-details-btn"
+            [class.btnactive]="option === 'first' || option === 'second'">Add Details →</button><br>
+        <button (click)="closeModal()" class="btn cancel-btn">Cancel</button>
+    </div>
+</div>
+<div *ngIf="currentStep === 'two'" class="block-customer-modal">
+    <div>
+        <img style="width: 60px;" src="../../../../../assets/images/customer/report.png" />
+    </div>
+    <p style="padding: 20px;" class="title">
+        Blocking Details
+    </p>
+    <p class="content">
+        If you encounter a situation where a customer did <br /> something wrong
+    </p>
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-6 col-lg-6">
+            <p class="sub-content">Type your message</p>
+        </div>
+        <div class="col-md-6 col-lg-6">
+            <a (click)="file.click()"><img src="../../../../../assets/images/customer/screenshots.png" />Add
+                Screenshot</a>
+            <input type="file" accept=".png, .jpg, .jpeg" class="file-upload" (change)="onFileSelected($event)" #file />
+        </div>
+    </div>
+    <div style="padding-top: 15px;">
+        <textarea rows="4" cols="50" [(ngModel)]="shortDescription"
+            (input)="onShortDescription($event.target.value)"></textarea>
+    </div>
+    <div style="text-align: center;margin-top: 20px;">
+        <button (click)="blockCustomer()" class="btn add-details-btn"
+            [class.btnactive]="isEnableReportBtn === true">Block Customer →</button><br>
+        <button (click)="closeModal()" class="btn cancel-btn">Cancel</button>
+    </div>
+</div>
+<div *ngIf="currentStep === 'three'" class="block-customer-modal">
+    <div>
+        <img style="width: 60px;" src="../../../../../assets/images/customer/report.png" />
+    </div>
+    <p class="title">
+        You have blocked <br />
+        this customer
+    </p>
+    <div style="padding-top: 25px;">
+        <img src="../../../../../assets/images/profile_pic.png" /> <br />
+        <p class="name">Dr. Ronald Richards</p>
+        <p class="role">Health Coach, Therapist</p>
+        <br />
+        <br />
+    </div>
+    <br />
+    <br />
+    <p class="review">You blocked this user for ..... and we will review this situation</p>
+    <br />
+    <br />
+    <div style="text-align: center;margin-top: 20px;">
+        <button (click)="backToPlatform()" class="btn back-to-btn">Back to Dashboard→</button><br>
+    </div>
+</div>

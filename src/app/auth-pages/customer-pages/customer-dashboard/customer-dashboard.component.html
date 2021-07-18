@@ -1,0 +1,185 @@
+<div class="customer-dashboard-container">
+    <section class="font-family">
+        <div class="top-container">
+            <div class="upcoming-session font-family">
+                <h1 class="head">Next upcoming Session</h1>
+                <div class="appoinment font-family">
+                    <h3 class="your-next-appoinment">Your next appointment</h3>
+                    <div class="img-content">
+                        <img class="rounded-circle dp" src="assets/images/ronald.png">
+                        <h3 class="name">Dr. Ronald Richards</h3>
+                        <p class="designation">Health Coach, Therapist, New York</p>
+                    </div>
+                    <div class="about">
+                        <h1 class="talk">Talk about family...</h1>
+                        <div class="sub-main-head">
+                            <h5 class="sub-head">Included</h5>
+                            <p class="time">30 min</p>
+                        </div>
+                        <div class="sub-main-head1">
+                            <h5 class="sub-head">2 March</h5>
+                            <p class="time">10:30 am</p>
+                        </div>
+                    </div>
+                    <div class="submission">
+                        <button type="button" (click)="navigateToChatPage()" class="btn-block btn btn-warning btn-rounded">
+                            Message
+                        </button>
+                        <div class="contact">
+                            <i class="fa fa-phone-alt" aria-hidden="true"></i>
+                           <a (click)="navigateToSessionPage()"> <i class="fa fa-video" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="chats-container right-container font-family">
+                <div class="d-flex justify-content-between header">
+                    <h1 class="chat">Chats</h1>
+                    <h1 class="see">see all chats →</h1>
+                </div>
+                <div class="chat-list" *ngFor="let chat of chats">
+                    <div class="sub-chat">
+                        <h5 class="chat-head">2 March</h5>
+                        <div class="chat-time">10:30 am</div>
+                    </div>
+                    <div class="img-content d-flex">
+                        <img class="rounded-circle dp" src="assets/images/ronald.png">
+                        <div>
+                            <h3 class="name">{{ chat.name }}</h3>
+                            <div class="designation">Health Coach, Therapist, New York</div>
+                        </div>
+                    </div>
+                    <div class="round">
+                        <i class="fas fa-comment-alt"></i>
+                    </div>
+                    <button type="button" [routerLink]="['/homepage/browse-practitioner']" class="btn-box btn btn-warning btn-rounded">
+                        <i class="fa fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="font-family">
+        <div class="font-family banner">
+            <div class="top-container">
+                <div class="yoga-container">
+                    <div class="d-flex justify-content-between header">
+                        <h1 class="interest">Interests</h1>
+                        <h1 class="see">see all →</h1>
+                    </div>
+
+                    <div class="yoga-content" *ngFor="let interest of  interests">
+                        <img class="yoga" src="assets/images/shutterstocked.jfif">
+                        <div class="card-yoga">
+                            <div class="dot">...</div>
+                            <div class="head-yoga">{{ interest.interest }}</div>
+                            <div class="para">mindfullness | happiness | stillness</div>
+                        </div>
+                    </div>
+                    <button type="button" [routerLink]="['/homepage/browse-practitioner']" class="btn-block btn btn-warning btn-rounded">
+                        + Add New Interest
+                    </button>
+                </div>
+                <div class="font-family right-container">
+                    <div class="graph-mood-container">
+                        <div class="graph">
+                            <div class="d-flex justify-content-between header">
+                                <div class="graph-head">Time spent in the platform</div>
+                                <div class="share">Share
+                                    <i class="fas fa-external-link-alt"></i>
+                                </div>
+                            </div>
+
+                            <div class="graphi">
+                                <app-bar-chart></app-bar-chart>
+                            </div>
+                        </div>
+
+                        <div class="mood-container">
+                            <h1 class="mood header">My MoodMeter</h1>
+                            <div class="emoji-container">
+                                <div class="emoji" *ngIf="customer.Mood_Type" [ngSwitch]="customer.Mood_Type[0].mood">
+                                    <ng-template [ngSwitchCase]="'Happy'">
+                                        <img class="emoji-img" src="assets/images/happy1.png">
+                                    </ng-template>
+                                    <ng-template [ngSwitchCase]="'Calm'">
+                                        <img class="emoji-img" src="assets/images/calm2.png">
+                                    </ng-template>
+                                    <ng-template [ngSwitchCase]="'Grateful'">
+                                        <img class="emoji-img" src="assets/images/emojis.png">
+                                    </ng-template>
+                                    <ng-template [ngSwitchCase]="'Surprised'">
+                                        <img class="emoji-img" src="assets/images/Surprised1.png">
+                                    </ng-template>
+                                    <ng-template [ngSwitchCase]="'Energized'">
+                                        <img class="emoji-img" src="assets/images/happy.png">
+                                    </ng-template>
+                                    <ng-template [ngSwitchCase]="'Sleepy'">
+                                        <img class="emoji-img" src="assets/images/sleepy.png">
+                                    </ng-template>
+                                    <p class="sub-head">Latest</p>
+                                </div>
+
+
+                                <div class="emoji" *ngIf="customer.Mood_Type" [ngSwitch]="customer.Mood_Type[1].mood">
+                                    <ng-template [ngSwitchCase]="'Happy'">
+                                        <img class="emoji-img" src="assets/images/happy1.png">
+                                    </ng-template>
+                                    <ng-template [ngSwitchCase]="'Calm'">
+                                        <img class="emoji-img" src="assets/images/calm2.png">
+                                    </ng-template>
+                                    <ng-template [ngSwitchCase]="'Grateful'">
+                                        <img class="emoji-img" src="assets/images/emojis.png">
+                                    </ng-template>
+                                    <ng-template [ngSwitchCase]="'Surprised'">
+                                        <img class="emoji-img" src="assets/images/Surprised1.png">
+                                    </ng-template>
+                                    <ng-template [ngSwitchCase]="'Energized'">
+                                        <img class="emoji-img" src="assets/images/happy.png">
+                                    </ng-template>
+                                    <ng-template [ngSwitchCase]="'Sleepy'">
+                                        <img class="emoji-img" src="assets/images/sleepy.png">
+                                    </ng-template>
+                                    <p class="sub-head">Previous to Latest</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="this-month">
+                        <h5 class="session-head">This month</h5>
+                        <div class="session">
+
+                            <h1 class="sess">Sessions</h1>
+                            <p class="sess-list">{{ customer.total_sessions_this_month}} new sessions</p>
+                            <div class="info">
+                                <i class="fas fa-chevron-up"></i>
+                                <div class="no">{{ customer.average_session_percentage}}%</div>
+                            </div>
+                        </div>
+
+                        <div class="session">
+                            <h1 class="sess">Check-ins</h1>
+                            <p class="sess-list">{{ customer.moods_checkin_this_month }} mood check-ins</p>
+                            <div class="info">
+                                <i class="fas fa-chevron-down"></i>
+                                <div class="no">{{ customer.average_moods_percentage }}%</div>
+                            </div>
+                        </div>
+
+                        <div class="session">
+                            <h1 class="sess">Chats</h1>
+                            <p class="sess-list">{{ customer.chats_this_month}} chats</p>
+                            <div class="info">
+                                <i class="fas fa-chevron-up"></i>
+                                <div class="no">{{ customer.average_moods_percentage }}%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" [ngClass]="{'col-md-12': page == 2}">
+            <div class="step-p">
+                <p class="step-process" [ngClass]="{'call-5': page == 5}">Step {{page}} of 5</p> 
+            </div>
+            <ng-container [ngSwitch]="page">
+                <ng-template [ngSwitchCase]="1">
+                    <app-first-page></app-first-page>
+                </ng-template>
+                <ng-template [ngSwitchCase]="2">
+                    <app-second-page></app-second-page>
+                </ng-template>
+                <ng-template [ngSwitchCase]="3">
+                    <app-third-page></app-third-page>
+                </ng-template>
+                <ng-template [ngSwitchCase]="4">
+                    <app-fourth-page></app-fourth-page>
+                </ng-template>
+                <ng-template [ngSwitchCase]="5">
+                    <app-fifth-page></app-fifth-page>
+                </ng-template>
+            </ng-container>
+            <button type="button" class="nextstep" (click)="slideUponMe(page+1)" *ngIf="page != 4 && page != 5">
+                Next step <i class="fa fa-arrow-right"></i>
+            </button>
+            <div class="slide-btn">
+                <img [src]="page == 1 ? 'assets/images/Ellipse 131.png' : 'assets/images/Ellipse 132.png'" class="img-dot" (click)="slideUponMe(1)"/>
+                <img [src]="page == 2 ? 'assets/images/Ellipse 131.png' : 'assets/images/Ellipse 132.png'" class="img-dot" (click)="slideUponMe(2)"/>
+                <img [src]="page == 3 ? 'assets/images/Ellipse 131.png' : 'assets/images/Ellipse 132.png'" class="img-dot" (click)="slideUponMe(3)"/>
+                <img [src]="page == 4 ? 'assets/images/Ellipse 131.png' : 'assets/images/Ellipse 132.png'" class="img-dot" (click)="slideUponMe(4)"/>
+                <img [src]="page == 5 ? 'assets/images/Ellipse 131.png' : 'assets/images/Ellipse 132.png'" class="img-dot" (click)="slideUponMe(5)"/>
+            </div>
+            <div class="skip-p" (click)="loggedUpdate()">
+                <a class="skip">Skip</a>
+            </div>
+        </div>
+        <div class="col-md-6" *ngIf="page != 2">   
+            <img src="assets/images/Group.png" class="group"/>
+        </div>
+    </div>
+</div>

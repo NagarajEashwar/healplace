@@ -1,0 +1,64 @@
+.add-session-container {
+    padding: 76px 91.5px;
+    background: #FAFAFA;
+    border-radius: 40px;
+    .row {
+        background: inherit;
+    }
+    .title {
+        font-family: BelyDisplayW00-Regular;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 40px;
+        line-height: 45px;
+        text-align: center;
+        color: #074D63;
+        margin-bottom: 13px;
+    }
+    .info {
+        max-width: 412px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: #074D63;
+    }
+    .btn.add-new {
+        width: 181px;
+        height: 60px;
+        border-radius: 20px;
+        border: 1px solid #074D63;
+        &:hover {
+            background: #FBD036;
+            border: none;
+        }
+    }
+    .session-item {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 54px 0;
+        
+        width: 100%;
+        .session-title {
+            font-family: FF Mark Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 18px;
+            color: #6D6D6D;
+        }
+        .session-value {
+            font-family: BelyDisplayW00-Regular;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 30px;
+            color: #00BAD5;
+        }
+    }
+}

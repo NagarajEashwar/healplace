@@ -1,0 +1,173 @@
+<div class="add-new-payment">
+    <h5 class="text-blue headings text-blue-headings"> Add a Payment Method </h5>
+    <br />
+    <div class="row">
+        <div class="col-lg-4 col-md-4">
+            <div class="payment-card">
+                <img style="width: 42px;
+                padding-top: 49px;" src="../../../../assets/images/customer/card.png" />
+                <span class="title">Credit Card</span>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4">
+            <div class="payment-card">
+                <img style="padding-top: 49px;
+                width: 30px;" src="../../../../assets/images/customer/paypal.png" />
+                <span class="title">PayPal</span>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4">
+            <div class="payment-card">
+                <span class="plus-symbol">+</span>
+                <span class="title">Add Other?</span>
+            </div>
+        </div>
+    </div>
+    <form [formGroup]="paymentForm" (ngSubmit)="addNewPaymentDetails(paymentForm)">
+        <div class="row mt-20">
+            <div class="col-lg-6 col-md-6">
+                <p class="sub-title">Full Name</p>
+                <input formControlName="fullName" class="card-full-name" type="text" />
+                <p style="color: red;margin-bottom: 0px;font-size: 12px;"
+                    *ngIf="paymentForm.controls.fullName.touched && paymentForm.controls.fullName.hasError('required')">
+                    Field Required</p>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <p class="sub-title">Cardholder’s Name</p>
+                <input formControlName="cardHolderName" class="card-full-name" type="text" />
+                <p style="color: red;margin-bottom: 0px;font-size: 12px;"
+                    *ngIf="paymentForm.controls.cardHolderName.touched && paymentForm.controls.cardHolderName.hasError('required')">
+                    Field Required</p>
+            </div>
+        </div>
+        <div class="row mt-20">
+            <div class="col-lg-6 col-md-6">
+                <p class="sub-title">Billing Address</p>
+                <div>
+                    <input formControlName="billingAddr" type="text" class="billing-addr" />
+                </div>
+                <p style="color: red;margin-bottom: 0px;font-size: 12px;"
+                    *ngIf="paymentForm.controls.billingAddr.touched && paymentForm.controls.billingAddr.hasError('required')">
+                    Field Required</p>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <p class="sub-title">Card Number</p>
+                <div class="card-number">
+                    <input formControlName="cardNumPart1" type="text" placeholder="0000"
+                        style="width: 70px;background: #f3f3f3;padding-top: 27px;margin-left: 10px;" /><span>-</span>
+                    <input formControlName="cardNumPart2" type="text" placeholder="0000"
+                        style="width: 70px;background: #f3f3f3;" /><span>-</span>
+                    <input formControlName="cardNumPart3" type="text" placeholder="0000"
+                        style="width: 70px;background: #f3f3f3;" /><span>-</span>
+                    <input formControlName="cardNumPart4" type="text" placeholder="0000"
+                        style="width: 70px;background: #f3f3f3;" />
+                    <img src="../../../../assets/images/customer/card-grey.png" />
+                </div>
+                <p style="color: red;margin-bottom: 0px;font-size: 12px;"
+                    *ngIf="paymentForm.controls.cardNumPart1.touched || paymentForm.controls.cardNumPart2.touched || paymentForm.controls.cardNumPart3.touched || paymentForm.controls.cardNumPart4.touched">
+                    <span
+                        *ngIf="paymentForm.controls.cardNumPart1.hasError('required') || paymentForm.controls.cardNumPart2.hasError('required') || paymentForm.controls.cardNumPart3.hasError('required') || paymentForm.controls.cardNumPart4.hasError('required')">Field
+                        Required</span>
+                    <span
+                        *ngIf="paymentForm.controls.cardNumPart1.hasError('pattern') || paymentForm.controls.cardNumPart2.hasError('pattern') || paymentForm.controls.cardNumPart3.hasError('pattern') || paymentForm.controls.cardNumPart4.hasError('pattern')">Please
+                        enter numbers</span>
+                    <span
+                        *ngIf="paymentForm.controls.cardNumPart1.hasError('minlength') || paymentForm.controls.cardNumPart2.hasError('minlength') || paymentForm.controls.cardNumPart3.hasError('minlength') || paymentForm.controls.cardNumPart4.hasError('minlength')">Each
+                        part enter 4 digit</span>
+                    <span
+                        *ngIf="paymentForm.controls.cardNumPart1.hasError('maxlength') || paymentForm.controls.cardNumPart2.hasError('maxlength') || paymentForm.controls.cardNumPart3.hasError('maxlength') || paymentForm.controls.cardNumPart4.hasError('maxlength')">Each
+                        part enter 4 digit</span>
+                </p>
+            </div>
+        </div>
+        <div class="row mt-20">
+            <div class="col-lg-6 col-md-6">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <p class="sub-title">City</p>
+                        <input formControlName="city" class="city" type="text">
+                        <p style="color: red;margin-bottom: 0px;font-size: 12px;"
+                            *ngIf="paymentForm.controls.city.touched && paymentForm.controls.city.hasError('required')">
+                            Field Required</p>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <p class="sub-title">Zip Code</p>
+                        <input formControlName="zipCode" class="city" type="text">
+                        <p style="color: red;margin-bottom: 0px;font-size: 12px;"
+                            *ngIf="paymentForm.controls.zipCode.touched && paymentForm.controls.zipCode.hasError('required')">
+                            Field Required</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <p class="sub-title">CVV Number</p>
+                        <input class="ccv-num" placeholder="CVV" type="text" formControlName="cvvNumber" />
+                        <p style="color: red;margin-bottom: 0px;font-size: 12px;"
+                            *ngIf="paymentForm.controls.cvvNumber.touched">
+                            <span *ngIf="paymentForm.controls.cvvNumber.hasError('required')">Field Required</span>
+                            <span *ngIf="paymentForm.controls.cvvNumber.hasError('pattern')">Please enter numbers</span>
+                            <span *ngIf="paymentForm.controls.cvvNumber.hasError('minlength')">Minium 3 digit
+                                only</span>
+                            <span *ngIf="paymentForm.controls.cvvNumber.hasError('maxlength')">Maximum 3 digit
+                                only</span>
+                        </p>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <p class="sub-title">Exp. Month</p>
+                        <div class="btn-group ccv-num" dropdown>
+                            <button id="button-alignment" dropdownToggle type="button" class="btn dropdown-toggle"
+                                aria-controls="dropdown-alignment">
+                                {{selectedMonth}} <img src="../../../../assets/images/customer/down_caret.png" />
+                            </button>
+                            <ul id="dropdown-alignment" *dropdownMenu class="dropdown-menu" role="menu"
+                                aria-labelledby="button-alignment">
+                                <ng-container *ngFor="let m of month">
+                                    <li role="menuitem" style="text-align: center;"><a class="dropdown-item"
+                                            (click)="selectedMonth=m;">{{m}}</a></li>
+                                </ng-container>
+                            </ul>
+                        </div>
+                        <p style="color: red;margin-bottom: 0px;font-size: 12px;"
+                            *ngIf="selectedMonth === 'Month' && formSubmitted === true">
+                            Field Required</p>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <p class="sub-title">Exp. Year</p>
+                        <div class="btn-group ccv-num" dropdown>
+                            <button id="button-alignment-year" dropdownToggle type="button" class="btn dropdown-toggle"
+                                aria-controls="dropdown-dropup">
+                                {{selectedYear}}
+                                <img src="../../../../assets/images/customer/down_caret.png" />
+                            </button>
+                            <ul id="dropdown-dropup" *dropdownMenu class="dropdown-menu" role="menu"
+                                aria-labelledby="button-alignment-year">
+                                <ng-container *ngFor="let y of year">
+                                    <li role="menuitem" style="text-align: center;"><a class="dropdown-item"
+                                            (click)="selectedYear=y;">{{y}}</a></li>
+                                </ng-container>
+                            </ul>
+                        </div>
+                        <p style="color: red;margin-bottom: 0px;font-size: 12px;"
+                            *ngIf="selectedYear === 'Year' && formSubmitted === true">
+                            Field Required</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix" style="padding:25px"></div>
+        <div class="row col-md-12 text-center">
+            <button type="submit" class="pick-date btn-rounded vertical-center">{{buttonText}}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                </svg>
+            </button>
+        </div>
+        <div *ngIf="isShowBackButton" class="row col-md-12 text-center">
+            <button type="button" class="unstyled-button vertical-center" (click)="onGoBackBtnClick()">Back</button>
+        </div>
+    </form>
+</div>

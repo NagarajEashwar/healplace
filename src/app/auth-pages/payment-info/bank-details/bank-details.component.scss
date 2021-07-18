@@ -1,0 +1,58 @@
+.add-bank-details-wrapper {
+    width: 100%;
+    background: #FFFFFF;
+    padding-left: 128px;
+    .add-bank-details-container {
+        padding: 76px 91.5px;
+        margin: 0 auto;
+        width: 50%;
+        .title {
+            font-family: BelyDisplayW00-Regular;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 30px;
+            text-align: center;
+            color: #074D63;
+            margin-bottom: 67px;
+        }
+        form {
+            margin-bottom: 67px;
+            label {
+                width: 100%;
+                margin-bottom: 13px;
+                font-family: FF Mark Pro;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 18px;
+                color: #6D6D6D;
+            }
+            .form-control {
+                height: 80px;
+                background: rgb(109, 109, 109, 0.05);
+                border-radius: 20px;
+                margin-bottom: 32px;
+                font-family: FF Mark Pro;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 20px;
+                border: none;
+            }
+            .ng-invalid.ng-touched {
+                border: 1px solid red;
+            }
+            input, select{
+                color: #074D63 !important;
+            }
+        }
+        .btn.add-new {
+            width: 181px;
+            height: 60px;
+            border-radius: 20px;
+            background: #FBD036;
+            border: none;
+        }
+    }
+}

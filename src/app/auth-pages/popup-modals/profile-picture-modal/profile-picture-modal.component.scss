@@ -1,0 +1,108 @@
+$white: #fff;
+$primary-blue: #00BAD5;
+$secondary-blue: #074D63;
+$card-bg: rgba(255, 244, 227, 0.5);
+$text-title: #6D6D6D;
+$slight-grey: #FAFAFA;
+$main-font: healspace font;
+
+.modal-body {
+    width: 874px;
+    height: 874px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 44px;
+    background-color: $slight-grey;
+    border-radius: 40px;
+
+    .img-upload-btn {
+        margin-top: 24px;
+        width: 72px;
+        height: 72px;
+
+        img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        input {
+            display: none;
+        }
+    }
+
+    .main-header {
+        font-size: 24px;
+        line-height: 30px;
+        margin-top: 21px;
+        font-family: $main-font;
+        color: $secondary-blue;
+    }
+
+    .help-txt {
+        max-width: 545px;
+        text-align: center;
+        // margin-top: 
+
+        h2 {
+            font-size: 16px;
+            line-height: 20px;
+            color: $secondary-blue;
+            margin-bottom: 34px;
+        }
+    }
+
+    .default-options {
+        box-shadow: none;
+
+        .card-body {
+            padding: 38px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .body-header {
+                font-size: 24px;
+                line-height: 30px;
+                color: $text-title;
+                font-family: $main-font;
+                margin-bottom: 0;
+            }
+
+            .option-img {
+                display: flex;
+                flex-wrap: wrap;
+                align-content: center;
+                justify-content: space-between;
+
+                .avatar-box {
+                    width: 72px;
+                    height: 72px;
+                    flex: 20%;
+                    text-align: center;
+                    margin-top: 40px;
+
+                    img {
+                        height: 100%;
+                        width: auto;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+
+    .save-img {
+        background: #FBD036;
+        border-radius: 20px;
+        border: 0;
+        width: 179px;
+        height: 60px;
+        padding: 21px;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        color: $secondary-blue;
+    }
+}

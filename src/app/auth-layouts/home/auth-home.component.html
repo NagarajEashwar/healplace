@@ -1,0 +1,24 @@
+<!-- The content below is only a placeholder and can be replaced. -->
+<div class="wrapper default-theme" *ngIf="!showCutomerInfo else callBasicInfo">
+  <app-auth-navbar></app-auth-navbar>
+  <main>
+    <ngx-scrolltop
+      [backgroundColor]="'#212121'"
+      [symbolColor]="'#fafafa'"
+      color="primary"
+      [size]="40"
+      [mode]="'classic'"
+      position="right"
+      theme="gray">
+    </ngx-scrolltop>
+    <app-auth-sidebar></app-auth-sidebar>
+    <div class="pages container-fluid" style="padding: 0 !important;">
+      <router-outlet></router-outlet>
+      <!-- <app-auth-footer></app-auth-footer> -->
+    </div>
+  </main>
+</div>
+
+<ng-template #callBasicInfo>
+  <customer-basic-info></customer-basic-info>
+</ng-template>

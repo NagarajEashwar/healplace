@@ -1,0 +1,87 @@
+<div *ngIf="currentStep === 'one'" class="block-chat-modal">
+    <div>
+        <img style="width: 60px;" src="../../../../../assets/images/customer/report.png" />
+    </div>
+    <p class="title">
+        Report Practitioner :
+    </p>
+   <div style="padding-top: 25px;">
+       <img src="../../../../../assets/images/profile_pic.png" /> <br />
+       <p class="name">Dr. Ronald Richards</p>
+       <p class="role">Health Coach, Therapist</p>
+       <br />
+       <br />
+       <p class="content">Tell us why you are reporting this interaction.</p>
+   </div>
+   <br />
+   <br />
+   <div class="row">
+       <div class="col-md-6 col-lg-6">
+           <div class="sub-div" [class.subdivactive]="option === 'first'" style="float: right;">
+            <a (click)="optionSelected('first')">
+                <p class="sub-content">This practitioner wasn’t <br />
+                 a good match for me.</p>
+            </a>
+           </div>
+       </div>
+       <div class="col-md-6 col-lg-6">
+           <div class="sub-div" [class.subdivactive]="option === 'second'">
+            <a (click)="optionSelected('second')">
+                <p class="sub-content">There was inappropriate <br />
+                 content or action in my session</p>
+            </a>
+           </div>
+       </div>
+   </div>
+   <br />
+   <br />
+    <div style="text-align: center;margin-top: 20px;">
+        <button (click)="addDetails()" class="btn add-details-btn" [class.btnactive]="option === 'first' || option === 'second'">Add Details →</button><br>
+        <button (click)="closeModal()" class="btn cancel-btn">Cancel</button>
+    </div>
+</div>
+<div *ngIf="currentStep === 'two'" class="block-chat-modal">
+    <div>
+        <img style="width: 60px;" src="../../../../../assets/images/customer/report.png" />
+    </div>
+    <p style="padding: 20px;" class="title">
+        Report Details
+    </p>
+    <p class="content">
+        Please share more details here about your interaction. Healplace will <br />
+        always preserve your privacy and anonymity in feedback and reviews.
+    </p>
+   <br />
+   <br />
+   <div class="row">
+       <div class="col-md-6 col-lg-6">
+           <p class="sub-content">Type your message</p>
+       </div>
+       <div class="col-md-6 col-lg-6">
+        <a (click)="file.click()"><img src="../../../../../assets/images/customer/screenshots.png" />Add Screenshot</a>
+        <input type="file" accept=".png, .jpg, .jpeg" class="file-upload" (change)="onFileSelected($event)" #file />
+       </div>
+   </div>
+   <div style="padding-top: 15px;">
+       <textarea rows="4" cols="50" [(ngModel)]="shortDescription" (input)="onShortDescription($event.target.value)"></textarea>
+   </div>
+    <div style="text-align: center;margin-top: 20px;">
+        <button (click)="reportPractitioner()" class="btn add-details-btn" [class.btnactive]="isEnableReportBtn === true">Report Practitioner →</button><br>
+        <button (click)="closeModal()" class="btn cancel-btn">Cancel</button>
+    </div>
+</div>
+<div *ngIf="currentStep === 'three'" class="block-chat-modal">
+    <br />
+    <br />
+    <br />
+    <p class="thanks">Thanks For <br />
+        Sharing!</p>
+        <br />
+        <br />
+    <p class="review">We will review what you’ve shared and contact you when <br /> we’re done.</p>
+    <br />
+    <br />
+    <div style="text-align: center;margin-top: 20px;">
+        <button (click)="backToPlatform()" class="btn back-to-btn">Back to platform →</button><br>
+    </div>
+</div>

@@ -1,0 +1,238 @@
+<div class="modal-body" style="border-radius: 40px;" *ngIf="resource">
+  <div class="float-right">
+    <button type="button" class="close" aria-hidden="true" (click)="closeSignupModal($event)">×</button>
+  </div>
+  <div class="text-center">
+    <h1 style="font-family:Verdana, Geneva, Tahoma, sans-serif; color: #FBD036" class="font-size-30">Create an account</h1>
+    <p class="font-size-16">Have an account? 
+      <span class="popupCS" style="cursor: pointer;text-decoration: underline;"
+      (click)="openLoginModal(loginModalOpen, 'login')"><b>Sign In </b>
+      </span>
+    </p>
+  </div>
+  <div class="p-2">
+    <form data-bitwarden-watching="1" (ngSubmit)="onSubmit()" #signupForm="ngForm">
+      <div class="form-group mb-3">
+        <input type="text" class="form-control text-input-design" placeholder="Email *" (input)="validateEmail($event)"
+        [(ngModel)]="user.email"
+        name="email"
+        required style="height:55px;"/>
+        <div>
+          <p
+            class="error-box margin-top-0 text-danger err-sf"
+            *ngIf="invalid_email"
+          >
+            Email must be a valid email address
+          </p>
+          <p class="error-box margin-top-0 text-danger err-sf" *ngIf="email_required">
+            Email is Required
+          </p>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <div class="input-group">
+          <input type="password" id="signup-password1" class="form-control text-input-design" 
+          placeholder="Password *"
+          [(ngModel)]="user.password1"
+          #password1="ngModel"
+          name="password1"
+          required
+          minlength="8" data-toggle="passwd1"/>
+          <div class="input-group-append">
+            <span class="input-group-text" style=" border: 1px solid #fafafa;">
+              <i class="fa fa-lg fa-eye-slash field-icon toggle-password view-hide"
+                id="eye-open1" toggle="#passwd1"
+                (click)="password_visit1()">
+              </i>
+            </span>
+          </div>
+        </div>
+        <div *ngIf="password1.invalid && (password1.dirty)">
+          <p
+            class="error-box margin-top-0 text-danger err-sf"
+            *ngIf="password1.hasError('required')"
+          >
+            Password is Required
+          </p>
+          <p class="error-box margin-top-0 text-danger err-sf" *ngIf="password1.hasError('minlength')">
+            This password is too short. It must contain at least 8 characters.
+          </p>
+        </div>
+        <ng-container *ngIf="passwordError">
+          <p class="error-box margin-top-0 text-danger err-sf" *ngFor="let list of passwordError">
+            {{list.error}}
+          </p>
+        </ng-container>
+      </div>
+      <div class="form-group mb-3">
+        <div class="input-group">
+          <input type="password" id="signup-password2" class="form-control text-input-design" 
+          placeholder="Confirm Password *" style="height:55px;"
+          [(ngModel)]="user.password2"
+          #password2="ngModel"
+          name="password2"
+          required data-toggle="passwd2"/>
+          <div class="input-group-append">
+            <span class="input-group-text" style=" border: 1px solid #fafafa;">
+              <i class="fa fa-lg fa-eye-slash field-icon toggle-password view-hide"
+                id="eye-open2" toggle="#passwd2"
+                (click)="password_visit2()">
+              </i>
+            </span>
+          </div>
+        </div>
+        <div *ngIf="password2.invalid && (password2.dirty)">
+          <p
+            class="error-box margin-top-0 text-danger err-sf"
+            *ngIf="password2.hasError('required')"
+          >
+            Password is Required
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div class="form-group mb-3">
+            <input type="text"
+            class="form-control text-input-design" placeholder="First Name *"
+            [(ngModel)]="user.first_name"
+            #first_name="ngModel"
+            name="first_name"
+            required/>
+            <div *ngIf="first_name.invalid && (first_name.dirty)">
+              <p
+                class="error-box margin-top-0 text-danger err-sf"
+                *ngIf="first_name.hasError('required')"
+              >
+                First Name is Required
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="form-group mb-3">
+            <input type="text"
+            class="form-control text-input-design" placeholder="Last Name *" 
+            [(ngModel)]="user.last_name"
+            #last_name="ngModel"
+            name="last_name"
+            required />
+            <div *ngIf="last_name.invalid && (last_name.dirty)">
+              <p
+                class="error-box margin-top-0 text-danger err-sf"
+                *ngIf="last_name.hasError('required')"
+              >
+                Last Name is Required
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <ngx-select-dropdown class="form-control select-custom-design"
+          tabindex="0"
+          [multiple]="false" 
+          [config]="countryConfig" 
+          [options]="countryData"
+          [(ngModel)]="user.country"
+          #country="ngModel"
+          name="country" required
+          (change)="countryChanged($event.value)" style="width:100%;">
+        </ngx-select-dropdown>
+        <div *ngIf="country.invalid && (country.dirty)">
+          <p class="error-box margin-top-0 text-danger err-sf" *ngIf="country.hasError('required')">
+            Country is Required
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <ngx-select-dropdown class="form-control select-custom-design"
+              tabindex="0"
+              [multiple]="false" 
+              [config]="stateConfig" 
+              [options]="stateData"
+              [(ngModel)]="user.state"
+              #state="ngModel"
+              name="state" required
+              (change)="stateChanged($event.value)" style="width:100%;">
+            </ngx-select-dropdown>
+            <div *ngIf="state.invalid && (state.dirty)">
+              <p class="error-box margin-top-0 text-danger err-sf" *ngIf="state.hasError('required')">
+                State is Required
+              </p>
+            </div>
+          </div>
+        </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <ngx-select-dropdown class="form-control select-custom-design"
+                tabindex="0"
+                [multiple]="false" 
+                [config]="cityConfig" 
+                [options]="cityData"
+                [(ngModel)]="user.city"
+                #city="ngModel"
+                name="city" required
+                (change)="cityChanged($event.value)" style="width:100%;">
+              </ngx-select-dropdown>
+              <div *ngIf="city.invalid && (city.dirty)">
+                <p class="error-box margin-top-0 text-danger err-sf" *ngIf="city.hasError('required')">
+                  City is Required
+                </p>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="form-group mb-3">
+        <!-- <input type="text" class="form-control text-input-design" placeholder="Phone Number"
+        [(ngModel)]="user.phonenumber"
+        #phonenumber="ngModel"
+        name="phonenumber"/> -->
+        <div class="input-group">
+          <ngx-intl-tel-input class="form-control text-input-design" [preferredCountries]="preferredCountries"
+            [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true"
+            [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]" [selectFirstCountry]="false"
+            [selectedCountryISO]="CountryISO.India" [maxLength]="15"
+            [phoneValidation]="true" [separateDialCode]="separateDialCode"
+            [numberFormat]="PhoneNumberFormat.National" name="phone" 
+            [(ngModel)]="user.phonenumber"
+            #phonenumber="ngModel">
+          </ngx-intl-tel-input>
+        </div>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline mr-4">
+        <input type="checkbox" id="customRadioInline2" name="customRadioInline2" class="custom-control-input"
+        [(ngModel)]="user.newsletter"
+        #newsletter="ngModel">
+        <label class="custom-control-label" for="customRadioInline2" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">I want to receive health related emails from
+        healplace</label>
+      </div>
+      <br><br>
+      <div class="col-lg-12 form-group">
+        <button type="submit"  class="btn btn-block btn-new btn-rounded"
+        [disabled]="!signupForm.valid || email_required || invalid_email">
+          <i class="fa fa-arrow-right"></i> &nbsp; Sign up
+        </button>
+      </div>
+    </form>
+    <div class="mt-4 text-center">
+      <div class="mb-0"><b>Or Log In with</b> &nbsp;
+        <button type="button" class="btn btn-social-icon btn-google" (click)="signInWithFB()"><i
+          class="mdi mdi-facebook rounded-circle bg-white font-size-30 text-primary"></i> &nbsp;
+        </button>
+        <button type="button" class="btn btn-social-icon btn-facebook" (click)="signInWithGoogle()"><i
+          class="mdi mdi-google rounded-circle bg-white font-size-30 text-danger"></i></button>
+      </div>
+    </div>
+    <div class="mt-1 text-center">
+      <span class="mb-0 font-size-14 text-muted">By logging in you<br>agree to healplace Privacy policy.</span>
+    </div>
+  </div>
+</div>
+
+<ng-template #loginModalOpen role="document" let-modal>
+  <public-login-modal [resource]="'login'" (changeBack)="closeSignupModal($event)" *ngIf="isContent == 'login'">
+  </public-login-modal>
+</ng-template>

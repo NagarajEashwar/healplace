@@ -1,0 +1,444 @@
+<div class="customer-booking-modal1">
+	<div class="modal-body">
+		<!--choose session type-->
+		<div class="card" *ngIf="showConfirmDoctorNamePrevious">
+			<h5 class="text-blue headings text-blue-headings"> Choose session type <p class="designation2-booking">
+					{{sessiontTypeDetails?.total_session_message}}</p>
+			</h5>
+			<br />
+			<ng-container *ngIf="sessiontTypeDetails && sessiontTypeDetails.included_packages">
+				<p class="designation2-booking">Included</p>
+				<div class="row" *ngFor="let included_packages of sessiontTypeDetails.included_packages, let i = index;"
+					(click)="clickFunction(included_packages, true)">
+					<div class="col-md-12">
+						<table class="table ">
+							<tr class="chat-list2-booking">
+								<td width="40%"> <img class="rounded-circle dp-booking" src="assets/images/ronald.png">
+									<div class="top-fix">
+										<h3 class="name2-booking name-fix name-color">
+											{{included_packages.practitioner__name}}</h3>
+										<span class="designation3-booking">
+											{{included_packages.practitioner__expertise.join()}}</span>
+									</div>
+								</td>
+								<td width="15%">
+									<p class="designation2-booking">Time</p>
+									<h3 class="name2-booking ">{{included_packages.duration_min | bookTime }} </h3>
+								</td>
+								<td width="15%">
+									<p class="designation2-booking">Price</p>
+									<h3 class="name2-booking ">Included</h3>
+								</td>
+								<td width="30%">
+									<svg *ngIf="selection==included_packages" style="float: right;"
+										xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#00BAD5"
+										class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+										<path
+											d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+									</svg>
+									<p class="designation2-booking">Session Title</p>
+									<h3 class="name2-booking textwrap">{{included_packages.title}}</h3>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</ng-container>
+			<ng-container *ngIf="sessiontTypeDetails && sessiontTypeDetails.others">
+				<p class="designation2-booking">Others</p>
+				<div class="row" *ngFor="let others of sessiontTypeDetails.others, let i = index;"
+					(click)="clickFunction(others, false)">
+					<div class="col-md-12">
+						<table class="table ">
+							<tr class="chat-list2-booking">
+								<td width="40%"> <img class="rounded-circle dp-booking" src="assets/images/ronald.png">
+									<div class="top-fix">
+										<h3 class="name2-booking name-fix name-color">{{others.practitioner__name}}</h3>
+										<span class="designation3-booking">{{others.practitioner__expertise.join()}}</span>
+									</div>
+								</td>
+								<td width="15%">
+									<p class="designation2-booking">Time</p>
+									<h3 class="name2-booking ">{{others.duration_min | bookTime }} </h3>
+								</td>
+								<td width="15%">
+									<p class="designation2-booking">Price</p>
+									<h3 class="name2-booking ">&#36;{{others.price}}</h3>
+								</td>
+								<td width="30%">
+									<svg *ngIf="selection==others" style="float: right;"
+										xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#00BAD5"
+										class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+										<path
+											d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+									</svg>
+									<p class="designation2-booking">Session Type</p>
+									<h3 class="name2-booking ">{{others.title}}</h3>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</ng-container>
+			<div class="row clearfix" style="padding:15px"></div>
+			<div class="row col-md-12 text-center">
+				<button type="button" class="pick-date btn-rounded vertical-center confirmDoctorNameDisabled"
+					[disabled]="confirmDoctorNameDisabled" (click)="confirmDoctorName()">Pick date and hour
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+						class="bi bi-arrow-right" viewBox="0 0 16 16">
+						<path fill-rule="evenodd"
+							d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+					</svg>
+				</button>
+			</div>
+			<div class="row col-md-12 text-center">
+				<button type="button" class="unstyled-button vertical-center"
+					(click)="activeModal.close()">Back</button>
+			</div>
+		</div>
+		<!--confirm choose session type-->
+		<div class="card" *ngIf="showConfirmDoctorName">
+			<h5 class="text-blue headings text-blue-headings"> Book an 1 on 1 video session <p
+					class="designation2-booking">
+					Please fill out the feilds below for scheduling video session </p>
+			</h5>
+			<br />
+			<div class="row">
+				<div class="col-md-12">
+					<table class="table">
+						<tr class="chat-list2-booking">
+							<td width="40%">
+								<p class="designation2-booking">Video Session with</p> <img
+									class="rounded-circle dp-booking" src="assets/images/ronald.png">
+								<div class="top-fix">
+									<h3 class="name2-booking name-fix name-color">{{selection.practitioner__name}}</h3>
+									<span class="designation2-booking" style="margin-top: 5px;">{{selection.practitioner__expertise.join()}}</span>
+								</div>
+							</td>
+							<td width="30%">
+								<p class="designation2-booking" style="margin-top: 18px;">Session Type</p>
+								<h3 class="name2-booking textwrap" style="line-height: 10px;">{{selection.title}}</h3>
+								<p class="designation2-booking">Video call using healplace.com</p>
+							</td>
+							<td width="15%">
+								<p class="designation2-booking" style="margin-top: 18px;">Details</p>
+								<h3 class="name2-booking" style="line-height: 10px;"><span *ngIf="!isIncluded">&#36;</span>{{isIncluded ? 'Free' : selection.price}}</h3>
+								<h3 class="designation2-booking ">{{selection.duration_min | bookTime }} </h3>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<p class="designation2-booking">Add short session title here*</p>
+					<textarea class="col-md-12 chat-list2-booking" rows="1" cols="50" style="height: 60px;
+					border-radius: 20px;" [(ngModel)]="shortSessionTitle" (input)="onSearchChange($event.target.value)"></textarea>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<p class="designation2-booking">Add short description here (optional)</p>
+					<textarea class="col-md-12 chat-list2-booking" rows="4" cols="50"
+						style="border-radius: 20px;height:140px;" [(ngModel)]="shortDescription"></textarea>
+				</div>
+			</div>
+			<div class="row clearfix" style="padding:15px"></div>
+			<div class="row col-md-12 text-center">
+				<button type="button" class="pick-date btn-rounded vertical-center confirmDoctorNameDisabled"
+					[disabled]="confirmDoctorNameSubDisabled" (click)="confirmDoctorNameSub()">Pick date and hour
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+						class="bi bi-arrow-right" viewBox="0 0 16 16">
+						<path fill-rule="evenodd"
+							d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+					</svg>
+				</button>
+			</div>
+			<div class="row col-md-12 text-center">
+				<button type="button" class="unstyled-button vertical-center"
+					(click)="confirmDoctorNameBack()">Back</button>
+			</div>
+		</div>
+		<!--Book Time-->
+		<div class="card" *ngIf="showBookAndTime">
+			<h5 class="text-blue headings text-blue-headings" style="font-size: 20px !important;"> 1. Select a day </h5>
+			<bs-datepicker-inline style="text-align: center; width: auto;" [minDate]="minDate" [(bsValue)]="bsValue"
+				[bsConfig]="{containerClass:'theme-blue'}" (bsValueChange)="onValueChange($event)"></bs-datepicker-inline>
+			<h5 class="text-blue headings text-blue-headings" style="font-size: 20px !important;"> 2. Choose time slot
+			</h5>
+			<div class="row">
+				<div class="col-md-4" *ngFor="let timeslot of timeslotPractitioner, let i = index;"
+					(click)="timeslotPractitionerSelect(timeslot)">
+					<div class="app-border" style="margin-top:10px;"
+						[class.highlightTime]="selectionTimeslot?.start_time==timeslot.start_time">
+						<label class="app-label">{{timeslot.start_time | date:'shortTime'}} - {{timeslot.end_time | date:'shortTime'}} </label>
+					</div>
+				</div>
+			</div>
+			<div class="row clearfix" style="padding:25px"></div>
+			<div class="row col-md-12 text-center">
+				<button type="button" class="pick-date btn-rounded vertical-center confirmDoctorNameDisabled"
+					(click)="bookSession()" [disabled]="!selectionTimeslot">Book session
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+						class="bi bi-arrow-right" viewBox="0 0 16 16">
+						<path fill-rule="evenodd"
+							d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+					</svg>
+				</button>
+			</div>
+			<div class="row col-md-12 text-center">
+				<button type="button" class="unstyled-button vertical-center"
+					(click)="confirmDoctorNameSubBack()">Back</button>
+			</div>
+		</div>
+		<!--Confirm Booking-->
+		<div class="card" *ngIf="showConfirmBooking">
+			<h5 class="text-blue headings text-blue-headings"> Confirm booking <p class="designation2-booking"> Please
+					fill
+					out the feilds below for scheduling video session </p>
+			</h5>
+			<br />
+			<div class="row">
+				<div class="col-md-12">
+					<table class="table">
+						<tr class="">
+							<td width="40% " class="textwithleft">
+								<p class="designation2-booking textwithleft">Video Session with</p> <img
+									class="rounded-circle dp-booking" src="assets/images/ronald.png">
+								<div class="top-fix">
+									<h3 class="name2-booking name-fix name-color">{{selection.practitioner__name}}</h3>
+									<span class="designation2-booking" style="margin-top: 5px;">{{selection.practitioner__expertise.join()}}</span>
+								</div>
+							</td>
+							<td width="30%">
+								<p class="designation2-booking" style="margin-top: 18px;">Session Type</p>
+								<h3 class="name2-booking textwrap" style="line-height: 10px;">{{selection.title}}</h3>
+								<p class="designation2-booking">Video call using healplace.com</p>
+							</td>
+							<td width="15%">
+								<p class="designation2-booking" style="margin-top: 18px;">Details</p>
+								<h3 class="name2-booking" style="line-height: 10px;"><span *ngIf="!isIncluded">&#36;</span>{{isIncluded ? 'Free' : selection.price}}</h3>
+								<h3 class="designation2-booking ">{{selection.duration_min | bookTime }} </h3>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<br />
+			<div class="row">
+				<div class="col-md-12">
+					<p class="designation2-booking textwithleft">Title</p>
+					<h3 class="name2-booking name-fix textwithleft name-color">{{shortSessionTitle}}</h3>
+				</div>
+			</div>
+			<br />
+			<div class="row" *ngIf="shortDescription && shortDescription.length != 0">
+				<div class="col-md-12">
+					<p class="designation2-booking textwithleft">Description</p>
+					<p class="designation2-booking textwithleft">{{shortDescription}}</p>
+				</div>
+			</div>
+			<br />
+			<div class="row">
+				<div class="col-md-3">
+					<p class="designation2-booking textwithleft">Date</p>
+					<h3 class="name2-booking name-fix textwithleft">{{bsValue | date }}</h3>
+				</div>
+				<div class="col-md-3">
+					<p class="designation2-booking textwithleft">Time</p>
+					<h3 class="name2-booking name-fix textwithleft">{{selectionTimeslot.start_time | date:'shortTime'}} - {{selectionTimeslot.end_time | date:'shortTime'}}</h3>
+				</div>
+			</div>
+			<div class="row clearfix" style="padding:25px"></div>
+			<div class="row col-md-12 text-center">
+				<button type="button" class="pick-date btn-rounded vertical-center confirmDoctorNameDisabled"
+					(click)="confirmBookingStep1()">Confirm Booking
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+						class="bi bi-arrow-right" viewBox="0 0 16 16">
+						<path fill-rule="evenodd"
+							d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+					</svg>
+				</button>
+			</div>
+			<div class="row col-md-12 text-center">
+				<button type="button" class="unstyled-button vertical-center"
+					(click)="confirmBookingStep1Back()">Back</button>
+			</div>
+		</div>
+		<!--Confirm Booking with card or no card-->
+		<div class="card" *ngIf="showConfirmBookingStep2">
+			<h5 class="text-blue headings text-blue-headings"> Confirm booking <p class="designation2-booking"> Please
+					fill
+					out the feilds below for scheduling video session </p>
+			</h5>
+			<br />
+			<div class="row">
+				<div class="col-md-12">
+					<table class="table">
+						<tr class="">
+							<td width="40% " class="textwithleft">
+								<p class="designation2-booking textwithleft">Video Session with</p> <img
+									class="rounded-circle dp-booking" src="assets/images/ronald.png">
+								<div class="top-fix">
+									<h3 class="name2-booking name-fix name-color">{{selection.practitioner__name}}</h3>
+									<span class="designation2-booking" style="margin-top: 5px;">{{selection.practitioner__expertise.join()}}</span>
+								</div>
+							</td>
+							<td width="30%">
+								<p class="designation2-booking" style="margin-top: 18px;">Session Type</p>
+								<h3 class="name2-booking textwrap" style="line-height: 10px;">{{selection.title}}</h3>
+							</td>
+							<td width="15%">
+								<p class="designation2-booking" style="margin-top: 18px;">Details</p>
+								<h3 class="name2-booking" style="line-height: 10px;"><span *ngIf="!isIncluded">&#36;</span>{{isIncluded ? 'Free' : selection.price}}</h3>
+								<h3 class="designation2-booking ">{{selection.duration_min | bookTime }} </h3>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<br />
+			<div class="row">
+				<div class="col-md-12">
+					<p class="designation2-booking textwithleft">Title</p>
+					<h3 class="name2-booking name-fix textwithleft name-color">{{shortSessionTitle}}</h3>
+				</div>
+			</div>
+			<br />
+			<div class="row" *ngIf="shortDescription && shortDescription.length != 0">
+				<div class="col-md-12">
+					<p class="description textwithleft">Description</p>
+					<p class="description-content textwithleft">{{shortDescription}}</p>
+				</div>
+			</div>
+			<br />
+			<div class="row">
+				<div class="col-md-3">
+					<p class="description-content textwithleft">Date</p>
+					<h3 class="date-time name-fix textwithleft">{{bsValue | date }}</h3>
+				</div>
+				<div class="col-md-3">
+					<p class="description-content textwithleft">Time</p>
+					<h3 class="date-time name-fix textwithleft">{{selectionTimeslot.start_time | date:'shortTime'}} - {{selectionTimeslot.end_time | date:'shortTime'}}</h3>
+				</div>
+			</div>
+			<br />
+			<div *ngIf="!isIncluded" class="row textwithleft">
+				<p class="designation2-booking textwithleft">Default Payment Method</p>
+				<br />
+			</div>
+			<div class="row" *ngIf="!isIncluded">
+				<div class="column chat-list2-booking" style="width: 260px !important; margin-left:25px;border-radius: 20px;">
+					<table class="" width="250px" (click)="paymentMethodPayCard()" style="cursor: pointer;">
+						<tr>
+							<td> <img class="rounded-circle dp-booking" style="width: 60px; height: 60px;"
+									src="assets/images/visa.png"> </td>
+							<td style="margin-top:5px">
+								<p class="designation2-booking" style="margin-top: 20px;margin-bottom: 0px;">Visa ending in {{paymentCardDetails?.cc_number.slice(11)}}</p>
+								<p class="designation2-booking" style="margin-top: 5px;">Expires in {{paymentCardDetails?.cc_expiry}}</p>
+							</td>
+							<td *ngIf="showSelectionPayCard"> &nbsp;&nbsp;
+								<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#00BAD5"
+									class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+									<path
+										d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+								</svg>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="column" style="width: 100px !important;"></div>
+				<div class="column chat-list2-booking" style="width: 260px !important;border-radius: 20px;">
+					<table class="" width="250px; top:25px">
+						<tr>
+							<td style="padding-top: 10px;" class="text-center">
+								<a (click)="addNewPayment()">
+									<i style="font-style: normal;
+									font-weight: bold;
+									font-size: 32px;
+									line-height: 35px;
+									color: #074D63;" class="fa fa-plus"></i>
+								<h3 style="padding-top: 15px;" class="name2-booking ">Add new card</h3>
+								</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="row clearfix" style="padding:25px"></div>
+			<div class="row col-md-12 text-center">
+				<button type="button" class="pick-date btn-rounded vertical-center confirmDoctorNameDisabled"
+					[disabled]="confirmBookingStep2Disabled" (click)="confirmBookingStep2()">Confirm Booking
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+						class="bi bi-arrow-right" viewBox="0 0 16 16">
+						<path fill-rule="evenodd"
+							d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+					</svg>
+				</button>
+			</div>
+			<div class="row col-md-12 text-center">
+				<button type="button" class="unstyled-button vertical-center"
+					(click)="confirmBookingStep1Back()">Back</button>
+			</div>
+		</div>
+		<!--Confirm Booking with card or no card-->
+		<div class="card" *ngIf="showAddNewPayment">
+			<app-add-new-customer-payment (saveCardDetails)="saveCardDetails($event)" (goBack)="goBackToConfirmScreen($event)" [isShowBackButton]="isShowBackButton" [buttonText]="buttonText"></app-add-new-customer-payment>
+		</div>
+		<!--Confirmed Booking and paid-->
+		<div class="card" *ngIf="showTotalConfirmBooked">
+			<h5 class="text-blue headings text-blue-headings"> We’ve Received Your <br > Booking Request 
+				<p class="designation2-booking"> Once the practitioner confirms the booking, you will <br /> receive a confirmation email.</p>
+			</h5>
+			<br />
+			<br />
+			<p class="text-blue headings text-blue-headings" style="font-size: 20px !important;"> Session details and
+				status
+			</p>
+			<div class="row">
+				<div class="col-md-12">
+					<table class="table">
+						<tr class="">
+							<td width="45% " class="textwithleft">
+								<img class="rounded-circle dp-booking" src="assets/images/ronald.png">
+								<div class="top-fix">
+									<h3 class="name2-booking name-fix name-color">{{selection.practitioner__name}}</h3>
+									<span class="designation2-booking" style="margin-top: 5px;">{{selection.practitioner__expertise.join()}}</span>
+								</div>
+							</td>
+							<td width="15%">
+								<h3 class="name2-booking" style="line-height: 10px; margin-top:5px;">
+									<span *ngIf="!isIncluded">&#36;</span>{{isIncluded ? 'Free' : selection.price}}</h3>
+								<h3 class="designation2-booking ">{{selection.duration_min | bookTime }} </h3>
+							</td>
+							<td width="25%">
+								<h3 class="name2-booking" style="line-height: 10px; margin-top:5px;">{{bsValue | date }}
+								</h3>
+								<h3 class="designation2-booking ">{{selectionTimeslot.start_time | date:'shortTime'}} - {{selectionTimeslot.end_time | date:'shortTime'}} </h3>
+							</td>
+							<td width="15%">
+								<div class="app-border" style="margin-top:5px;text-align: center;border-radius: 20px;" class="highlightButton">
+									<p style="margin-bottom: 0px;padding: 10px 15px;">Pending</p>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<br />
+			<div class="row">
+				<div class="col-md-12">
+					<p class="designation2-booking text-center">Please check your email within the next 24 hours for confirmation of <br /> your booking.</p>
+				</div>
+				<br />
+
+				<div class="row clearfix" style="padding:25px"></div>
+
+				<div class="row col-md-12 text-center">
+					<button type="button" class="unstyled-button vertical-center"
+						(click)="closeModal()">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

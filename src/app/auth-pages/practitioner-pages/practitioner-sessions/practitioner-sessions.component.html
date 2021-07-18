@@ -1,0 +1,26 @@
+<div id="practitioner-sessions">
+    <div>
+        <div class="row">
+            <div class="practitioner-info">
+                <div class="profile-photo"></div>
+                <div>
+                    <div class="name">Dr. {{username}}</div>
+                    <div class="place">Health Coach, Therapist, New York</div>
+                </div>
+            </div>
+        </div>
+
+        <app-practioner-session [sessions]=sessions></app-practioner-session>
+        <div class="add-new-container">
+            <button type="button" class="btn add-new" (click)="openAddSessionModal(addSessionModalOpen, 'addSession')">
+                Add New Session
+                <i class="fa fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<app-available-patient></app-available-patient>
+<ng-template #addSessionModalOpen role="document" let-modal>
+    <app-add-session [resource]="isContent" (changeBack)="closeAddSessionModal($event)" (closeModal)="closeAddSessionModal($event)" (reloadSessions)="fetchSessions()" *ngIf="isContent == 'addSession'" title="Add a New" buttonText="Add Session" type="add" >
+    </app-add-session>
+</ng-template>

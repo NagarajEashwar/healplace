@@ -1,0 +1,126 @@
+
+$white: #fff;
+$primary-blue: #00BAD5;
+$secondary-blue: #074D63;
+$card-bg: rgba(255, 244, 227, 0.5);
+$text-title: #6D6D6D;
+$slight-grey: #FAFAFA;
+$main-font: healspace font;
+:host {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+}
+.right-section {
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    border-radius: 40px 0px 0px 40px;
+    background-color: $slight-grey;
+
+    .available-switch {
+        width: 100%;
+        padding-left: 75px;
+        padding-bottom: 23px;
+        padding-top: 32px;
+
+        .custom-control-label {
+            color: $primary-blue;
+
+            &::after {
+                background-color: $primary-blue;
+            }
+        }
+    }
+
+    .card {
+        box-shadow: none;
+        background: transparent;
+        border-radius: 40px;
+        width: 320px;
+        margin-bottom: 0;
+
+        .more {
+            display: none;
+        }
+
+        &.active {
+            background-color: rgba($color: $text-title, $alpha: 0.1);
+
+            .more {
+                flex: 0 1 auto;
+                align-self: flex-end;
+                display: block;
+                direction: rtl;
+            }
+        }
+
+        .card-body {
+            display: flex;
+            padding: 30px 34px;
+
+            .avatar {
+                width: 40px;
+                height: 40px;
+                position: relative;
+
+                img {
+                    max-width: 40px;
+                    height: auto;
+                    border-radius: 50%;
+                }
+
+                span {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 18px;
+                    height: 18px;
+                    background: #FBD036;
+                    font-weight: bold;
+                    font-size: 12px;
+                    line-height: 16px;
+                    color: $secondary-blue;
+                    border-radius: 50%;
+                    text-align: center;
+                }
+            }
+
+            .details {
+                margin-left: 12px;
+                flex: 1;
+
+                h2 {
+                    font-weight: bold;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: $secondary-blue;
+                    margin-bottom: 0;
+                }
+
+                h3 {
+                    font-size: 12px;
+                    line-height: 16px;
+                    color: $secondary-blue;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    input {
+        padding: 16px 17.5px;
+        font-size: 12px;
+        line-height: 16px;
+        border: 0;
+        border-radius: 10px;
+        margin-top: 40px;
+        margin-bottom: 62px;
+        width: 251px;
+        height: 48px;
+        color: $secondary-blue;
+        background: rgba($color: $text-title, $alpha: 0.1)
+    }
+}

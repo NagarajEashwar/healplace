@@ -1,0 +1,150 @@
+.block-customer-modal{
+    width: 848px;
+    height: 558px;
+    background: #FAFAFA;
+    border-radius: 40px;
+    padding:20px;
+    text-align: center;
+    .file-upload {
+        display: none;
+    }
+    .thanks{
+        font-family: BelyDisplayW00-Regular;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 40px;
+        line-height: 45px;
+        text-align: center;
+        color: #074D63;
+    }
+    .review{
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: #074D63;
+    }
+    .back-to-btn{
+        padding: 20px 40px;
+        background: #00BAD5;
+        border-radius: 20px;
+        color: #FFFFFF;
+        border: none;
+    }
+    textarea{
+        border: none !important;
+        overflow: auto;
+        outline: none !important;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        width: 630px;
+        height: 143px;
+        background: #FFFFFF;
+        border-radius: 40px;
+        resize: none !important;
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+        color: #074D63;
+        padding: 10px;
+    }
+    p{
+        margin-bottom: 0px;
+    }
+    .cancel-btn{
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        color: #074D63;
+
+    }
+    .subdivactive{
+        background: #074D63 !important;
+        color: #FFFFFF !important;
+        p{
+            color: #FFFFFF !important; 
+        }
+    }
+    .btnactive{
+        background: #EA0606 !important;
+        color: #FFFFFF !important;
+        border: none !important;
+    }
+    .add-details-btn{
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        color: #074D63;
+        border: 1px solid #074D63;
+        padding: 10px 20px;
+    }
+    .btn:focus{
+        outline: none !important;
+    }
+    .sub-div{
+    border-radius: 20px;
+    width: 200px;
+    height: 80px;
+    color: #FFFFFF;
+    p{
+        padding-top: 20px;
+        color: #FFFFFF;
+    }
+}
+    .title{
+        font-family: BelyDisplayW00-Regular;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 40px;
+        line-height: 45px;
+        text-align: center;
+        color: #EA0606;
+    }
+    .content{
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: #074D63;
+
+    }
+    .name{
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: #074D63;
+    }
+    .sub-content{
+        font-family: BelyDisplayW00-Regular;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: #074D63;
+    }
+    .role{
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: center;
+        color: #6D6D6D;
+    }
+}

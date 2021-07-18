@@ -1,0 +1,137 @@
+<div id="calendar-container">
+    <div class="title">Edit Schedule</div>
+    <div id="calendar">
+        <div id="cale-container">
+            <div id="cale-nav-container">
+                <div id="cale-nav-container">
+                    <div id="cale-prev-week-container">
+                        <div id="cale-prev-week" (click)="previousWeek()">
+                            &lt; </div>
+                    </div>
+
+                    <div id="cale-current-month-year-container">
+                        <span>{{week}}</span>
+                        <app-week-selection (weekRange)="changeWeek($event)"></app-week-selection>
+                    </div>
+
+
+                    <div id="cale-prev-week-container">
+                        <div id="cale-next-week" (click)="nextWeek()">&gt;</div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div class="row schedule-container" *ngFor="let list of scheduleList;let i = index;">
+                <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" value="{{list.checked}}" id="flexCheckDefault" (click)="selectItem(i)">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        {{list.utc | date: 'EEE, MMM d'}}
+                    </label>
+                </div>
+                <ng-container *ngIf="list.available.length > 0">
+                    <div class="schedule-time col-md-2 btn-group" dropdown #dropdown="bs-dropdown" [autoClose]="false"
+                        *ngFor="let schedule of list.available; let j = index;" [ngClass]="{'inactive': !list.checked}">
+                        <button style="padding: 0px !important;" type="button" class="btn dropdown-toggle"
+                            (click)="dropdown.isOpen = !dropdown.isOpen; text = 'From'">
+                            <span class="value" *ngIf="!schedule.start && schedule.start_time">{{schedule.start_time | date:'shortTime'}}</span>
+                            <span class="value" *ngIf="schedule.start">{{schedule.start}}</span>
+                        </button>
+                        <i class="fa fa-arrow-right"></i>
+                        <button style="padding: 0px !important;" type="button" class="btn dropdown-toggle"
+                            (click)="dropdown.isOpen = !dropdown.isOpen; text = 'To'">
+                            <span class="value" *ngIf="!schedule.end && schedule.end_time">{{schedule.end_time | date:'shortTime'}}</span>
+                            <span class="value"  *ngIf="schedule.end">{{schedule.end}}</span>
+                        </button>
+                        <ul *dropdownMenu class="dropdown-menu" role="menu">
+                            <li role="menuitem"><a class="dropdown-item">{{text}}</a></li>
+                            <li role="menuitem"><a class="dropdown-item" *ngFor="let time of timeSchedule;"
+                                    (click)="addTime(text, time, i, j)">{{time}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="list.available.length === 0">
+                    <div class="schedule-time col-md-2 btn-group" dropdown #dropdown="bs-dropdown" [autoClose]="false" [ngClass]="{'inactive': !list.checked}">
+                        <button style="padding: 0px !important;" type="button" class="btn dropdown-toggle"
+                            (click)="dropdown.isOpen = !dropdown.isOpen; text = 'From'">
+                            <span class="value">From</span>
+                        </button>
+                        <i class="fa fa-arrow-right"></i>
+                        <button style="padding: 0px !important;" type="button" class="btn dropdown-toggle"
+                            (click)="dropdown.isOpen = !dropdown.isOpen; text = 'To'">
+                            <span class="value">To</span>
+                        </button>
+                        <ul *dropdownMenu class="dropdown-menu" role="menu">
+                            <li role="menuitem"><a class="dropdown-item">{{text}}</a></li>
+                            <li role="menuitem"><a class="dropdown-item" *ngFor="let time of timeSchedule;"
+                                    (click)="addTime(text, time, i, null)">{{time}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </ng-container>
+                <div class="schedule-time col-md-2 btn-group" dropdown #dropdown="bs-dropdown" [autoClose]="false"
+                    *ngIf="list.isAdd" [ngClass]="{'inactive': !list.checked}">
+                    <button style="padding: 0px !important;" type="button" class="btn dropdown-toggle"
+                        (click)="dropdown.isOpen = !dropdown.isOpen; text = 'From'">
+                        <span class="value">From</span>
+                    </button>
+                    <i class="fa fa-arrow-right"></i>
+                    <button style="padding: 0px !important;" type="button" class="btn dropdown-toggle"
+                        (click)="dropdown.isOpen = !dropdown.isOpen; text = 'To'">
+                        <span class="value">To</span>
+                    </button>
+                    <ul *dropdownMenu class="dropdown-menu" role="menu">
+                        <li role="menuitem"><a class="dropdown-item">{{text}}</a></li>
+                        <li role="menuitem"><a class="dropdown-item" *ngFor="let time of timeSchedule;"
+                                (click)="addTime(text, time, i, null)">{{time}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="add-schedule" (click)="addNewSchedule(i)" [ngClass]="{'inactive': !list.checked}">
+                    +
+                </div>
+                <div class="copy-all" *ngIf="list.checked">
+                   <a (click)="openCopyToAllConfirmModal(i)"> Copy to all</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row add-new-container d-flex">
+        <div class="col-md-4">
+            <button (click)="openDuplicateScheduleConfirmModal()" type="button" class="btn add-new">
+                Duplicate Schedule for next week
+            </button>
+        </div>
+        <div class="col-md-8">
+            <button type="button" class="btn save" (click)="saveSchedule()">
+                Save
+                <i class="fa fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<app-available-patient></app-available-patient>
+<ng-template #CopyToAllModal>
+    <div class="copy-to-all-modal">
+        <p class="title">
+            Copy this day for <br />
+            entire week?
+        </p>
+        <div style="text-align: center;">
+            <button class="btn btn-rounded copy-btn" (click)="copySchedule()">Copy Day →</button><br>
+            <button (click)="modalService.dismissAll();"  class="btn cancel-btn">Cancel</button>
+        </div>
+    </div>
+</ng-template>
+<ng-template #DuplicateScheduleModal>
+    <div class="copy-to-all-modal">
+        <p class="title">
+            Duplicate this schedule for <br />
+            next week?
+        </p>
+        <div style="text-align: center;">
+            <button class="btn btn-rounded copy-btn" (click)="duplicateSchedule()">Duplicate Schedule →</button><br>
+            <button (click)="modalService.dismissAll();" class="btn cancel-btn">Cancel</button>
+        </div>
+    </div>
+</ng-template>

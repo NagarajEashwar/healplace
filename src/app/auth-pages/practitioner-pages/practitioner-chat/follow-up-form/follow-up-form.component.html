@@ -1,0 +1,175 @@
+<div *ngIf="currentStep === 'one'" class="block-chat-modal">
+    <img width="33px" src="../../../../../assets/images/practitioner/folow-up-icon.png" />
+    <br />
+    <br />
+    <p class="title">
+        Follow-Up Form in Nutrition
+    </p>
+    <p class="content">Choose metrics category, or some type of stats to count </p>
+    <br />
+    <br />
+    <div class="row" style="margin-left: 20px;">
+        <div class="col-lg-4 col-md-4">
+            <div class="sub-div" [class.subdivactive]="option === 'first'">
+                <a (click)="optionSelected('first')">
+                    <i *ngIf="option === 'first'" style="float: right;margin-top: 10px;margin-right: 10px;"
+                        class="fa fa-check-circle"></i>
+                    <p class="sub-content">Question about <br />
+                        progress </p>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4">
+            <div class="sub-div" [class.subdivactive]="option === 'second'">
+                <a (click)="optionSelected('second')">
+                    <i *ngIf="option === 'second'" style="float: right;margin-top: 10px;margin-right: 10px;"
+                        class="fa fa-check-circle"></i>
+                    <p class="sub-content">Question about <br />
+                        health habits</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4">
+            <div class="sub-div" [class.subdivactive]="option === 'third'">
+                <a (click)="optionSelected('third')">
+                    <i *ngIf="option === 'third'" style="float: right;margin-top: 10px;margin-right: 10px;"
+                        class="fa fa-check-circle"></i>
+                    <p class="sub-content">Question about <br />
+                        something else</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div style="text-align: center;margin-top: 20px;">
+        <button (click)="addQuestion()" class="btn add-details-btn"
+            [class.btnactive]="option === 'first' || option === 'second' || option === 'third'">Add Question
+            →</button><br>
+        <button (click)="closeModal()" class="btn cancel-btn">Cancel</button>
+    </div>
+</div>
+
+<div *ngIf="currentStep === 'two'" class="block-chat-modal">
+    <img width="33px" src="../../../../../assets/images/practitioner/folow-up-icon.png" />
+    <br />
+    <br />
+    <p class="title">
+        Add question for customer
+    </p>
+    <p class="content">Choose metrics category, or some type of stats to count </p>
+    <br />
+    <div>
+        <input type="text" placeholder="Write a question" [(ngModel)]="question" (input)="onQuestion($event.target.value)" />
+    </div>
+    <br />
+    <div style="text-align: center;margin-top: 20px;">
+        <button (click)="chooseAnswerType()" class="btn add-details-btn"
+            [class.btnactive]="question !== null && question !== ''">Choose answer type →</button><br>
+        <button (click)="closeModal()" class="btn cancel-btn">Cancel</button>
+    </div>
+</div>
+
+<div *ngIf="currentStep === 'three'" class="block-chat-modal">
+    <img width="33px" src="../../../../../assets/images/practitioner/folow-up-icon.png" />
+    <br />
+    <br />
+    <p class="title">
+        Choose answer type
+    </p>
+    <p class="content">Choose metrics category, or some type of stats to count </p>
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <div class="sub-div" style="float: right;" [class.subdivactive]="ansTypeOption === 'first'">
+                <a (click)="ansTypeOptionSelected('first')">
+                    <i *ngIf="ansTypeOption === 'first'" style="float: right;margin-top: 10px;margin-right: 10px;"
+                        class="fa fa-check-circle"></i>
+                    <p class="sub-content">Choose from <br />
+                        a scale of 1 to 5</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <div class="sub-div" [class.subdivactive]="ansTypeOption === 'second'">
+                <a (click)="ansTypeOptionSelected('second')">
+                    <i *ngIf="ansTypeOption === 'second'" style="float: right;margin-top: 10px;margin-right: 10px;"
+                        class="fa fa-check-circle"></i>
+                    <p class="sub-content">Yes / No <br />
+                        Answer</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div style="text-align: center;margin-top: 20px;">
+        <button (click)="chooseFreq()" class="btn add-details-btn"
+            [class.btnactive]="ansTypeOption === 'first' || ansTypeOption === 'second'">Choose frequency  →</button><br>
+        <button (click)="closeModal()" class="btn cancel-btn">Cancel</button>
+    </div>
+</div>
+
+<div *ngIf="currentStep === 'four'" class="block-chat-modal">
+    <img width="33px" src="../../../../../assets/images/practitioner/folow-up-icon.png" />
+    <br />
+    <br />
+    <p class="title">
+        Choose a frequency for this <br />
+follow-up form
+    </p>
+    <p class="content">Choose metrics category, or some type of stats to count </p>
+    <div class="row" style="margin-left: 20px;">
+        <div class="col-lg-4 col-md-4">
+            <div class="sub-div" [class.subdivactive]="freqOption === 'first'">
+                <a (click)="freqOptionSelected('first')">
+                    <i *ngIf="freqOption === 'first'" style="float: right;margin-top: 10px;margin-right: 10px;"
+                        class="fa fa-check-circle"></i>
+                    <p class="sub-content">Send it just <br />
+                        this one time</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4">
+            <div class="sub-div" [class.subdivactive]="freqOption === 'second'">
+                <a (click)="freqOptionSelected('second')">
+                    <i *ngIf="freqOption === 'second'" style="float: right;margin-top: 10px;margin-right: 10px;"
+                        class="fa fa-check-circle"></i>
+                    <p class="sub-content">Daily</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4">
+            <div class="sub-div" [class.subdivactive]="freqOption === 'third'">
+                <a (click)="freqOptionSelected('third')">
+                    <i *ngIf="freqOption === 'third'" style="float: right;margin-top: 10px;margin-right: 10px;"
+                        class="fa fa-check-circle"></i>
+                    <p class="sub-content">Weekly</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div style="text-align: center;margin-top: 20px;">
+        <button (click)="sendForm()" class="btn add-details-btn"
+            [class.btnactive]="freqOption === 'first' || freqOption === 'second' || freqOption === 'third'">Send Form →</button><br>
+        <button (click)="closeModal()" class="btn cancel-btn">Cancel</button>
+    </div>
+</div>
+
+<div *ngIf="currentStep === 'five'" class="block-chat-modal">
+    <img width="33px" src="../../../../../assets/images/practitioner/folow-up-icon.png" />
+    <br />
+    <br />
+    <p class="title">
+        You send a follow-up form <br />
+to help this user track his <br />
+habits / progress.
+    </p>
+    <p class="content">Confimation message or other content here! </p>
+    <br />
+    <br />
+    <div style="text-align: center;margin-top: 20px;">
+        <button (click)="backToDashBoard()" class="btn back-to-btn" >Back to Dashboard →</button><br>
+    </div>
+</div>

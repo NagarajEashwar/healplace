@@ -1,0 +1,46 @@
+<div class="withdraw-history-wrapper">
+    <div class="d-flex align-items-center justify-content-between title-wrapper">
+        <div class="title">My withdraw history</div>
+
+        <div class="dropdown" ngbDropdown>
+            <button type="button" class="btn header-item" id="page-header-user-dropdown" ngbDropdownToggle>
+                Download full history
+                <i class="mdi mdi-chevron-down d-none d-xl-inline-block text-black-50"></i>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                <a class="dropdown-item" href="#">By month</a>
+                <a class="dropdown-item" href="#">Year to day</a>
+                <a class="dropdown-item" href="#">By year</a>
+                <a class="dropdown-item" href="#">All</a>
+            </div>
+        </div>
+    </div>
+    <div class="row withdraw-history-header">
+        <div class="col-md-2">
+            <div class="withdraw-history-title">Date</div>
+        </div>
+        <div class="col-md-5">
+            <div class="withdraw-history-title">Bank Account / Card Number</div>
+        </div>
+        <div class="col-md-2">
+            <div class="withdraw-history-title">Amount</div>
+        </div>
+        <div class="col-md-3">
+            <div class="withdraw-history-title">Receipt</div>
+        </div>
+    </div>
+    <div class="row withdraw-history-item">
+        <div class="col-md-2">
+            <div class="withdraw-history-value">04/18/21</div>
+        </div>
+        <div class="col-md-5">
+            <div class="withdraw-history-value">Visa Ending in 2430</div>
+        </div>
+        <div class="col-md-2">
+            <div class="withdraw-history-value">$ 620</div>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn">Download</button>
+        </div>
+    </div>
+</div>

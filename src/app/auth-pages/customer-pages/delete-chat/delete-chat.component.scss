@@ -1,0 +1,101 @@
+.block-chat-modal{
+    width: 848px;
+    height: 558px;
+    background: #FAFAFA;
+    border-radius: 40px;
+    padding:20px;
+    .pt-10{
+        padding-top: 10px;
+    }
+    .pl-20{
+        padding-left: 20px;
+    }
+    .del-btn{
+        width: 180px;
+        height: 60px;
+        background: #FBD036;
+        border-radius: 20px;
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        color: #074D63;
+    }
+    .cancel-btn{
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+        color: #6D6D6D;
+    }
+    .circle-div{
+        width: 40px;
+    height: 40px;
+    background: #fafafa;
+    border-radius: 20px;
+    text-align: center;
+    }
+    .details-section{
+        padding: 20px;
+    margin: 50px;
+    background: #FFFFFF;
+    box-shadow: 0px 15px 30px rgb(0 0 0 / 5%);
+    border-radius: 20px;
+    p{
+        margin-bottom: 0px;
+    }
+    }
+    .title{
+        font-family: BelyDisplayW00-Regular;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 40px;
+        line-height: 45px;
+        text-align: center;
+        color: #074D63;
+        padding-top: 70px;
+    }
+    .content{
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: #074D63;
+    }
+    .chat-in{
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        color: #6D6D6D;
+    }
+    .name{
+        font-family: BelyDisplayW00-Regular;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 30px;
+        color: #00BAD5;
+    }
+    .sub-title{
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        color: #074D63;
+    }
+    .sub-content{
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        color: #6D6D6D;
+    }
+}

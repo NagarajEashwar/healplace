@@ -1,0 +1,52 @@
+<div class="add-session-container">
+
+    <div class="title">{{ title }} Session Type</div>
+    <div class="info">Please fill out the fields below for adding your video session</div>
+    <hr>
+
+
+    <form class="form-group" [formGroup]="addSessionForm" (ngSubmit)="openConfirmSessionModal(confirmSessionModalOpen, 'confirmSession', session)" novalidate>
+
+        <div class="form-group">
+            <label for="expertise">Choose expertise / interest / speciality </label>
+            <select class="form-control" name="expertise" formControlName="expertise">
+                <option selected>Select</option>
+                <option *ngFor="let expertise of expertises" [value]="expertise.id">
+                    {{expertise.name}}
+                </option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="title">Add short session title here * </label>
+            <input type="text" class="form-control" id="title" name="title" formControlName="title" required>
+        </div>
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label for="amount">Type Session amount </label>
+                <input type="number" class="form-control" id="amount" name="amount" formControlName="price">
+            </div>
+            <div class="col-md-6 form-group">
+                <label for="duration">Enter Duration </label>
+                <input placeholder="Please enter in minutes" type="number" class="form-control" id="duration" name="duration" formControlName="duration_min">
+
+            </div>
+        </div>
+    </form>
+
+    <div class="add-new-container d-flex flex-column align-items-center">
+        <button type="submit" [disabled]="!addSessionForm.valid" class="btn add-new" (click)="openConfirmSessionModal(confirmSessionModalOpen, 'confirmSession', session)">
+            {{ buttonText }}
+            <i class="fa fa-arrow-right"></i>
+        </button>
+        <button type="button" class="btn" (click)="back()">
+            Back
+        </button>
+    </div>
+</div>
+
+<ng-template #confirmSessionModalOpen role="document" let-modal>
+    <app-confirm-session [resource]="isContent" [session]="session" (changeBack)="closeConfirmSessionModal($event)" (confirmCallBack)="saveSession(session)" (confirmBack)="closeConfirmSessionModal($event)"
+        *ngIf="isContent == 'confirmSession'" title="Confirm adding this Session" buttonText="Add New Session" [type]=type>
+    </app-confirm-session>
+</ng-template>

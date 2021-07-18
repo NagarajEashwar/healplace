@@ -1,0 +1,73 @@
+.third-page {
+    padding-right: 103px;
+    padding-left: 180px;
+    margin-bottom: 114px;
+}
+.arrow-right{
+    padding: 33px !important;
+    margin-top: 74px !important;
+    cursor: pointer;
+}
+.div-space{
+    border-radius: 20px 0px 0px 20px;
+    width: 100% !important;
+    cursor: pointer;
+    height: 100% !important;
+}
+.color-fix{
+    background: rgba(252, 215, 215, 0.2);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 0px;
+}
+.fix-shadow{
+    background: #ffffff !important;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.2);
+}
+.f-p{
+    color: #134d63;
+    font-weight: 1000;
+    margin: 10px;
+    font-size: 12px;
+    margin-top: 44px;
+}
+.s-p{
+    color: #134d63;
+    margin: 10px;
+    font-size: 10px;
+}
+.hello{
+    font-family: BelyDisplayW00-Regular;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 45px;
+    color: #00BAD5;
+    font-weight: 800;
+}
+
+.checkbox{
+    width: 20px;
+    height: 20px;
+    left: 242px;
+    top: calc(50% - 594px/2 + 0.5px);
+}
+.checked{
+    left: 286px;
+    right: 0px;
+    top: 328px;
+    bottom: 1px;
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: #074D63;
+}
+.form-check{
+    position: relative;
+    display: block;
+    padding-left: unset !important;
+    padding: 10px;
+}

@@ -1,0 +1,25 @@
+<div class="second-page">
+    <p class="hello">Choose At Least One Interest</p>
+    <div class="row" style="cursor: pointer;">
+        <div class="col-md-10">
+            <div class="row">
+                <ng-container *ngFor="let list of interestData; let i=index">
+                    <div class="col-md-6" (click)="chooseMe(list.id)" *ngIf="i<4">
+                        <div class="row" style="height: 120px;padding: 10px;">
+                            <div class="col-md-4" style="padding-right: unset !important;">
+                                <img src="assets/images/shutterstocked.jfif" class="div-space">
+                            </div>
+                            <div class="col-md-8 color-fix" id="{{list.id}}">
+                                <p class="f-p">{{list.interest}}</p>
+                                <p class="s-p">mindfulness | happiness | stillness</p>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>  
+        </div>
+        <div class="col-md-2">
+            <img src="assets/images/arrow-right.png" class="arrow-right"/>
+        </div>
+    </div>
+</div>

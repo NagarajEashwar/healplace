@@ -1,0 +1,152 @@
+#payment-info {
+
+    padding-left: 188px;
+    background: #ffffff;
+    display: flex;
+    .payment-container {
+        width: 100%;
+        padding-top: 56px;
+    }
+    .practitioner-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 56px;
+        flex-grow: 1;
+        .profile-photo {
+            width: 80px;
+            height: 80px;
+            background: #cccccc;
+            background: url('../../../assets/images/users/avator-2.jpg');
+            background-size: 100%;
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+        .name {
+            font-family: BelyDisplayW00-Regular;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 30px;
+            color: #074D63;
+        }
+        .place {
+            font-family: FF Mark Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 20px;
+            color: #6D6D6D;
+        }
+    }
+    .add-new-container {
+        display: flex;
+        justify-content: center;
+        width: 66%;
+        padding-bottom: 200px;
+    }
+   .add-new {
+    font-family: FF Mark Pro;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    color: #074D63;
+    border: 1px solid #074D63;
+    border-radius: 20px;
+    padding: 20px 40px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px;
+   }
+    .account-info {
+        width: 92px;
+        height: 92px;
+        flex-direction: column;
+        border-radius: 50%;
+        background: #00BAD5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 15px;
+        color: #FFFFFF;
+        margin-right: 40px;
+        &.all {
+            background: #FFF4E3;
+            color: #074D63;
+            margin-right: 60px;
+        }
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        div:first-child {
+            font-family: FF Mark Pro;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+    }
+    .row {
+        margin-bottom: 52px;
+    }
+    .info-container {
+        width: 90%;
+        padding: 54px 73px;
+        background: #FFFFFF;
+        box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
+        border-radius: 20px;
+        margin-bottom: 56px;
+        display: flex;
+        justify-content: space-between;
+        .title {
+            font-family: FF Mark Pro;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 20px;
+            color: #074D63;
+            text-align: left;
+        }
+        .price {
+            font-family: BelyDisplayW00-Regular;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 40px;
+            line-height: 45px;
+            color: #00BAD5;
+            margin-top: 7px;
+        }
+        .account-description{
+            font-family: FF Mark Pro;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 18px;
+            color: #6D6D6D;
+            margin-top: 12px;
+        }
+        .btn {
+            padding: 21px 40px;
+            font-family: FF Mark Pro;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 18px;
+            color: #074D63;
+            border: 1px solid #074D63;
+            white-space: nowrap;
+            &.highlight {
+                background: #FBD036;
+                border: none;
+            }
+        }
+    }
+}

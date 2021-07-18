@@ -1,0 +1,169 @@
+
+
+:host {
+    display: flex;
+    background: #ffffff;
+}
+#calendar-container{
+    padding-left: 125px;
+    padding-top: 56px;
+    flex: 1;
+    min-width: 930px;
+    background: #ffffff;
+    padding-bottom: 70px;
+    .title {
+        font-family: BelyDisplayW00-Regular;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 30px;
+        color: #074D63;
+        margin-bottom: 17px;
+        text-align: center;
+    }
+    #calendar {
+        margin-bottom: 42px;
+    }
+    #cale-container {
+        width: inherit;
+    }
+
+    #cale-nav-container {
+        margin-bottom: 15px;
+        width: inherit;
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: #00BAD5;
+    }
+
+    #cale-current-month-year-container {
+        display: inline-block;
+        text-align: center;
+        text-transform: capitalize;
+        vertical-align: top;
+        min-width: 324px;
+
+    }
+
+    #cale-prev-week-container {
+        display: inline-block;
+    }
+
+    #cale-next-week-container {
+        display: inline-block;
+    }
+
+    #cale-prev-week {
+        cursor: pointer;
+        float: left;
+        height: 40px;
+        text-align: center;
+        width: 40px;
+    }
+
+    #cale-next-week {
+        cursor: pointer;
+        float: right;
+        height: 40px;
+        text-align: center;
+        width: 40px;
+    }
+
+    #cale-prev-week:hover, #cale-next-week:hover {
+        color: #bdbdbd;
+    }
+
+    #cale-week-container {
+        text-align: center;
+    }
+
+    .cale-date-header {
+        display: inline-block;
+        min-height: 50px;
+        vertical-align: top;
+        width: 94px;
+        padding: 17px 0 0 0;
+        margin-right: 20px;
+        text-align: center;
+    }
+
+    #cale-available-time-container {
+        min-height: 150px;
+    }
+
+    .cale-day-time-container {
+        display: inline-block;
+        height: 100%;
+        padding: 17px 20px 0 0;
+        vertical-align: top;
+    }
+
+    .cale-day-time-container:last-of-type {
+            width: 13%;
+    }
+
+    .cale-date-number {
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: center;
+        color: #000000;
+    }
+
+    .cale-available-time {
+        display: block;
+        margin-bottom: 20px;
+        padding: 10px 0px 10px 0px;
+        text-align: center;
+        width: 94px;
+        height: 40px;
+        background: rgba(7, 77, 99, 0.05);
+        border-radius: 20px;
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 10px;
+        line-height: 15px;
+        text-align: center;
+        color: #074D63;
+        pointer-events: none;
+    }
+
+    .cale-available-time.selected, .cale-available-time:hover {
+        background-color: #29b6f6;
+        color: #ffffff;
+    }
+    .cale-available-time.disabled, .cale-available-time.disabled:hover {
+        background-color: none;
+        opacity: 0.5;
+    }
+    .cale-date-display {
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: center;
+        color: #000000;
+    }
+    .btn.add-new {
+        width: 181px;
+        height: 60px;
+        border-radius: 20px;
+        border: 1px solid #074D63;
+        background: #FBD036;
+        margin-bottom: 12px;
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        color: #074D63;
+    }
+}

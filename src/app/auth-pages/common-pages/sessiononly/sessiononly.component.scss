@@ -1,0 +1,913 @@
+.body {
+    background-color: #fff;
+  }
+  
+  
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [home*="col-"] {
+      width: 100%;
+    }
+  }
+  
+  
+  
+  .headings{
+    font-family: healspace font !important;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 70px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  .btn-warning1{
+    width: 410px;
+  
+  }
+  .HealthWidth{
+    width: 460px;
+    line-height: 25px;
+  }
+  .col-mod{
+    padding: 20px;
+    padding-left: 96px;
+    padding-top: 45px;
+  }
+  .font-change{
+    font-size: 20px;
+  }
+  .btn-white{
+    height: 75px;
+    width: 410px;
+  }
+  .col-md-81 {
+    padding: 20px;
+    padding-left: 96px;
+    padding-top: 45px;
+  }
+  .font-spc{
+    width: 460px;
+    line-height: 25px;
+  }
+  .text-warning{
+    background-color: #FBD036;
+  }
+  
+  .text-success{
+  background-color: #6CB244;
+  }
+  
+  .card-shadow {
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.12);
+  }
+  
+  .th-align {
+    text-align: center;
+  }
+  
+  .book-a-session {
+    background-color: #FBD036;
+    border: 2px solid #FBD036;
+    box-shadow: 5px 15px 20px 0px rgba(0, 0, 0, 0.15);
+    height: 75px;
+    width: 410px;
+    left: 430px;
+    top: 3805px;
+    border-radius: 40px;
+  }
+  
+  .container-fluid, .container-xl, .container-lg, .container-md, .container-sm {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  
+  .btn-outline-warning {
+    color: #000;
+    font-size: 13px;
+    border: 2px solid #006400;
+    background-color: #ffffff;
+  }
+  
+  .btn-warning {
+    background-color: #ffa700;
+    border: 2px solid #ffa700;
+    color: #000;
+    font-size: 13px;
+    text-align: center;
+    margin-left: 15px;
+  }
+  
+  .search-box .search-icon {
+    font-size: 16px;
+    position: absolute;
+    left: 13px;
+    top: 0;
+    line-height: 59px;
+  }
+  
+  .card {
+    border-radius: 40px;
+  }
+  
+  bg-light {
+    background-color: #F4F4F4 !important;
+  }
+  
+  .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #00B2D3;
+    background-color: #fff;
+    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.12);
+  }
+  
+  .btn-success {
+    color: #fff;
+    background-color: #6CB244;
+    border-color: #6CB244;
+  }
+  
+  .h1-lable {
+    font-family: FF Mark pro;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 70px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  .form-rounded { 
+    border-radius: 1rem; 
+    } 
+  
+    .button {
+      background-color:  #00BAD5; /* Green */
+      border: none;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    .button4 {border-radius: 50px;}
+  
+  
+  
+  
+    
+  .new-text {
+    font-family: FF Mark Pro;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  
+  .col-lg-4-new{
+    padding-left: 30px;
+    padding-top: 30px;
+  }
+  
+  .view-more {
+    width: 87px;
+    height: 22px;
+    left: 909px;
+    top: 4711px;
+    font-family: FF Mark Pro;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 22px;
+    color: #00B2D3;
+  }
+  
+  .view-more-button {
+    height: 82px;
+    width: 246px;
+    left: 837px;
+    top: 4680px;
+    border: 2px solid #00B2D3;
+    border-radius: 40px;
+  }
+  
+  .result {
+    width: 366px;
+    height: 30px;
+    left: 776px;
+    top: 4800px;
+    font-family: FF Mark Pro;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 22px;
+    text-align: center;
+    color: #000000;
+  }
+  
+  .life-coaching {
+    font-family: FF Mark Pro;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  
+  .text-input-design{
+  
+    height: calc(3.5em + 0.94rem + 2px);
+    font-weight: 500;
+    background-color: #EBF3FA;
+    border: 2px solid #D4D3D3;
+    font-size: 0.9825rem;
+  }
+  
+  .select-custom-design{
+    height:calc(3.5em + 0.94rem + 2px);
+    background: #EBF3FA;
+    font-size: 0.9825rem;
+    border: 2px solid #D4D3D3;
+  }
+  
+  .btn-primary{
+    background-color: #FBD036;
+    border:2px solid #FBD036;
+    color: #000;
+  }
+  
+  btn-outline-primary{
+    background-color: #fff;
+    border-color: #006400;
+    color: #000;
+  }
+  
+  .col-lg-2-new{
+    padding-left: 15px;
+    padding-top: 15px;
+  }
+  
+  .card-shadow{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .bg-warning{
+    background-color: #FBD036 !important;
+    border: 1px solid #FBD036;
+  }
+  
+  .bg-success{
+    background-color: #6CB244 !important;
+    border: 1px solid #6CB244;
+  }
+  
+  @font-face {
+    font-family: "healspace font";
+   // src: url("../../../../assets/fonts/font.woff") format('woff'),url("../../../../assets/fonts/font.woff2") format('woff2'); //
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  .landing-footer {
+    padding: 100px 0 191px;
+    background-color: #EBF3FA;
+    color: rgba(52, 58, 64, 0.5);
+  }
+  
+  .landing-footer-article {
+    padding: 65px 0 100px;
+    background-color: #EBF3FA;
+    color: rgba(52, 58, 64, 0.5);
+  }
+  
+  
+  //from pooja
+  
+  .top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }
+  
+  .top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+  }
+  .bottom-right {
+    position: absolute;
+    bottom: 275px;
+    right: 25px;
+  }
+  .card1{
+    background-color: #facf35;
+    margin-left: 141px;
+  }
+  .card-body1{
+    height: 83px;
+    margin-top: -24px;
+  }
+  .card2{
+    margin-top: -24px;
+  }
+  .row1{
+    margin-top: 100px;
+  }
+  .row2{
+    margin-top: 100px;
+  }
+  .h-63{
+    height: 37px;
+    margin-top: -70px;
+  }
+  .h-text-63{
+    margin-top: -9px;
+  }
+  .card11{
+    margin-bottom: 200px;
+  }
+  .card22{
+     margin-bottom: 200px;
+     height: 270px;
+   }
+  .card33{
+      height: 270px;
+    }
+  .img-left{
+    margin-left: 211px;
+  }
+  .card-logo{
+    margin-left: 175px;
+  }
+  
+  
+  @media(device-width: 320px)
+  {
+    .btn-warning1{
+      width: 295px;
+    }
+    .headings{
+      font-size: 45px;
+    }
+    .vidimg{
+      width: 130%;
+    }
+    .landing-footer-article{
+      margin-left: -12px;
+      margin-right: -13px;
+    }
+    .btn-white{
+      height: 58px;
+      width: 214px;
+    }
+    .font-change{
+      font-size: 18px;
+    }
+  
+    .HealthWidth {
+      width: 290px;
+    }
+    .card-logo
+    {
+      margin-left: 75px;
+    }
+    .col-md-81 {
+      padding-left: 25px;
+    }
+    .avtar-row{
+      place-content: center;
+      margin-top: 40px;
+      margin-left: -61px;
+    }
+    .col-spc{
+      margin-left: -63px;
+      margin-top: -56px;
+    }
+    .col-mod{
+      margin-left: -63px;
+    }
+    .card-spc{
+      margin-left: 30px;
+    }
+    .card-mod{
+      margin-left: 190px;
+    }
+    .font-spc{
+      width: 270px;
+      line-height: 18px;
+    }
+    .img-height{
+      height: 80px;
+    }
+    .img-whp{
+      width: 330px;
+    }
+    .font-vid{
+      padding-left: inherit;
+    }
+    .col-md-health{
+      margin-left: 60px;
+      margin-top: -40px;
+    }
+  
+  }
+  @media(device-width: 360px)
+  {
+    .btn-warning1{
+      width: 295px;
+    }
+    .headings{
+      font-size: 49px;
+    }
+    .vidimg{
+      width: 130%;
+    }
+    .landing-footer-article{
+      margin-left: -12px;
+      margin-right: -13px;
+    }
+    .btn-white{
+      height: 58px;
+      width: 214px;
+    }
+    .font-change{
+      font-size: 18px;
+    }
+  
+    .HealthWidth {
+      width: 355px;
+    }
+    .col-md-81 {
+      padding-left: 25px;
+    }
+    .avtar-row{
+      place-content: center;
+      margin-top: 40px;
+      margin-left: -100px;
+    }
+    .col-spc{
+      margin-left: -63px;
+      margin-top: -56px;
+    }
+    .col-mod{
+      margin-left: -63px;
+    }
+    .card-spc{
+      margin-left: 30px;
+    }
+    .card-mod{
+      margin-left: 190px;
+    }
+    .font-spc{
+      width: 300px;
+      line-height: 18px;
+    }
+    .img-height{
+      height: 122px;
+    }
+    .img-whp{
+      width: 360px;
+    }
+    .font-vid{
+      padding-left: inherit;
+    }
+    .col-md-health{
+      margin-left: 60px;
+      margin-top: -40px;
+    }
+  
+  }
+  @media(device-width: 375px)
+  {
+    .btn-warning1{
+      width: 295px;
+    }
+    .headings{
+      font-size: 43px;
+    }
+    .vidimg{
+      width: 130%;
+    }
+    .landing-footer-article{
+      margin-left: -12px;
+      margin-right: -13px;
+    }
+    .btn-white{
+      height: 58px;
+      width: 220px;
+    }
+    .font-change{
+      font-size: 18px;
+    }
+  
+  
+    .HealthWidth {
+      width: 355px;
+    }
+    .col-md-81 {
+      padding-left: 25px;
+    }
+    .avtar-row{
+      place-content: center;
+      margin-top: 40px;
+      margin-left: -100px;
+    }
+    .col-spc{
+      margin-left: -63px;
+      margin-top: -56px;
+    }
+    .col-mod{
+      margin-left: -63px;
+    }
+    .card-spc{
+      margin-left: 30px;
+    }
+    .card-mod{
+      margin-left: 220px;
+    }
+    .font-spc{
+      width: 300px;
+      line-height: 18px;
+    }
+    .img-height{
+      height: 122px;
+    }
+    .img-whp{
+      width: 380px;
+    }
+    .font-vid{
+      padding-left: inherit;
+    }
+    .col-md-health{
+      margin-left: 60px;
+      margin-top: -40px;
+    }
+  
+  }
+  @media(device-width: 411px)
+  {
+    .btn-warning1{
+      width: 335px;
+    }
+    .headings{
+      font-size: 40px;
+    }
+    .vidimg{
+      width: 130%;
+    }
+    .landing-footer-article{
+      margin-left: -12px;
+      margin-right: -13px;
+    }
+    .btn-white{
+      height: 58px;
+      width: 225px;
+    }
+    .font-change{
+      font-size: 18px;
+    }
+  
+    .HealthWidth {
+      width: 400px;
+    }
+    .col-md-81 {
+      padding-left: 35px;
+    }
+    .avtar-row{
+      place-content: center;
+      margin-top: 40px;
+      margin-left: -78px;
+    }
+    .col-spc{
+      margin-left: -63px;
+      margin-top: -56px;
+    }
+    .col-mod{
+      margin-left: -63px;
+    }
+    .card-spc{
+      margin-left: 30px;
+    }
+    .card-mod{
+      margin-left: 220px;
+    }
+    .font-spc{
+      width: 400px;
+      line-height: 18px;
+    }
+    .img-height{
+      height: 122px;
+    }
+    .img-whp{
+      width: 400px;
+    }
+    .font-vid{
+      padding-left: inherit;
+    }
+    .col-md-health{
+      margin-left: 60px;
+      margin-top: -40px;
+    }
+  
+  }
+  @media(device-width: 414px)
+  {
+    .btn-warning1{
+      width: 348px;
+    }
+    .headings{
+      font-size: 40px;
+    }
+    .vidimg{
+      width: 130%;
+    }
+    .landing-footer-article{
+      margin-left: -12px;
+      margin-right: -13px;
+    }
+    .btn-white{
+      height: 58px;
+      width: 230px;
+    }
+    .font-change{
+      font-size: 18px;
+    }
+  
+  
+    .HealthWidth {
+      width: 400px;
+    }
+    .col-md-81 {
+      padding-left: 35px;
+    }
+    .avtar-row{
+      place-content: center;
+      margin-top: 40px;
+      margin-left: -78px;
+    }
+    .col-spc{
+      margin-left: -63px;
+      margin-top: -56px;
+    }
+    .col-mod{
+      margin-left: -63px;
+    }
+    .card-spc{
+      margin-left: 30px;
+    }
+    .card-mod{
+      margin-left: 220px;
+    }
+    .font-spc{
+      width: 400px;
+      line-height: 18px;
+    }
+    .img-height{
+      height: 122px;
+    }
+    .img-whp{
+      width: 400px;
+    }
+    .font-vid{
+      padding-left: inherit;
+    }
+    .col-md-health{
+      margin-left: 60px;
+      margin-top: -40px;
+    }
+  
+  }
+  @media(device-width: 540px)
+  {
+    .btn-warning1{
+      width: 370px;
+    }
+    .headings{
+      font-size: 42px;
+    }
+    .vidimg{
+      width: 130%;
+    }
+    .landing-footer-article{
+      margin-left: -12px;
+      margin-right: -13px;
+    }
+    .btn-white{
+      height: 58px;
+      width: 270px;
+    }
+    .new-text{
+      font-size:20px;
+    }
+    .font-change{
+      font-size: 16px;
+    }
+  
+  
+    .HealthWidth {
+      width: 400px;
+    }
+    .col-md-81 {
+      padding-left: 35px;
+    }
+    .avtar-row{
+      place-content: center;
+      margin-top: 40px;
+      margin-left: -78px;
+    }
+    .col-spc{
+      margin-left: -43px;
+      margin-top: -56px;
+    }
+    .col-mod{
+      margin-left: -43px;
+    }
+    .card-spc{
+      margin-left: 30px;
+    }
+    .card-mod{
+      margin-left: 350px;
+    }
+    .font-spc{
+      width: 400px;
+      line-height: 18px;
+    }
+    .img-height{
+      height: 122px;
+    }
+    .img-whp{
+      width: 550px;
+    }
+    .font-vid{
+      padding-left: inherit;
+    }
+    .col-md-health{
+      margin-left: 60px;
+      margin-top: -40px;
+    }
+    .card-logo{
+      margin-left: 309px;
+    }
+  
+  
+  }
+  @media(device-width: 768px)
+  {
+    .btn-warning1{
+      width: 348px;
+    }
+    .headings{
+      font-size: 60px;
+    }
+    .new-text{
+      font-size:20px;
+    }
+    .vidimg{
+      width: 101%;
+    }
+    .landing-footer-article{
+      margin-left: -12px;
+      margin-right: -13px;
+    }
+    .btn-white{
+      height: 58px;
+      width: 280px;
+    }
+  
+  
+    .HealthWidth {
+      width: 400px;
+    }
+    .col-md-81 {
+      padding-left: 31px;
+    }
+    .avtar-row{
+      place-content: center;
+      margin-top: 40px;
+      margin-left: -78px;
+    }
+    .col-spc{
+      margin-left: -80px;
+    }
+    .col-mod{
+      padding-left: 22px;
+    }
+    /*
+    .col-mod{
+      margin-left: -63px;
+    }
+    .card-spc{
+      margin-left: 30px;
+    }
+    .card-mod{
+      margin-left: 220px;
+    }
+    .font-spc{
+      width: 400px;
+      line-height: 18px;
+    }
+    */
+    .img-height{
+      height: 210px;
+    }
+    .img-whp{
+      width: 800px;
+    }
+   /* .font-vid{
+      padding-left: inherit;
+    }*/
+    .col-md-health{
+      margin-left: 60px;
+      margin-top: -40px;
+    }
+    .card-logo{
+      margin-left: 75px;
+    }
+    .img-left{
+      margin-left: 29px
+    }
+  
+  }
+  @media(device-width: 1024px)
+  {
+    .btn-warning1{
+      width: 487px;
+    }
+    .headings{
+      font-size: 65px;
+    }
+    .new-text{
+      font-size:20px;
+    }
+    .vidimg{
+      width: 100%;
+    }
+    .landing-footer-article{
+      margin-left: -12px;
+      margin-right: -13px;
+    }
+    .btn-white{
+      height: 58px;
+      width: 300px;
+    }
+  
+    .avtar-row{
+      margin-left: -110px;
+    }
+  
+  }
+  
+  .image{
+  
+  height: 200px;   
+     width: 307px;
+     left: 0px;
+     top: 0px;
+     border-radius: 1px;border-top-left-radius: 51px;border-top-right-radius: 51px;
+  }
+  .container4{
+    
+      width: 100%;
+      text-align: center;
+      height: 452px;
+      border-bottom-right-radius: 40px;
+      border-bottom-left-radius: 40px;
+      /* position: absolute; */
+      width: 233px;
+      /* height: 400px; */
+      left: 7px;
+      margin-left: 36px;
+      top: 0px;
+      background: #00BAD5;
+      padding-top: 30px;
+      padding-left: 10px;
+      margin-top:-52px;
+        
+  }
+  .column{
+  
+    margin-left:90px;
+  }
+  
+  
+ 
+  
+  .button4
+  {
+    margin-bottom: 15px;
+      margin-left: 825px;
+  }
+  
+  
+  @media only screen and (max-width: 620px) {
+    /* For mobile phones: */
+    .banner-2 {
+      width: 100%;
+      height: 1500px;
+    }
+  }
+  

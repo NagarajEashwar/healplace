@@ -1,0 +1,282 @@
+<!-- <div class="row">
+  <div class="col-sm-8">
+    <div class="card" style="background-color: white;    width: 900px;margin-left: 120px;    height: 993px;margin-top: 9px;">
+
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <img class="center" src="assets/images/Mark richards.png" style="width:120px; height:120px; "/>
+        <img class="center" src="assets/images/code pen.png" style="width:36px; height:36px; margin-top:-23px; "/>
+        <br>
+    <h1 style="text-align: center;font-family: BelyDisplayW00-Regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;color: #074D63;">Mark Richards</h1>
+
+    <p style="
+    /* H2 - Regular */
+
+    font-family: FF Mark Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 125% */
+
+    text-align: center;
+
+    /* Background - dark */
+
+    color: #6D6D6D;
+    ">mark@gmail.com</p>
+
+    <br><br><br><br>
+
+
+
+
+
+    <table>
+
+    <p style="margin-left: 122px;">Name</p>
+    <tr>
+
+        <td><input type="text" placeholder="Mark" style="
+            position: absolute;
+            width: 320px;
+            height: 80px;
+            
+            
+            /* Background - dark */
+            
+            background: #6D6D6D;
+            opacity: 0.05;
+            border-radius: 20px;margin-left: 107px;"/> </td>
+
+    <p style="margin-left: 163px;
+    margin-top: -33px;">Surname</p>
+        <td><input type="text" placeholder="Richards" style="
+            position: absolute;
+            width: 320px;
+            height: 80px;    margin-left: -384px;
+          
+            
+            /* Background - dark */
+            
+            background: #6D6D6D;
+            opacity: 0.05;
+            border-radius: 20px;"/> </td>
+
+    </tr>
+    <br><br><br><br><br><br><br>
+
+    <p style="margin-left: 122px;">Email</p>
+    <tr>
+
+        <td><input type="text" placeholder="markrichards@gmail.com" style="
+            position: absolute;
+            width: 320px;
+            height: 80px;
+            
+            
+            /* Background - dark */
+            
+            background: #6D6D6D;
+            opacity: 0.05;
+            border-radius: 20px;margin-left: 107px;"/> </td>
+
+    <p style="margin-left: 163px;
+    margin-top: -26px;">Phone number</p>
+        <td><input type="text" placeholder="(+98) 9123 343 121" style="
+            position: absolute;
+            width: 320px;
+            height: 80px;    margin-left: -369px;
+          
+            
+            /* Background - dark */
+            
+            background: #6D6D6D;
+            opacity: 0.05;
+            border-radius: 20px;"/> </td>
+
+    </tr>
+
+    <br><br><br><br><br><br><br>
+
+    <p style="margin-left: 122px;">Location</p>
+    <tr>
+
+        <td><input type="text" placeholder="e.g. New York, USA" style="
+            position: absolute;
+            width: 320px;
+            height: 80px;
+            
+            
+            /* Background - dark */
+            
+            background: #6D6D6D;
+            opacity: 0.05;
+            border-radius: 20px;margin-left: 107px;"/> </td>
+
+    <p style="margin-left: 163px;
+    margin-top: -26px;">Postal Code</p>
+        <td><input type="text"  style="
+            position: absolute;
+            width: 320px;
+            height: 80px;    margin-left: -369px;
+          
+            
+            /* Background - dark */
+            
+            background: #6D6D6D;
+            opacity: 0.05;
+            border-radius: 20px;" placeholder="2219384"/> </td>
+
+    </tr>
+
+
+
+
+
+
+
+
+    </table>
+
+    <button type="button" style="Width:179px;Height:60px;border-radius:20px;Padding :20px, 40px, 20px, 40px;text-align: center; margin-left: 387px;
+    margin-top: 120px;background-color:#FBD036;border:#FBD036;">Save Profile →</button>
+
+    </div>
+  </div>
+  <div class="col-sm-4" style="float:right;">
+      <br><br><br>
+      <table style="margin-left: 62px;">
+          <tr>
+      <td><p style="Font-family: FF Mark Pro;Font-style: Bold;font-weight:bold;
+          Font-size: 14px; color: #074D63;">My Interests (8)</p></td>
+      <td>
+      
+  <p style="margin-left: -79px; Font-family: FF Mark Pro;Font-style: Bold;font-weight:bold;
+  Font-size: 14px; color: #074D63;">see all →</p>
+  </td>
+  </tr>
+  <br><br>
+  <img src="assets/images/first interest.png"/>
+  <br><br><br>
+  <img src="assets/images/second interest.png"/>
+  <br><br><br>
+  <img src="assets/images/first interest.png"/>
+  <br><br><br>
+  <img src="assets/images/second interest.png"/>
+  <br><br><br>
+  <img src="assets/images/first interest.png"/>
+  </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+ -->
+
+<div class="customer-profile-container">
+    <section class="font-family">
+        <div class="font-family banner">
+            <div class="top-container">
+                <div class="form-container">
+                    <div class="">
+                        <img class="center profile" src="{{logedinData.profile_image}}"/>
+                        <img class="center edit-btn" src="assets/images/code pen.png" 
+                        (click)="openModal(profilePictureModal, 'edit-profile')"/>
+                        <h1 class="profile-content">Mark Richards</h1>
+                        <p class="email-content">mark@gmail.com</p>
+                        <form class="form-group">
+                            <div class="row" style="margin-top: 50px;margin-right: unset;margin-left: unset;">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control" id="name" 
+                                        name="name" [(ngModel)]="logedinData.nick_name">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="Surname">Surname</label>
+                                        <input type="text" class="form-control" id="Surname" 
+                                        name="Surname" [(ngModel)]="logedinData.ssn">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-right: unset;margin-left: unset;">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="text" class="form-control" id="email" 
+                                        name="email" [(ngModel)]="logedinData.email">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="phone">Phone</label>
+                                        <input type="text" class="form-control" id="phone" 
+                                        name="phone" [(ngModel)]="logedinData.phone_number">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-right: unset;margin-left: unset;">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="location">Location</label>
+                                        <input type="text" class="form-control" id="location" 
+                                        name="location" [(ngModel)]="logedinData.address">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="postalcode">Postal Code</label>
+                                        <input type="text" class="form-control" id="postalcode" 
+                                        name="postalcode" [(ngModel)]="logedinData.postalcode">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column align-items-center">
+                                <button type="button" class="nextstep" (click)="profileSubmit()">Save Profile <i class="fa fa-arrow-right"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="yoga-container-copy">
+                    <div class="yoga-inside">
+                        <div class="d-flex justify-content-between header">
+                            <h1 class="interest">My Interests ({{interests.length}})</h1>
+                            <h1 class="see">see all →</h1>
+                        </div>
+                        <div class="yoga-content" *ngFor="let interest of interests">
+                            <img class="yoga" src="assets/images/shutterstocked.jfif">
+                            <div class="card-yoga">
+                                <div class="dot">...</div>
+                                <div class="head-yoga">{{ interest.interest }}</div>
+                                <div class="para">mindfullness | happiness | stillness</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

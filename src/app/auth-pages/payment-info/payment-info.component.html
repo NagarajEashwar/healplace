@@ -1,0 +1,65 @@
+<div id="payment-info">
+
+    <div class="payment-container">
+        <div class="row">
+            <div class="practitioner-info">
+                <div class="profile-photo"></div>
+                <div>
+                    <div class="name">Dr. {{ username }}</div>
+                    <div class="place">Health Coach, Therapist, New York</div>
+                </div>
+            </div>
+            <div class="account-info">
+                <div>$920</div>
+                <div>
+                    <span>This month</span>
+                    <span>Earnings</span>
+                </div>
+            </div>
+            <div class="account-info all">
+                <div>$6800</div>
+                <div>
+                    <span>All</span>
+                    <span>Earnings</span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="info-container">
+                <div>
+                    <div class="title">Funds Available for withdraw</div>
+                    <div class="price">$856</div>
+                </div>
+                <button type="button" class="btn highlight">
+                    Withdraw Funds
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="info-container">
+                <div>
+                    <div class="title">Bank Account Details</div>
+                    <div class="account-description">Ronald Richards Bank Name Here</div>
+                </div>
+                <button type="button" class="btn" routerLink="/bank-details">
+                    Update
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="info-container">
+                <div>
+                    <div class="title">Withdraw History</div>
+                    <div class="account-description">View Details of your healspace membership and payments</div>
+                </div>
+                <button type="button" class="btn" routerLink="/withdraw-history">
+                    View Withdraw History
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <app-available-patient></app-available-patient>
+</div>

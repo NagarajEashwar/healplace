@@ -1,0 +1,42 @@
+<div class="fourth-page">
+    <h1 class="head">Notification settings</h1>
+    <h4 class="sub-head">I’d like to receive notifications about:</h4>
+    <div class="sildes">
+        <div class="container">
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-2">
+                    <label class="switch" for="checkbox1">
+                        <input type="checkbox" id="checkbox1" [(ngModel)]="notification_type" (change)="notificationChange()"/>
+                        <div class="slider round"></div>
+                      </label>
+                </div>
+                <div class="col-10">
+                    <p style="margin-left: 30px;font-weight: 1000;font-size: 14px;margin-top: 8px;">Notification Type</p>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 8px;">
+                <div class="col-2">
+                    <label class="switch" for="checkbox2">
+                        <input type="checkbox" id="checkbox2" [(ngModel)]="reminder_type" (change)="reminderChange()"/>
+                        <div class="slider round"></div>
+                      </label>
+                </div>
+                <div class="col-10">
+                    <p style="margin-left: 30px;font-weight: 1000;font-size: 14px;margin-top: 8px;">Reminder Type</p>
+                </div>
+            </div>
+            <!-- <div class="row" style="margin-top: 8px;">
+                <div class="col-2">
+                    <label class="switch" for="checkbox3">
+                        <input type="checkbox" id="checkbox3" />
+                        <div class="slider round"></div>
+                      </label>
+                </div>
+                <div class="col-10">
+                    <p style="margin-left: 30px;font-weight: 1000;font-size: 14px;margin-top: 8px;">Turn Off All Notifications</p>
+                </div>
+            </div> -->
+        </div>
+        <!-- <button type="button" class="nextstep" (click)="submit()">Save Profile <i class="fa fa-arrow-right"></i></button> -->
+    </div>
+</div>

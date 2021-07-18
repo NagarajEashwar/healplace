@@ -1,0 +1,333 @@
+<div class="row chat-section">
+    <div class="col-md-8 col-lg-9 left">
+        <div class="chat-box-container" *ngIf="messageData.length > 0" #chatScrollContainer>
+            <div class="p-20" *ngFor="let list of messageData;">
+                <div class="row" *ngIf="userData.user.email === list.author.id">
+                    <div class="col-lg-12 col-md-12 chat-send">
+                        <div [popover]="popTemplate" [ngClass]="{'msg-hover': hiveredMsgId == list.sid}"
+                            text="list.type" placement="right" [outsideClick]="true" class="dot-section"
+                            (click)="selectMsg(list.item)">
+                        </div>
+                        <div class="send-msg" (mouseover)="hiveredMsgId=list.sid" (mouseout)="hiveredMsgId=null">
+                            <span class="send-message" *ngIf="list.type === 'text'">
+                                {{list.text}} <p>{{list.timestamp | amTimeAgo}}</p>
+                            </span>
+                            <span class="send-message" *ngIf="list.type === 'media'" (click)="openFile(list.item)"> <a
+                                    class="updloaded-file" *ngIf="list.item.media.filename === 'blob'"><i
+                                        class="fa fa-paperclip" aria-hidden="true"></i>
+                                    Audio File</a><a class="updloaded-file"
+                                    *ngIf="list.item.media.filename !== 'blob'"><i class="fa fa-paperclip"
+                                        aria-hidden="true"></i>
+                                    {{list.item.media.filename}}</a>
+                                <p>{{list.timestamp | amTimeAgo}}</p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" *ngIf="userData.user.email !== list.author.id">
+                    <div class="col-lg-12 col-md-12 chat-receive">
+                        <div class="receive-msg" (mouseover)="hiveredMsgId=list.sid" (mouseout)="hiveredMsgId=null">
+                            <span class="msg-text" *ngIf="list.type === 'text'">
+                                {{list.text}} <p>{{list.timestamp | amTimeAgo}}</p>
+                            </span>
+                            <span class="msg-text" *ngIf="list.type === 'media'" (click)="openFile(list.item)"> <a
+                                    class="updloaded-file" *ngIf="list.item.media.filename === 'blob'"><i
+                                        class="fa fa-paperclip" aria-hidden="true"></i>Audio File</a><a
+                                    class="updloaded-file" *ngIf="list.item.media.filename !== 'blob'"><i
+                                        class="fa fa-paperclip" aria-hidden="true"></i>{{list.item.media.filename}}</a>
+                                <p>{{list.timestamp | amTimeAgo}}</p>
+                            </span>
+                        </div>
+                        <div *ngIf="generalService.isCustomer()" [popover]="receiveMsgPopTemplate"
+                            [ngClass]="{'msg-hover': hiveredMsgId == list.sid}" text="list.type" placement="right"
+                            [outsideClick]="true" class="dot-section" (click)="selectMsg(list.item)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="spinner" *ngIf="messageData.length === 0 && isLoading">
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <div class="row chat-bottom">
+            <div class="col-md-8 col-lg-8">
+                <div *ngIf="isTyping">
+                    Typing...
+                </div>
+                <div class="row text-section">
+                    <div class="form-group col-md-11 col-lg-11 mb-0">
+                        <textarea placeholder="Type your message" class="form-control" rows="1" [(ngModel)]="message"
+                            (keyup.enter)="sendMsg()" (keydown)="onKeyDown($event)"></textarea>
+                    </div>
+                    <div class="col-md-1 col-lg-1">
+                        <emoji-mart (emojiClick)="addEmoji($event)" class="emoji-section" showPreview="false"
+                            *ngIf="showEmojiPopup"></emoji-mart>
+                        <img class="pt-35" style="width: 20px;" src="../../../../assets/images/customer/smile-chat.png"
+                            (click)="showEmoji()" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 col-lg-1 folder">
+                <img class="pt-35" src="../../../../assets/images/folder.png" (click)="file.click()" />
+                <input type="file" class="file-upload" (change)="onFileSelected($event)" #file />
+            </div>
+            <div class="col-md-1 col-lg-1 folder">
+                <img class="pt-35" src="../../../../assets/images/mic.png" (click)="toggleRecord()" />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-lg-3 right">
+        <div class="form-group mt-30">
+            <input class="form-control search" type="search" placeholder="Search My Chats" />
+        </div>
+        <div class="practitioner-list-container" *ngIf="userData.groups[0] === 'Customer'">
+            <div class="row margin-auto practitioner-list" *ngFor="let list of practitionerList;" (click)="goToChat(list)">
+                <div class="col-md-2 col-lg-2 pt-30 pl-30">
+                    <img class="status-img" src="../../../../assets/images/red_circle.png" />
+                    <img class="profile-pic"
+                        [src]="list.profile_image ? list.profile_image : '../../../../assets/images/profile_pic.png'" />
+                </div>
+                <div class="col-md-8 col-lg-8 pt-30 pl-30">
+                    <p class="profile-name">Dr. {{list.name}}</p>
+                    <span class="profile-content">in {{list.expertise.join()}}</span>
+                </div>
+                <div class="col-md-2 col-lg-2 pt-30 pl-30 popover-section">
+                    <img (click)="openPractitionerPopup()" class="p-dot" src="../../../../assets/images/more.svg" />
+                </div>
+            </div>
+        </div>
+        <div *ngIf="userData.groups[0] === 'Practitioner'">
+            <div class="row margin-auto practitioner-list" *ngFor="let list of customerList;" (click)="goToChat(list)">
+                <div class="col-md-2 col-lg-2 pt-30 pl-30">
+                    <img class="status-img" src="../../../../assets/images/red_circle.png" />
+                    <img class="profile-pic"
+                        [src]="list.profile_image ? list.profile_image : '../../../../assets/images/profile_pic.png'" />
+                </div>
+                <div class="col-md-8 col-lg-8 pt-30 pl-30">
+                    <p class="profile-name">{{list.nick_name}}</p>
+                    <span class="profile-content">in {{list.interest.join()}}</span>
+                </div>
+                <div class="col-md-2 col-lg-2 pt-30 pl-30 popover-section">
+                    <img (click)="openPractitionerPopup($event)" class="p-dot" src="../../../../assets/images/more.svg" />
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="userData.groups[0] === 'Customer'">
+            <p class="pinned-msg">
+                Saved messages
+            </p>
+            <div>
+                <div class="pinned-msg-div">
+                    <div class="p-20">
+                        <p class="from">From</p>
+                        <p class="pin-msg-title">
+                            Dr. Ronald Richards
+                        </p>
+                        <p class="pin-msg-content">Health Coach, Therapist, New York</p>
+                        <p class="pin-msg-content">
+                            Hi Richard, I have some questions about some familiy issues, and I was wondering if you
+                            could
+                            help me...
+                        </p>
+                    </div>
+                </div>
+                <div class="pinned-msg-div">
+                    <div class="p-20">
+                        <p class="from">From</p>
+                        <p class="pin-msg-title">
+                            Dr. Ronald Richards
+                        </p>
+                        <p class="pin-msg-content">Health Coach, Therapist, New York</p>
+                        <p class="pin-msg-content">
+                            Hi Richard, I have some questions about some familiy issues, and I was wondering if you
+                            could
+                            help me...
+                        </p>
+                    </div>
+                </div>
+                <div class="pinned-msg-div">
+                    <div class="p-20">
+                        <p class="from">From</p>
+                        <p class="pin-msg-title">
+                            Dr. Ronald Richards
+                        </p>
+                        <p class="pin-msg-content">Health Coach, Therapist, New York</p>
+                        <p class="pin-msg-content">
+                            Hi Richard, I have some questions about some familiy issues, and I was wondering if you
+                            could
+                            help me...
+                        </p>
+                    </div>
+                </div>
+                <div class="pinned-msg-div">
+                    <div class="p-20">
+                        <p class="from">From</p>
+                        <p class="pin-msg-title">
+                            Dr. Ronald Richards
+                        </p>
+                        <p class="pin-msg-content">Health Coach, Therapist, New York</p>
+                        <p class="pin-msg-content">
+                            Hi Richard, I have some questions about some familiy issues, and I was wondering if you
+                            could
+                            help me...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #popTemplate>
+    <div class="action-popover">
+        <p>
+            <!-- <span (click)="pinMsg()" class="pin-msg">Pin Message</span>
+            | -->
+            <span (click)="deleteMsg()" class="pin-msg">Remove</span>
+        </p>
+    </div>
+</ng-template>
+<ng-template #receiveMsgPopTemplate>
+    <div class="action-popover">
+        <p>
+            <span (click)="pinMsg()" class="pin-msg">Pin Message</span>
+        </p>
+    </div>
+</ng-template>
+<ng-template #practitionerPopTemplate>
+    <div class="practitioner-popover">
+        <div class="row p-30">
+            <div class="col-md-2 col-lg-2">
+                <img src="../../../../assets/images/profile_pic.png" />
+            </div>
+            <div class="col-md-8 col-lg-8">
+                <p class="title">Dr. Ronald Richards</p>
+                <p class="content">Health Coach, Therapist</p>
+            </div>
+            <div class="col-md-2 col-lg-2" *ngIf="generalService.isCustomer()">
+                <p class="content"><a class="notes" (click)="openNotes()" >Notes</a></p>
+            </div>
+        </div>
+        <hr>
+        <div class="row p-30">
+            <div class="col-md-6 col-lg-6">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img (click)="bookSession()" *ngIf="generalService.isCustomer()" style="width: 40px;height: 40px;cursor: pointer;"
+                            src="../../../../assets/images/customer/session-book.png" />
+                        <img (click)="openFollowUpForm()" *ngIf="!generalService.isCustomer()" style="width: 40px;height: 40px;cursor: pointer;"
+                            src="../../../../assets/images/practitioner/follow-up-form.png" />
+                    </div>
+                    <div class="col-md-9 col-lg-9">
+                        <ng-container *ngIf="generalService.isCustomer()" >
+                            <a (click)="bookSession()"><span class="sub-title">Book</span><br>
+                            <span class="sub-title"> a session</span></a>
+                        </ng-container>
+                        <ng-container *ngIf="!generalService.isCustomer()">
+                            <a (click)="openFollowUpForm()">
+                                <span class="sub-title">Follow-Up</span><br>
+                            <span class="sub-title"> Form</span>
+                            </a>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img (click)="switchPractitioner()" *ngIf="generalService.isCustomer()" style="width: 40px;height: 40px;cursor: pointer;"
+                            src="../../../../assets/images/customer/switch practitioner.png" />
+                        <img (click)="blockCustomer()" *ngIf="!generalService.isCustomer()" style="width: 40px;height: 40px;cursor: pointer;"
+                            src="../../../../assets/images/practitioner/block-user.png" />
+                    </div>
+                    <div class="col-md-9 col-lg-9">
+                        <ng-container *ngIf="generalService.isCustomer()">
+                           <a (click)="switchPractitioner()">
+                            <span class="sub-title">Switch</span><br>
+                            <span class="sub-title">practitioner</span>
+                           </a>
+                        </ng-container>
+                        <ng-container *ngIf="!generalService.isCustomer()">
+                            <a (click)="blockCustomer()">
+                                <span class="sub-title">Block</span><br>
+                            <span class="sub-title">Customer</span>
+                            </a>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="p-30">
+           <ng-container *ngIf="generalService.isCustomer()">
+            <p class="sub-content">
+                <a class="pr-10 sub-content" (click)="archiveChat()">Archive Chat</a>|
+                <a class="pl-10 sub-content" (click)="deleteChat()">Delete Chat </a>
+            </p>
+            <p class="sub-content">
+                <a class="pr-10 sub-content" (click)="reportPtactitioner()">Report Practitioner </a>|
+                <a class="pl-10 sub-content" (click)="reviewPractitioner()">Review Practitioner</a>
+            </p>
+           </ng-container>
+           <ng-container *ngIf="!generalService.isCustomer()">
+            <p class="sub-content">
+                <a class="pr-10 sub-content" (click)="archiveChat()">Archive Chat</a>|
+                <a class="pl-10 sub-content" (click)="viewSessions()">View Sessions </a>|
+                <a class="pl-10 sub-content" (click)="reviewMe()">Review Me </a>
+            </p>
+            <p class="sub-content">
+                <a class="pr-10 sub-content" (click)="followUpForm()">Me Active follow-up forms </a>
+            </p>
+           </ng-container>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #ChartRemoveConfirmModal>
+    <div class="chat-remove-confirm-modal">
+        <p class="title">
+            Are You Sure You Want To<br>
+            Delete This Conversation?
+        </p>
+        <p class="content">This action cannot be undone.</p>
+        <div class="row details-section">
+            <div class="col-md-4 col-lg-4">
+                <p class="chat-in">Chat in</p>
+                <p class="name">Nutrition</p>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <div class="row">
+                    <div class="col-md-2 col-lg-2">
+                        <div class="circle-div">
+                            <img class="pt-10" src="../../../../assets/images/user_icon.png" />
+                        </div>
+                    </div>
+                    <div class="col-md-10 col-lg-10">
+                        <p class="sub-title pl-20">3 Practitioners</p>
+                        <p class="sub-content pl-20">14 chats</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <div class="row">
+                    <div class="col-md-2 col-lg-2">
+                        <div class="circle-div">
+                            <img class="pt-10" src="../../../../assets/images/pinned_msg.png" />
+                        </div>
+                    </div>
+                    <div class="col-md-10 col-lg-10">
+                        <p class="sub-title pl-20">4 Pinned Messages</p>
+                        <p class="sub-content pl-20">21 files shared</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <button class="btn btn-rounded del-btn">Delete Chat →</button><br>
+            <button class="btn cancel-btn">Cancel</button>
+        </div>
+    </div>
+</ng-template>

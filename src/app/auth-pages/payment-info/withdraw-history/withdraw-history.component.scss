@@ -1,0 +1,78 @@
+.withdraw-history-wrapper {
+    margin-bottom: 50px;
+    padding-top: 56px;
+    padding-left: 188px;
+    padding-right: 60px;
+    background: #ffffff;
+    padding-bottom: 70px;
+    .title-wrapper {
+        width: 90%;
+        margin-bottom: 60px;
+    }
+    .title{
+        font-family: FF Mark Pro;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        color: #074D63;
+    }
+    .dropdown {
+        button {
+            padding: 21px 40px;
+            font-family: FF Mark Pro;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 18px;
+            color: #074D63;
+            border: 1px solid #074D63;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+    }
+    .withdraw-history-title {
+        font-family: BelyDisplayW00-Regular;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 30px;
+        color: #6D6D6D;
+    }
+    .withdraw-history-item, .withdraw-history-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 31px 35px;
+        
+        width: 100%;
+        margin-bottom: 40px;
+        background: #FFFFFF;
+        box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
+        border-radius: 20px;
+
+        .withdraw-history-value {
+            font-family: FF Mark Pro;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 20px;
+            color: #074D63;
+        }
+        .btn {
+            font-family: FF Mark Pro;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            color: #00BAD5;
+            border: none;
+            background: none;
+        }
+    }
+    .withdraw-history-header {
+        background: inherit;
+        box-shadow: none;
+    }
+}

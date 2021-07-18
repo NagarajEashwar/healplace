@@ -1,0 +1,22 @@
+<div class="document-verification-details-wrapper">
+    <div class="document-verification-details-container">
+        <div class="title">Document verification</div>
+
+        <form class="form-group" [formGroup]="documentVerificationDetailsForm" (ngSubmit)="saveBankDetails()">
+
+            <div class="form-group">
+                <label for="file">Add document</label>
+                <div class="form-control d-flex align-items-center">
+                    <input type="file" class="form-control-file" id="file" name="file" formControlName="file" (change)="onFileChange($event)">
+                </div>
+            </div>
+        </form>
+
+        <div class="add-new-container d-flex flex-column align-items-center">
+            <button type="button" class="btn add-new" [disabled]="!documentVerificationDetailsForm.valid" (click)="saveBankDetails()">
+                Link this account
+                <i class="fa fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</div>

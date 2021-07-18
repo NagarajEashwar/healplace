@@ -1,0 +1,204 @@
+.main-banner
+{
+	padding-top: 100px;
+}
+
+.yoga-style
+{
+    margin-left: 50px;
+}
+
+.yoga-content1
+{
+	top: 180px;
+}
+
+.yoga-content2
+{
+	top: 360px;
+}
+
+.yoga-content3
+{
+	top: 540px;
+}
+
+
+.yoga
+{
+	 position: absolute; 
+width: 145.62px;
+height: 108px;
+left: 0px;
+top: 0px;
+
+/* background: url(shutterstock_387025426.jpg); */
+border-radius: 20px 0px 0px 20px;
+}
+
+.yoga1
+{
+	position: absolute; 
+width: 145.62px;
+height: 108px;
+left: 0px;
+top: 0px;
+
+/* background: url(shutterstock_387025426.jpg); */
+border-radius: 20px 0px 0px 20px;
+}
+
+.yoga2
+{
+	position: absolute; 
+width: 145.62px;
+height: 108px;
+left: 0px;
+top: 0px;
+
+/* background: url(shutterstock_387025426.jpg); */
+border-radius: 20px 0px 0px 20px;
+}
+
+
+
+.card-yoga
+{
+	position: absolute;
+width: 360px;
+height: 108px;
+left: 0px;
+top: 0px;
+padding-top: 25px;
+background: rgba(252, 215, 215, 0.2);
+border-radius: 20px;
+}
+
+
+.card-yoga1
+{
+	position: absolute;
+width: 360px;
+height: 108px;
+left: 0px;
+top: 0px;
+padding-top: 25px;
+background: rgba(252, 215, 215, 0.2);
+border-radius: 20px;
+}
+
+.head-yoga
+{
+	position: static;
+    /* width: 39px; */
+    height: 30px;
+    left: 128px;
+    top: 0px;
+    font-family: BelyDisplayW00-Regular;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: right;
+    color: #074D63;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 35px;
+    }
+
+
+
+    .para1
+    {
+    	position: static;
+    /* width: 167px; */
+    height: 15px;
+    left: 0px;
+    top: 30px;
+    font-family: FF Mark Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 15px;
+    text-align: right;
+    color: #074D63;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 25px;
+    }
+
+
+
+    
+
+
+    .tick
+    {
+    	position: absolute;
+    left: 85%;
+    right: 5.56%;
+    width: 35px;
+    top: 0;
+    bottom: 74.07%;
+    border: 1.5px solid #00BAD5;
+    }
+
+
+    .btn-text
+    {
+    	position: static;
+left: 24.03%;
+right: 24.03%;
+top: 33.33%;
+bottom: 33.33%;
+
+/* H2 - Bold */
+
+font-family: FF Mark Pro;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 20px;
+/* identical to box height, or 125% */
+
+
+/* White */
+
+color: #FFFFFF;
+
+
+/* Inside Auto Layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 0px;
+    }
+
+
+    .last-text
+    {
+    	position: absolute;
+left: 37.01%;
+right: 39.65%;
+top: 115.58%;
+bottom: 5.66%;
+
+/* Paragraph - Regular */
+
+font-family: FF Mark Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 18px;
+/* identical to box height, or 129% */
+
+text-align: center;
+
+/* Background - dark */
+
+color: #6D6D6D;
+
+    }

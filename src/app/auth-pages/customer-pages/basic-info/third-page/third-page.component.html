@@ -1,0 +1,30 @@
+<div class="third-page">
+    <p class="hello">Select setting from below</p>
+    <div class="form-check">
+        <input class="checkbox" type="checkbox" [(ngModel)]="is_news_subscribe" (change)="newsChange()">
+        <label class="form-check-label" for="flexCheckDefault" style="margin-left: 10px;
+        font-weight: 1000;
+        font-size: 14px;
+    ">
+            News Subscribe
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="checkbox" type="checkbox" [(ngModel)]="is_sms_subscribe" (change)="smsChange()">
+        <label class="form-check-label" for="flexCheckDefault" style="margin-left: 10px;
+        font-weight: 1000;
+        font-size: 14px;
+    ">
+            SMS Subscribe
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="checkbox" type="checkbox" [(ngModel)]="is_email_subscribe" (change)="emailChange()">
+        <label class="form-check-label" for="flexCheckDefault" style="margin-left: 10px;
+        font-weight: 1000;
+        font-size: 14px;
+    ">
+            Email Subscribe
+        </label>
+    </div>
+</div>

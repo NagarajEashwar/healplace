@@ -1,0 +1,36 @@
+<div class="sidebar">
+  <div class="sidebar_content">
+    <a href="#" class="logo"><img src="../../../assets/v2/logo.svg" alt="logo" srcset=""></a>
+    <div class="sideMenu_container">
+      <div class="menu_container" [ngSwitch]="isGroup">
+        <!-- Admin Pages -->
+        <ng-template [ngSwitchCase]="'Admin'">
+          <a routerLink="/welcome-admin" class="active" routerLinkActive="class-name" routerLinkActiveOptions="{exact:true}"  class="active"><img src="../../../assets/v2/dashboard.svg" alt="dahsboard"></a>
+          <a href="#"><img src="../../../assets/v2/practitioner-menu.png" alt="dahsboard" style="width: 24px;"></a>
+          <a href="#"><img src="../../../assets/v2/clients-menu.png" alt="dahsboard" style="width: 24px;" ></a>
+          <a href="#"><img src="../../../assets/v2/report.svg" alt="dahsboard"></a>
+          <a href="#"><img src="../../../assets/v2/interest-menu.png" alt="dahsboard" style="width: 24px;"></a>
+        </ng-template>
+        <!-- Practitioner Pages -->
+        <ng-template [ngSwitchCase]="'Practitioner'">
+          <a routerLink="/welcome-practitioner" class="active" routerLinkActive="class-name" routerLinkActiveOptions="{exact:true}"  class="active"><img src="../../../assets/v2/dashboard.svg" alt="dahsboard"></a>
+          <a routerLink="/chat"><img src="../../../assets/v2/chat.svg" alt="dahsboard"></a>
+          <!-- <a routerLink="/practitioner/sessions" routerLinkActiveOptions="{exact:true}"> <img src="../../../assets/v2/video.svg" alt="dahsboard"></a> -->
+          <a routerLink="/practitionersessions" routerLinkActiveOptions="{exact:true}"> <img src="../../../assets/v2/video.svg" alt="dahsboard"></a>
+          <a href="#"><img src="../../../assets/v2/report.svg" alt="dahsboard"></a>   
+          <a routerLink="/practitioner/schedule" routerLinkActive="active"><img src="../../../assets/v2/calendar.svg" alt="dahsboard"></a>  
+        </ng-template>
+        <!-- Customer Pages -->
+        <ng-template [ngSwitchCase]="'Customer'">
+          <a routerLink="/welcome-customer" class="active" routerLinkActive="class-name" routerLinkActiveOptions="{exact:true}"  class="active"><img src="../../../assets/v2/dashboard.svg" alt="dahsboard"></a>
+          <a routerLink="/chat"><img src="../../../assets/v2/chat.svg" alt="dahsboard"></a>
+          <a href="#"><img src="../../../assets/v2/video.svg" alt="dahsboard"></a>
+          <a href="#"><img src="../../../assets/v2/report.svg" alt="dahsboard"></a>
+        </ng-template>
+      </div>
+      <div class="logout_container">
+        <a href="#" (click)="logout()"><img src="../../../assets/v2/logout.svg" alt="dahsboard"><span>Logout</span></a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,82 @@
+<div *ngIf="currentStep === 'one'" class="block-customer-modal">
+    <div>
+        <img style="width: 60px;" src="../../../../../assets/images/customer/switch-practitioner2.png" />
+    </div>
+    <p class="title" style="padding-top: 20px;">
+        Need To Make A Change?
+    </p>
+    <br />
+    <p class="content">Tell us a little bit more so we can help.</p>
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-6 col-lg-6">
+            <div class="sub-div" style="float: right; background: #074D63;">
+                <a (click)="optionSelected('first')">
+                    <i *ngIf="option === 'first'" style="float: right;margin-top: 10px;margin-right: 10px;" class="fa fa-check-circle"></i>
+                    <p class="sub-content">This practitioner wasn’t <br />
+                        a good match for me.</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-6">
+            <div class="sub-div" style="background: #074D63;">
+                <a (click)="optionSelected('second')">
+                    <i *ngIf="option === 'second'" style="float: right;margin-right: 20px;margin-top: 10px;" class="fa fa-check-circle"></i>
+                    <p style="text-align: left;
+                    padding-left: 64px;" class="sub-content">I need a <br />
+different service.
+</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div style="text-align: center;margin-top: 20px;">
+        <button (click)="addDetails()" class="btn add-details-btn"
+            [class.btnactive]="option === 'first' || option === 'second'">Switch practitioner →</button><br>
+        <button (click)="closeModal()" class="btn cancel-btn">Cancel</button>
+    </div>
+</div>
+<div *ngIf="currentStep === 'two'" class="block-customer-modal">
+    <div>
+        <img style="width: 60px;" src="../../../../../assets/images/customer/switch-practitioner2.png" />
+    </div>
+    <p style="padding: 20px;" class="title">
+        Confirm You’d Like To <br />
+Switch Practitioners.
+    </p>
+    <p class="content">
+        Tell us a little bit more about why you’re switching.
+    </p>
+    <br />
+    <br />
+    <div style="padding-top: 15px;">
+        <textarea rows="4" cols="50" placeholder="Type your message" [(ngModel)]="shortDescription"
+            (input)="onShortDescription($event.target.value)"></textarea>
+    </div>
+    <div style="text-align: center;margin-top: 20px;">
+        <button (click)="switchPractitioner()" class="btn add-details-btn"
+            [class.btnactive]="isEnableReportBtn === true">Confirm Switching →</button><br>
+        <button (click)="closeModal()" class="btn cancel-btn">Cancel</button>
+    </div>
+</div>
+<div *ngIf="currentStep === 'three'" class="block-customer-modal">
+    <div>
+        <img style="width: 60px;" src="../../../../../assets/images/customer/switch-practitioner-stop.png" />
+    </div>
+    <p class="title">
+        Oops! You can no longer <br />
+switch to another practitioner
+    </p>
+    <br />
+    <br />
+    <p class="review">If you are having trouble finding a match, please contact our team for more support.</p>
+    <br />
+    <br />
+    <div style="text-align: center;margin-top: 20px;">
+        <button (click)="contactUs()" class="btn back-to-btn">Contact Us →</button><br>
+        <button (click)="closeModal()" class="btn cancel-btn">Cancel</button>
+    </div>
+</div>

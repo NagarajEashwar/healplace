@@ -1,0 +1,175 @@
+.card {
+	margin-bottom: 0px  !important;
+}
+
+.landing-footer {
+  padding: 200px 0 40px 0px;
+}
+
+.contact {
+	display: flex;
+  position: static;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+    padding: 100px 0px 240px;
+    width: 100%;
+    height: 530px;
+	background: url('/assets/images/BG-SHAPE.png'), #00BAD5;
+	
+	
+ }
+
+.con-val{
+	color: red;
+    padding-top: 5px;
+}
+
+.savealert {
+	width: 660px;
+    text-align: center;
+    position: absolute;
+    top: 12px;
+    left: 70px;
+    font-size: 16px;
+}
+
+ .currency-price {
+    position: relative;
+    bottom: 100px !important;
+}
+ .pquestion {
+	position: static;
+	width: 445px;
+	height: 90px;
+	right: 112px;
+	top: calc(50% - 90px/2); 
+
+	font-family: BelyDisplayW00-Regular;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	line-height: 45px; 
+	text-align: center; 
+	color: #FFFFFF;  
+	
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+
+	margin: 12px 0px;
+ }
+ .innerquestion {
+	height: 60px;
+
+	position: static;     
+    font-family: FF Mark Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    flex: none;
+    order: 1;
+	flex-grow: 0;
+	
+	margin: 40px 0px;
+	max-width: 590px;
+ }
+
+ .contact-info {
+	padding: 100px 120px; 
+	width: 840px; 
+	height: 792px;
+	left: 300px;
+	top: 530px; 
+	background: #FFFFFF;
+	box-shadow: 0px 40px 60px rgba(0, 0, 0, 0.04);
+	border-radius: 40px;
+	border-color: #00BAD5;
+	top: 390px;
+ }
+
+ .p-contact-content {
+
+	font-family: FF Mark Pro;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 20px; 
+	text-align: center;
+	color: #074D63; 
+	
+ }
+
+ /* .contact-form {
+	position: absolute;
+	left: 120px;
+	margin: 60px 0px;
+ } */
+ 
+.lblName {
+	position: static;
+	height: 18px;
+	left: 120px;
+	top: 0px;
+	margin: 60px 0px;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+
+	font-family: FF Mark Pro;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 18px;
+ 
+}
+
+
+textarea:hover, 
+input:hover, 
+textarea:active, 
+input:active, 
+textarea:focus, 
+input:focus,
+.btn:active,
+.btn.active
+{
+    outline:0px !important;
+    -webkit-appearance:none;
+	box-shadow: none !important;
+	
+}
+
+textarea {
+	resize: none;
+}
+
+.text-line {
+	background-color: transparent;
+	outline: none;
+	outline-style: none;
+	outline-offset: 0;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: solid #6D6D6D 1px;
+	padding: 3px 10px;
+  border-radius: 0;
+}
+
+.img-first {
+	position: absolute;
+    top: -20px;
+    right: -17px;
+	width: 88px;
+}
+.img-second {
+  position: absolute;
+    top: 630px;
+    left: -75px;
+}
+
+ 

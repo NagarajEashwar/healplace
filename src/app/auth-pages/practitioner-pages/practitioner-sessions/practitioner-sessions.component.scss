@@ -1,0 +1,60 @@
+:host {
+    display: flex;
+    background: #ffffff;
+}
+#practitioner-sessions {
+    padding-top: 56px;
+    padding-left: 188px;
+    background: #ffffff;
+    flex:1;
+    .practitioner-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 56px;
+        .profile-photo {
+            width: 80px;
+            height: 80px;
+            background: url('../../../../assets/images/users/avator-2.jpg');
+            background-size: 100%;
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+        .name {
+            font-family: BelyDisplayW00-Regular;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 30px;
+            color: #074D63;
+        }
+        .place {
+            font-family: FF Mark Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 20px;
+            color: #6D6D6D;
+        }
+    }
+    .add-new-container {
+        display: flex;
+        justify-content: center;
+        width: 66%;
+        padding-bottom: 200px;
+    }
+   .add-new {
+    font-family: FF Mark Pro;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    color: #074D63;
+    border: 1px solid #074D63;
+    border-radius: 20px;
+    padding: 20px 40px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px;
+   }
+}

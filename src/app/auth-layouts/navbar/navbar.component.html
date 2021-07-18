@@ -1,0 +1,284 @@
+<header id="page-topbar">
+  <div class="navbar-header">
+    <div class="d-flex">
+      <!-- LOGO -->
+      <div class="navbar-brand-box">
+        <a href="/" class="logo logo-dark">
+          <span class="logo-sm">
+            <img src="assets/images/favicon_heal.PNG" alt="" height="22">
+          </span>
+          <span class="logo-lg">
+            <img src="assets/images/favicon_heal.PNG" alt="" height="17">
+          </span>
+        </a>
+
+        <a href="/" class="logo">
+          <span class="logo-sm">
+            <img src="assets/images/favicon_heal.PNG" alt="" height="25">
+          </span>
+          <!-- <span *ngIf="!hideHeader" class="logo-lg">
+              <img src="assets/images/favicon_heal.PNG" alt="" height="45">
+            </span> -->
+          <!-- <span class="logo-lg">
+              <img src="assets/images/Logo_custom.png" style="margin-left: -24px;">
+            </span> -->
+          <!-- &nbsp;
+             <span class="logo-he" style="margin-bottom: 25px;">
+              <img src="assets/images/healplace.PNG" alt="" height="39">
+              
+            </span> -->
+        </a>
+      </div>
+
+      <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item">
+        <i class="fa fa-fw fa-bars text-black-50"></i>
+      </button>
+      <div class="dropdown d-inline-block" ngbDropdown style="margin-bottom: 20px;">
+        <a class="navbar-brand" *ngIf="title">
+          <h5 class="text-blue headings" style="margin-bottom: -10px;">
+            {{title}}
+          </h5>
+        </a>
+        <a class="navbar-brand" *ngIf="!title" [ngSwitch]="isGroup">
+          <!-- Admin Pages -->
+          <ng-template [ngSwitchCase]="'Admin'">
+            <h5 class="text-blue headings" style="margin-bottom: -10px;">
+              Hi {{transform(userData?.user?.first_name)}}!
+            </h5>
+          </ng-template>
+          <!-- Practitioner Pages -->
+          <ng-template [ngSwitchCase]="'Practitioner'">
+            <h5 class="text-blue headings" style="margin-bottom: -10px;">
+              {{ getTitle() }}
+            </h5>
+          </ng-template>
+          <!-- Customer Pages -->
+          <ng-template [ngSwitchCase]="'Customer'">
+            <h5 class="text-blue headings" style="margin-bottom: -10px;">
+              {{ getTitle() }}
+            </h5>
+          </ng-template>
+        </a>
+      </div>
+    </div>
+
+    <div class="d-flex">
+      <div class="dropdown d-inline-block" ngbDropdown>
+        <form class="form-inline my-2 my-lg-0">
+          <div class="form-group has-search" style="margin-top: 15px; margin-left: 40px; 
+                 margin-right: 60px;
+                 height: 51px;">
+            <span class="fa fa-search form-control-feedback"></span>
+            <input type="text" class="form-control" placeholder="Search...">
+          </div>
+        </form>
+      </div>
+      <div class="dropdown d-inline-block" ngbDropdown>
+        <button type="button" class="btn header-item noti-icon" id="page-header-notifications-dropdown" ngbDropdownToggle>
+          <i class="bx bx-bell bx-tada text-black-50"></i>
+          <span class="badge badge-danger badge-pill" style=" color: #003153; font-weight: bold; background-color: #FBD036;">3</span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0" ngbDropdownMenu aria-labelledby="page-header-notifications-dropdown">
+          <div class="p-3">
+            <div class="row align-items-center">
+              <div class="col">
+                <h6 class="m-0">Notifications</h6>
+              </div>
+              <div class="col-auto">
+                <a href="javascript: void(0);" class="small">View All</a>
+              </div>
+            </div>
+          </div>
+          <perfect-scrollbar style="position: relative; height: 230px;" [config]="configData">
+            <a href="" class="text-reset notification-item">
+              <div class="media">
+                <div class="avatar-xs mr-3">
+                  <span class="avatar-title bg-primary rounded-circle font-size-16">
+                    <i class="bx bx-cart"></i>
+                  </span>
+                </div>
+                <div class="media-body">
+                  <h6 class="mt-0 mb-1">Sample Title</h6>
+                  <div class="font-size-12 text-muted">
+                    <p class="mb-1">Sample Text</p>
+                    <p class="mb-0">
+                      <i class="mdi mdi-clock-outline"></i>
+                      Sample Time
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="" class="text-reset notification-item">
+              <div class="media">
+                <img src="assets/images/users/avatar-3.jpg" class="mr-3 rounded-circle avatar-xs" alt="user-pic">
+                <div class="media-body">
+                  <h6 class="mt-0 mb-1">Sample Title</h6>
+                  <div class="font-size-12 text-muted">
+                    <p class="mb-1">Sample Text</p>
+                    <p class="mb-0">
+                      <i class="mdi mdi-clock-outline"></i>
+                      Sample Time
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="" class="text-reset notification-item">
+              <div class="media">
+                <div class="avatar-xs mr-3">
+                  <span class="avatar-title bg-success rounded-circle font-size-16">
+                    <i class="bx bx-badge-check"></i>
+                  </span>
+                </div>
+                <div class="media-body">
+                  <h6 class="mt-0 mb-1">Sample Title</h6>
+                  <div class="font-size-12 text-muted">
+                    <p class="mb-1">Sample Text</p>
+                    <p class="mb-0">
+                      <i class="mdi mdi-clock-outline"></i>
+                      Sample Time
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="" class="text-reset notification-item">
+              <div class="media">
+                <img src="assets/images/users/avatar-4.jpg" class="mr-3 rounded-circle avatar-xs" alt="user-pic">
+                <div class="media-body">
+                  <h6 class="mt-0 mb-1">Sample Title</h6>
+                  <div class="font-size-12 text-muted">
+                    <p class="mb-1">Sample Text</p>
+                    <p class="mb-0">
+                      <i class="mdi mdi-clock-outline"></i>
+                      Sample Time
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </perfect-scrollbar>
+          <div class="p-2 border-top">
+            <a class="btn btn-sm btn-light btn-block text-center" href="javascript:void(0)">
+              <i class="mdi mdi-arrow-down-circle mr-1"></i> Loade More..
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown d-inline-block" ngbDropdown>
+        <button type="button" class="btn header-item" id="page-header-user-dropdown" ngbDropdownToggle>
+          <img class="rounded-circle header-profile-user" src="assets/images/users/avator-2.jpg" alt="Header Avatar">
+          <span class="d-none d-xl-inline-block ml-1 text-black-50">
+            <a style="color:  #003153; font-size: 16px; font-weight: bold; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">{{transform(userData?.user?.first_name)}}</a>
+            <br>
+            <!-- {{userData?.user?.email}} -->
+          </span>
+          <i class="mdi mdi-chevron-down d-none d-xl-inline-block text-black-50"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+          <div id="page-header-user-dropdown">
+            <img class="rounded-circle header-profile-user" src="assets/images/users/avator-2.jpg" alt="Header Avatar">
+            <span class="d-none d-xl-inline-block ml-1 text-black-50">
+              <a class="user-name">{{transform(userData?.user?.first_name)}}</a>
+              <div class="email">{{userData?.user?.email}}</div>
+              <!-- {{userData?.user?.email}} -->
+            </span>
+           </div>
+          <!-- item-->
+          <div [ngSwitch]="isGroup">
+            <!-- Admin Pages -->
+            <ng-template [ngSwitchCase]="'Admin'">
+              <hr/>
+              <a class="dropdown-item" href="javascript: void(0);">
+                <i class="bx bx-bell font-size-16 align-middle mr-1"></i>
+                Add Practitioner
+              </a>
+              <a class="dropdown-item" href="javascript: void(0);">
+                <i class="bx bx-user font-size-16 align-middle mr-1"></i>
+                Change Notifications Settings
+              </a>
+              <a class="dropdown-item" href="javascript: void(0);">
+                <i class="bx bx-bell font-size-16 align-middle mr-1"></i>
+                Plans and Discounts
+              </a>
+            </ng-template>
+            <!-- Practitioner Pages -->
+            <ng-template [ngSwitchCase]="'Practitioner'">
+              <!-- item-->
+              <hr/>
+              <a class="dropdown-item" routerLink="/edit-profile">
+                <i class="bx bx-user font-size-16 align-middle mr-1"></i>
+                My Profile
+              </a>
+              <a class="dropdown-item" routerLink="/payment-info">
+                <i class="bx bx-receipt font-size-16 align-middle mr-1"></i>
+                Payments Info
+              </a>
+              <a class="dropdown-item">
+                <i class="bx bx-receipt font-size-16 align-middle mr-1"></i>
+                Settings and Guidelines
+              </a>
+              <a class="dropdown-item" routerLink="/connect-account">
+                <i class="bx bx-receipt font-size-16 align-middle mr-1"></i>
+                Connect Account</a>
+              <a class="dropdown-item" routerLink="/document-verification">
+                <i class="bx bx-receipt font-size-16 align-middle mr-1"></i>
+                Document Verificaction</a>
+              <a class="dropdown-item" routerLink="/practitioner/notifications">
+                <i class="bx bx-bell font-size-16 align-middle mr-1"></i>
+                Manage Notifications
+              </a>
+              <a class="dropdown-item" href="javascript: void(0);">
+                <i class="bx bx-bell font-size-16 align-middle mr-1"></i>
+                Contact an Admin
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item d-block" href="javascript: void(0);">
+                <span class="badge badge-success float-right"></span>
+                <i class="bx bx-help-circle font-size-16 align-middle mr-1"></i>
+                Help & Faq
+              </a>
+              <a class="dropdown-item" href="javascript: void(0);">
+                <i class="bx bx-info-circle font-size-16 align-middle mr-1"></i>
+                Terms and Conditions
+              </a>
+              <!-- <div class="dropdown-divider"></div> -->
+            </ng-template>
+            <!-- Customer Pages -->
+            <ng-template [ngSwitchCase]="'Customer'">
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" routerLink="/customer-profile">
+                <i class="bx bx-user font-size-16 align-middle mr-1"></i>
+                My Profile
+              </a>
+              <a class="dropdown-item" routerLink="/payment-info">
+                <i class="bx bx-receipt font-size-16 align-middle mr-1"></i>
+                Billing Info
+              </a>
+              <a class="dropdown-item" routerLink="/cutomer/notifications">
+                <i class="bx bx-bell font-size-16 align-middle mr-1"></i>
+                Manage Notifications
+              </a>
+              <a class="dropdown-item" routerLink="/mysubscription">
+                <i class="bx bx-bell font-size-16 align-middle mr-1"></i>
+                My Subscription
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item d-block" href="javascript: void(0);">
+                <span class="badge badge-success float-right"></span>
+                <i class="bx bx-help-circle font-size-16 align-middle mr-1"></i>
+                Help & Faq
+              </a>
+              <a class="dropdown-item" href="javascript: void(0);">
+                <i class="bx bx-info-circle font-size-16 align-middle mr-1"></i>
+                About Healplace
+              </a>
+              <!-- <div class="dropdown-divider"></div> -->
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

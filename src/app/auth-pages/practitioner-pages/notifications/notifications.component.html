@@ -1,0 +1,74 @@
+<div id="notifications">
+    <div class="left-section">
+        <div class="notifications-container">
+            <div>
+                <div class="heading">Notifications from healplace</div>
+                <div class="info-container">
+                    <div>
+                        <div class="title">Healplace news and updates</div>
+                        <div class="description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                        </div>
+                    </div>
+                    <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="duration">
+                        <label ngbButtonLabel class="btn-primary">
+                            <input ngbButton type="radio" [value]="1">Daily
+                        </label>
+                        <label ngbButtonLabel class="btn-primary">
+                            <input ngbButton type="radio" [value]="2">Weekly
+                        </label>
+                        <label ngbButtonLabel class="btn-primary">
+                            <input ngbButton type="radio" [value]="3">Off
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="heading">How to receive notifications</div>
+                <div class="info-container">
+                    <div>
+                        <div class="title">Choose method for receive notifications</div>
+                        <div class="description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                        </div>
+                    </div>
+                    <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="method">
+                        <label ngbButtonLabel class="btn-primary">
+                            <input ngbButton type="radio" [value]="1">Email
+                        </label>
+                        <label ngbButtonLabel class="btn-primary">
+                            <input ngbButton type="radio" value="2">Phone
+                        </label>
+                        <label ngbButtonLabel class="btn-primary">
+                            <input ngbButton type="radio" [value]="3">Both
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="heading">Reminders from healplace</div>
+                <div class="info-container">
+                    <div>
+                        <div class="title">Receive reminder before</div>
+                        <div class="description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                        </div>
+                    </div>
+                    <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="reminder">
+                        <label ngbButtonLabel class="btn-primary">
+                            <input ngbButton type="radio" [value]="1">24 hours
+                        </label>
+                        <label ngbButtonLabel class="btn-primary">
+                            <input ngbButton type="radio" value="2">1 hour
+                        </label>
+                        <label ngbButtonLabel class="btn-primary">
+                            <input ngbButton type="radio" [value]="3">15 min
+                        </label>
+                        <label ngbButtonLabel class="btn-primary">
+                            <input ngbButton type="radio" [value]="4">Select All
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
